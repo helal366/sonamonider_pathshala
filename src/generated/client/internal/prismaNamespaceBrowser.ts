@@ -51,7 +51,8 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-
+  Role: 'Role',
+  User: 'User'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -68,4 +69,61 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 } as const)
 
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
+
+
+export const RoleScalarFieldEnum = {
+  role_id: 'role_id',
+  role_name: 'role_name',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type RoleScalarFieldEnum = (typeof RoleScalarFieldEnum)[keyof typeof RoleScalarFieldEnum]
+
+
+export const UserScalarFieldEnum = {
+  user_id: 'user_id',
+  full_name: 'full_name',
+  mobile_number: 'mobile_number',
+  role_name: 'role_name',
+  gender: 'gender',
+  blood_group: 'blood_group',
+  date_of_birth: 'date_of_birth',
+  heightInCm: 'heightInCm',
+  weightInKg: 'weightInKg',
+  religion: 'religion',
+  nationality: 'nationality',
+  birth_certificate_number: 'birth_certificate_number',
+  nid_number: 'nid_number',
+  father_name: 'father_name',
+  mother_name: 'mother_name',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const SortOrder = {
+  asc: 'asc',
+  desc: 'desc'
+} as const
+
+export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const QueryMode = {
+  default: 'default',
+  insensitive: 'insensitive'
+} as const
+
+export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 

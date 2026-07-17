@@ -27,6 +27,8 @@ import express, { Application, Request, Response } from "express";
 import cors from "cors";
 import { envVars } from "./configs/index.js";
 import { html } from "./utils/html.js";
+import { notFound } from "./middlewares/notFound.js";
+import { globalErrorHandler } from "./middlewares/globalErrorHandler.js";
 
 const app:Application = express();
 app.use(cors({
@@ -38,5 +40,8 @@ app.use(express.urlencoded({extended:true}));
 app.use(cookieParser())
 app.get("/", (req:Request,res:Response)=>{
     res.send(html)
-})
+});
+
+app.use(notFound);
+app.use(globalErrorHandler);
 export default app;

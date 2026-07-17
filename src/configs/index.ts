@@ -11,6 +11,7 @@ interface IEnvVariables {
   JWT_REFRESH_EXPIRES: string;
   BCRYPT_SALT_ROUND: string;
   APP_LOCAL_URL: string;
+  NEON_DB_LINK_DIRECT: string;
 }
 const loadEnvVariables = (): IEnvVariables => {
   const envVars: string[] = [
@@ -23,6 +24,7 @@ const loadEnvVariables = (): IEnvVariables => {
     "JWT_REFRESH_SECRET",
     "JWT_REFRESH_EXPIRES",
     "APP_LOCAL_URL",
+    "NEON_DB_LINK_DIRECT",
   ];
   for (const varName of envVars) {
     if (!process.env[varName]) {
@@ -39,6 +41,7 @@ const loadEnvVariables = (): IEnvVariables => {
     JWT_REFRESH_EXPIRES: process.env.JWT_REFRESH_EXPIRES as string,
     BCRYPT_SALT_ROUND: process.env.BCRYPT_SALT_ROUND as string,
     APP_LOCAL_URL: process.env.APP_LOCAL_URL as string,
+    NEON_DB_LINK_DIRECT: process.env.NEON_DB_LINK_DIRECT as string,
   };
 };
 export const envVars = loadEnvVariables();

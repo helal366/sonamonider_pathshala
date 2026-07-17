@@ -1,3 +1,0 @@
-model Student{
-    student_id String @id @default(uuid())
-}

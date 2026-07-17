@@ -9,7 +9,43 @@
 * 🟢 You can import this file directly.
 */
 
+export const Gender = {
+  MALE: 'MALE',
+  FEMALE: 'FEMALE',
+  OTHER: 'OTHER'
+} as const
+
+export type Gender = (typeof Gender)[keyof typeof Gender]
 
 
-// This file is empty because there are no enums in the schema.
-export {}
+export const BloodGroup = {
+  A_POSITIVE: 'A_POSITIVE',
+  A_NEGATIVE: 'A_NEGATIVE',
+  B_POSITIVE: 'B_POSITIVE',
+  B_NEGATIVE: 'B_NEGATIVE',
+  AB_POSITIVE: 'AB_POSITIVE',
+  AB_NEGATIVE: 'AB_NEGATIVE',
+  O_POSITIVE: 'O_POSITIVE',
+  O_NEGATIVE: 'O_NEGATIVE'
+} as const
+
+export type BloodGroup = (typeof BloodGroup)[keyof typeof BloodGroup]
+
+
+export const Religion = {
+  ISLAM: 'ISLAM',
+  HINDU: 'HINDU',
+  CHRISTIAN: 'CHRISTIAN',
+  BUDDO: 'BUDDO',
+  OTHER: 'OTHER'
+} as const
+
+export type Religion = (typeof Religion)[keyof typeof Religion]
+
+
+export const Morning_Section = {
+  madrashatul_atfal: 'madrashatul_atfal',
+  sonamonider_pathshala: 'sonamonider_pathshala'
+} as const
+
+export type Morning_Section = (typeof Morning_Section)[keyof typeof Morning_Section]
