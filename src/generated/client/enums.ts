@@ -49,3 +49,34 @@ export const Morning_Section = {
 } as const
 
 export type Morning_Section = (typeof Morning_Section)[keyof typeof Morning_Section]
+
+
+export const Days = {
+  SATURDAY: 'SATURDAY',
+  SUNDAY: 'SUNDAY',
+  MONDAY: 'MONDAY',
+  TUESDAY: 'TUESDAY',
+  WEDNESDAY: 'WEDNESDAY',
+  THURSDAY: 'THURSDAY',
+  FRIDAY: 'FRIDAY'
+} as const
+
+export type Days = (typeof Days)[keyof typeof Days]
+
+
+export const Months = {
+  JANUARY: 'JANUARY',
+  FEBRUARY: 'FEBRUARY',
+  MARCH: 'MARCH',
+  APRIL: 'APRIL',
+  MAY: 'MAY',
+  JUNE: 'JUNE',
+  JULY: 'JULY',
+  AUGUST: 'AUGUST',
+  SEPTEMBER: 'SEPTEMBER',
+  OCTOBER: 'OCTOBER',
+  NOVEMBER: 'NOVEMBER',
+  DECEMBER: 'DECEMBER'
+} as const
+
+export type Months = (typeof Months)[keyof typeof Months]

@@ -31,8 +31,17 @@ const deleteRole = async (roleName: string)=>{
         where: { role_name: cleanRoleName }
     });
 }
-
+const getAllRoles=async()=>{
+    const allRetrievedRoles=await prisma.role.findMany();
+    const allRoles = allRetrievedRoles.map(singleRoleData=>(singleRoleData.role_name))
+    return allRoles
+};
+const updateRole=async(roleName: string)=>{
+    
+}
 export const roleServices = {
     createRole,
-    deleteRole
+    deleteRole,
+    getAllRoles,
+    updateRole
 }

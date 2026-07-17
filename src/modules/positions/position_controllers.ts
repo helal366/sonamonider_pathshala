@@ -5,19 +5,63 @@ import { StatusCodes } from "http-status-codes";
 import { positionServices } from "./position_services.js";
 import { sendResponse } from "../../utils/sendResponse.js";
 
-const createPosition = catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
-    const {positionName} = req.body;
-    if(!positionName || Array.isArray(positionName) || typeof positionName !== "string" || positionName.trim()==="" ){
-        throw new AppError("Invalid position name", StatusCodes.BAD_REQUEST)
-    };
+const createPosition = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { positionName } = req.body;
+    if (
+      !positionName ||
+      Array.isArray(positionName) ||
+      typeof positionName !== "string" ||
+      positionName.trim() === ""
+    ) {
+      throw new AppError("Invalid position name", StatusCodes.BAD_REQUEST);
+    }
     const result = await positionServices.createPosition(positionName);
     sendResponse(res, {
+      success: true,
+      statusCode: StatusCodes.CREATED,
+      message: "Position created successfully.",
+      data: result,
+    });
+  },
+);
+
+const deletePosition = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { positionName } = req.body;
+    if (
+      !positionName ||
+      Array.isArray(positionName) ||
+      typeof positionName !== "string" ||
+      positionName.trim() === ""
+    ) {
+      throw new AppError("Invalid position name", StatusCodes.BAD_REQUEST);
+    };
+    await positionServices.deletePosition(positionName)
+    sendResponse(res, {
         success: true,
-        statusCode: StatusCodes.CREATED,
-        message: "Position created successfully.",
-        data: result
+        statusCode: StatusCodes.OK,
+        message: "Position deleted successfully."
+    })
+  },
+);
+
+const getAllPositions=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
+    const allPositions = await positionServices.getAllPositions();
+    sendResponse(res,{
+        success: true,
+        statusCode: StatusCodes.OK,
+        message: "All Positions retrieved successfully.",
+        data: allPositions
     })
 });
-export const positionControllers={
-    createPosition
-}
+
+const updatePosition=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
+
+})
+export const positionControllers = {
+  createPosition,
+  deletePosition,
+  getAllPositions,
+  updatePosition
+};

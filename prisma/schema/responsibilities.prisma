@@ -1,0 +1,7 @@
+model responsibility{
+    responsibility_id String @id @default(uuid())
+    responsibility_name String @unique
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}

@@ -39,7 +39,34 @@ const deleteRole = catchAsync(
   },
 );
 
+const getAllRoles = catchAsync(
+    async (req: Request, res: Response, next: NextFunction) => {
+        const result = await roleServices.getAllRoles();
+        sendResponse(res, {
+            success: true,
+            statusCode: StatusCodes.OK,
+            message: "All Roles retrieved successfully.",
+            data: result
+        })
+    }
+);
+
+const updateRole= catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
+    const {roleName}= req.body;
+    if(!roleName || Array.isArray(roleName) || typeof roleName !== "string" || roleName.trim().toUpperCase()){
+        throw new AppError("Invalid Role name.",StatusCodes.BAD_REQUEST)
+    }
+    const result = await roleServices.updateRole(roleName);
+    sendResponse(res, {
+        success: true,
+        statusCode: StatusCodes.OK,
+        message: "Role updated successfully.",
+        data: result
+    })
+})
 export const roleController = {
   createRole,
   deleteRole,
+  getAllRoles,
+  updateRole
 };
