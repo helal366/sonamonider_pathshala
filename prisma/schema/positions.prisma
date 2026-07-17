@@ -1,0 +1,10 @@
+model position{
+    position_id String @id @default(uuid())
+    position_name String @unique
+
+    
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+
+    @@map("positions")
+}

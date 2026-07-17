@@ -26,12 +26,26 @@ enum Morning_Section{
     sonamonider_pathshala
 }
 
-// enum Role{
-//     SUPER_ADMIN
-//     ADMINISTRATOR_INCHARGE_ADMIN
-//     ACADEMIC_INCHARGE_ADMIN
-//     ADMIN
-//     TEACHER
-//     STUDENT
-//     STAFF
-// }
+enum Days{
+    SATURDAY
+    SUNDAY
+    MONDAY
+    TUESDAY
+    WEDNESDAY
+    THURSDAY
+    FRIDAY
+}
+enum Months{
+    JANUARY
+    FEBRUARY
+    MARCH
+    APRIL
+    MAY
+    JUNE
+    JULY
+    AUGUST
+    SEPTEMBER
+    OCTOBER
+    NOVEMBER
+    DECEMBER
+}
