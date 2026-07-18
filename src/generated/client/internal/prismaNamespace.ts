@@ -385,6 +385,7 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 export const ModelName = {
   position: 'position',
+  responsibility: 'responsibility',
   Role: 'Role',
   User: 'User'
 } as const
@@ -402,7 +403,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "position" | "role" | "user"
+    modelProps: "position" | "responsibility" | "role" | "user"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -477,6 +478,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.positionCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.PositionCountAggregateOutputType> | number
+        }
+      }
+    }
+    responsibility: {
+      payload: Prisma.$responsibilityPayload<ExtArgs>
+      fields: Prisma.responsibilityFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.responsibilityFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$responsibilityPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.responsibilityFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$responsibilityPayload>
+        }
+        findFirst: {
+          args: Prisma.responsibilityFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$responsibilityPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.responsibilityFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$responsibilityPayload>
+        }
+        findMany: {
+          args: Prisma.responsibilityFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$responsibilityPayload>[]
+        }
+        create: {
+          args: Prisma.responsibilityCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$responsibilityPayload>
+        }
+        createMany: {
+          args: Prisma.responsibilityCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.responsibilityCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$responsibilityPayload>[]
+        }
+        delete: {
+          args: Prisma.responsibilityDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$responsibilityPayload>
+        }
+        update: {
+          args: Prisma.responsibilityUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$responsibilityPayload>
+        }
+        deleteMany: {
+          args: Prisma.responsibilityDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.responsibilityUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.responsibilityUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$responsibilityPayload>[]
+        }
+        upsert: {
+          args: Prisma.responsibilityUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$responsibilityPayload>
+        }
+        aggregate: {
+          args: Prisma.ResponsibilityAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateResponsibility>
+        }
+        groupBy: {
+          args: Prisma.responsibilityGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ResponsibilityGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.responsibilityCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ResponsibilityCountAggregateOutputType> | number
         }
       }
     }
@@ -675,6 +750,16 @@ export const PositionScalarFieldEnum = {
 } as const
 
 export type PositionScalarFieldEnum = (typeof PositionScalarFieldEnum)[keyof typeof PositionScalarFieldEnum]
+
+
+export const ResponsibilityScalarFieldEnum = {
+  responsibility_id: 'responsibility_id',
+  responsibility_name: 'responsibility_name',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ResponsibilityScalarFieldEnum = (typeof ResponsibilityScalarFieldEnum)[keyof typeof ResponsibilityScalarFieldEnum]
 
 
 export const RoleScalarFieldEnum = {
@@ -951,6 +1036,7 @@ export type PrismaClientOptions = ({
 }
 export type GlobalOmitConfig = {
   position?: Prisma.positionOmit
+  responsibility?: Prisma.responsibilityOmit
   role?: Prisma.RoleOmit
   user?: Prisma.UserOmit
 }

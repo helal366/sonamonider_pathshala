@@ -319,6 +319,7 @@ allowBuilds:
 vercel login
 vercel link
 vercel env pull .env.production.local
+
 export ENABLE_EXPERIMENTAL_COREPACK=1
 vercel --prod --force
 

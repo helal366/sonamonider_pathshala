@@ -1,3 +1,4 @@
+
 import app from "./app.js";
 import { envVars } from "./configs/index.js";
 import { prisma } from "./lib/prisma.js";

@@ -1,7 +1,6 @@
 import cookieParser from "cookie-parser";
 import express, { Application, Request, Response } from "express";
 import cors from "cors";
-import { envVars } from "./configs/index.js";
 import { html } from "./utils/html.js";
 import { notFound } from "./middlewares/notFound.js";
 import { globalErrorHandler } from "./middlewares/globalErrorHandler.js";
@@ -9,10 +8,7 @@ import { roleRouter } from "./modules/roles/role_routes.js";
 import { positionRouter } from "./modules/positions/position_routes.js";
 
 const app:Application = express();
-app.use(cors({
-    origin: envVars.APP_LOCAL_URL,
-    credentials: true,
-}))
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser())

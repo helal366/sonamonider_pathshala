@@ -52,6 +52,7 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   position: 'position',
+  responsibility: 'responsibility',
   Role: 'Role',
   User: 'User'
 } as const
@@ -80,6 +81,16 @@ export const PositionScalarFieldEnum = {
 } as const
 
 export type PositionScalarFieldEnum = (typeof PositionScalarFieldEnum)[keyof typeof PositionScalarFieldEnum]
+
+
+export const ResponsibilityScalarFieldEnum = {
+  responsibility_id: 'responsibility_id',
+  responsibility_name: 'responsibility_name',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ResponsibilityScalarFieldEnum = (typeof ResponsibilityScalarFieldEnum)[keyof typeof ResponsibilityScalarFieldEnum]
 
 
 export const RoleScalarFieldEnum = {
