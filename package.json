@@ -4,14 +4,14 @@
   "main": "dist/server.js",
   "imports": {
     "#db-client": {
-      "default": "./dist/generated/client/client.js"
+      "default": "./dist/src/generated/client/client.js"
     }
   },
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "shx rm -rf dist && tsc",
+    "build": "shx rm -rf dist && pnpm prisma generate && tsc",
     "postinstall": "prisma generate",
-    "db:migrate": "prisma migrate dev && pnpm prisma generate && pnpm build",
+    "db:migrate": "prisma migrate dev && pnpm build",
     "db:studio": "prisma studio"
   },
   "keywords": [],
