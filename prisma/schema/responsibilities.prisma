@@ -4,4 +4,6 @@ model Responsibility{
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+
+    @@map("responsibilities")
 }

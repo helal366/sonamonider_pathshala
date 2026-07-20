@@ -51,8 +51,8 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  position: 'position',
-  responsibility: 'responsibility',
+  Position: 'Position',
+  Responsibility: 'Responsibility',
   Role: 'Role',
   User: 'User'
 } as const
@@ -108,6 +108,7 @@ export const UserScalarFieldEnum = {
   full_name: 'full_name',
   mobile_number: 'mobile_number',
   role_name: 'role_name',
+  position_name: 'position_name',
   gender: 'gender',
   blood_group: 'blood_group',
   date_of_birth: 'date_of_birth',

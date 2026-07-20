@@ -18,15 +18,15 @@ export { Prisma }
 export * as $Enums from './enums.js'
 export * from './enums.js';
 /**
- * Model position
+ * Model Position
  * 
  */
-export type position = Prisma.positionModel
+export type Position = Prisma.PositionModel
 /**
- * Model responsibility
+ * Model Responsibility
  * 
  */
-export type responsibility = Prisma.responsibilityModel
+export type Responsibility = Prisma.ResponsibilityModel
 /**
  * Model Role
  * 

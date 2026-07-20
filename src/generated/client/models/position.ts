@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `position` model and its related types.
+ * This file exports the `Position` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model position
+ * Model Position
  * 
  */
-export type positionModel = runtime.Types.Result.DefaultSelection<Prisma.$positionPayload>
+export type PositionModel = runtime.Types.Result.DefaultSelection<Prisma.$PositionPayload>
 
 export type AggregatePosition = {
   _count: PositionCountAggregateOutputType | null
@@ -71,37 +71,37 @@ export type PositionCountAggregateInputType = {
 
 export type PositionAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which position to aggregate.
+   * Filter which Position to aggregate.
    */
-  where?: Prisma.positionWhereInput
+  where?: Prisma.PositionWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of positions to fetch.
+   * Determine the order of Positions to fetch.
    */
-  orderBy?: Prisma.positionOrderByWithRelationInput | Prisma.positionOrderByWithRelationInput[]
+  orderBy?: Prisma.PositionOrderByWithRelationInput | Prisma.PositionOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.positionWhereUniqueInput
+  cursor?: Prisma.PositionWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` positions from the position of the cursor.
+   * Take `±n` Positions from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` positions.
+   * Skip the first `n` Positions.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned positions
+   * Count returned Positions
   **/
   _count?: true | PositionCountAggregateInputType
   /**
@@ -129,11 +129,11 @@ export type GetPositionAggregateType<T extends PositionAggregateArgs> = {
 
 
 
-export type positionGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.positionWhereInput
-  orderBy?: Prisma.positionOrderByWithAggregationInput | Prisma.positionOrderByWithAggregationInput[]
+export type PositionGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PositionWhereInput
+  orderBy?: Prisma.PositionOrderByWithAggregationInput | Prisma.PositionOrderByWithAggregationInput[]
   by: Prisma.PositionScalarFieldEnum[] | Prisma.PositionScalarFieldEnum
-  having?: Prisma.positionScalarWhereWithAggregatesInput
+  having?: Prisma.PositionScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: PositionCountAggregateInputType | true
@@ -151,7 +151,7 @@ export type PositionGroupByOutputType = {
   _max: PositionMaxAggregateOutputType | null
 }
 
-export type GetPositionGroupByPayload<T extends positionGroupByArgs> = Prisma.PrismaPromise<
+export type GetPositionGroupByPayload<T extends PositionGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<PositionGroupByOutputType, T['by']> &
       {
@@ -166,121 +166,133 @@ export type GetPositionGroupByPayload<T extends positionGroupByArgs> = Prisma.Pr
 
 
 
-export type positionWhereInput = {
-  AND?: Prisma.positionWhereInput | Prisma.positionWhereInput[]
-  OR?: Prisma.positionWhereInput[]
-  NOT?: Prisma.positionWhereInput | Prisma.positionWhereInput[]
-  position_id?: Prisma.StringFilter<"position"> | string
-  position_name?: Prisma.StringFilter<"position"> | string
-  created_at?: Prisma.DateTimeFilter<"position"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"position"> | Date | string
+export type PositionWhereInput = {
+  AND?: Prisma.PositionWhereInput | Prisma.PositionWhereInput[]
+  OR?: Prisma.PositionWhereInput[]
+  NOT?: Prisma.PositionWhereInput | Prisma.PositionWhereInput[]
+  position_id?: Prisma.StringFilter<"Position"> | string
+  position_name?: Prisma.StringFilter<"Position"> | string
+  created_at?: Prisma.DateTimeFilter<"Position"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"Position"> | Date | string
+  user?: Prisma.UserListRelationFilter
 }
 
-export type positionOrderByWithRelationInput = {
+export type PositionOrderByWithRelationInput = {
   position_id?: Prisma.SortOrder
   position_name?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
+  user?: Prisma.UserOrderByRelationAggregateInput
 }
 
-export type positionWhereUniqueInput = Prisma.AtLeast<{
+export type PositionWhereUniqueInput = Prisma.AtLeast<{
   position_id?: string
   position_name?: string
-  AND?: Prisma.positionWhereInput | Prisma.positionWhereInput[]
-  OR?: Prisma.positionWhereInput[]
-  NOT?: Prisma.positionWhereInput | Prisma.positionWhereInput[]
-  created_at?: Prisma.DateTimeFilter<"position"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"position"> | Date | string
+  AND?: Prisma.PositionWhereInput | Prisma.PositionWhereInput[]
+  OR?: Prisma.PositionWhereInput[]
+  NOT?: Prisma.PositionWhereInput | Prisma.PositionWhereInput[]
+  created_at?: Prisma.DateTimeFilter<"Position"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"Position"> | Date | string
+  user?: Prisma.UserListRelationFilter
 }, "position_id" | "position_name">
 
-export type positionOrderByWithAggregationInput = {
+export type PositionOrderByWithAggregationInput = {
   position_id?: Prisma.SortOrder
   position_name?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
-  _count?: Prisma.positionCountOrderByAggregateInput
-  _max?: Prisma.positionMaxOrderByAggregateInput
-  _min?: Prisma.positionMinOrderByAggregateInput
+  _count?: Prisma.PositionCountOrderByAggregateInput
+  _max?: Prisma.PositionMaxOrderByAggregateInput
+  _min?: Prisma.PositionMinOrderByAggregateInput
 }
 
-export type positionScalarWhereWithAggregatesInput = {
-  AND?: Prisma.positionScalarWhereWithAggregatesInput | Prisma.positionScalarWhereWithAggregatesInput[]
-  OR?: Prisma.positionScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.positionScalarWhereWithAggregatesInput | Prisma.positionScalarWhereWithAggregatesInput[]
-  position_id?: Prisma.StringWithAggregatesFilter<"position"> | string
-  position_name?: Prisma.StringWithAggregatesFilter<"position"> | string
-  created_at?: Prisma.DateTimeWithAggregatesFilter<"position"> | Date | string
-  updated_at?: Prisma.DateTimeWithAggregatesFilter<"position"> | Date | string
+export type PositionScalarWhereWithAggregatesInput = {
+  AND?: Prisma.PositionScalarWhereWithAggregatesInput | Prisma.PositionScalarWhereWithAggregatesInput[]
+  OR?: Prisma.PositionScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.PositionScalarWhereWithAggregatesInput | Prisma.PositionScalarWhereWithAggregatesInput[]
+  position_id?: Prisma.StringWithAggregatesFilter<"Position"> | string
+  position_name?: Prisma.StringWithAggregatesFilter<"Position"> | string
+  created_at?: Prisma.DateTimeWithAggregatesFilter<"Position"> | Date | string
+  updated_at?: Prisma.DateTimeWithAggregatesFilter<"Position"> | Date | string
 }
 
-export type positionCreateInput = {
+export type PositionCreateInput = {
+  position_id?: string
+  position_name: string
+  created_at?: Date | string
+  updated_at?: Date | string
+  user?: Prisma.UserCreateNestedManyWithoutPositionInput
+}
+
+export type PositionUncheckedCreateInput = {
+  position_id?: string
+  position_name: string
+  created_at?: Date | string
+  updated_at?: Date | string
+  user?: Prisma.UserUncheckedCreateNestedManyWithoutPositionInput
+}
+
+export type PositionUpdateInput = {
+  position_id?: Prisma.StringFieldUpdateOperationsInput | string
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  user?: Prisma.UserUpdateManyWithoutPositionNestedInput
+}
+
+export type PositionUncheckedUpdateInput = {
+  position_id?: Prisma.StringFieldUpdateOperationsInput | string
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  user?: Prisma.UserUncheckedUpdateManyWithoutPositionNestedInput
+}
+
+export type PositionCreateManyInput = {
   position_id?: string
   position_name: string
   created_at?: Date | string
   updated_at?: Date | string
 }
 
-export type positionUncheckedCreateInput = {
-  position_id?: string
-  position_name: string
-  created_at?: Date | string
-  updated_at?: Date | string
-}
-
-export type positionUpdateInput = {
+export type PositionUpdateManyMutationInput = {
   position_id?: Prisma.StringFieldUpdateOperationsInput | string
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type positionUncheckedUpdateInput = {
+export type PositionUncheckedUpdateManyInput = {
   position_id?: Prisma.StringFieldUpdateOperationsInput | string
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type positionCreateManyInput = {
-  position_id?: string
-  position_name: string
-  created_at?: Date | string
-  updated_at?: Date | string
-}
-
-export type positionUpdateManyMutationInput = {
-  position_id?: Prisma.StringFieldUpdateOperationsInput | string
-  position_name?: Prisma.StringFieldUpdateOperationsInput | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type positionUncheckedUpdateManyInput = {
-  position_id?: Prisma.StringFieldUpdateOperationsInput | string
-  position_name?: Prisma.StringFieldUpdateOperationsInput | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type positionCountOrderByAggregateInput = {
+export type PositionCountOrderByAggregateInput = {
   position_id?: Prisma.SortOrder
   position_name?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
 }
 
-export type positionMaxOrderByAggregateInput = {
+export type PositionMaxOrderByAggregateInput = {
   position_id?: Prisma.SortOrder
   position_name?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
 }
 
-export type positionMinOrderByAggregateInput = {
+export type PositionMinOrderByAggregateInput = {
   position_id?: Prisma.SortOrder
   position_name?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
+}
+
+export type PositionScalarRelationFilter = {
+  is?: Prisma.PositionWhereInput
+  isNot?: Prisma.PositionWhereInput
 }
 
 export type StringFieldUpdateOperationsInput = {
@@ -291,41 +303,138 @@ export type DateTimeFieldUpdateOperationsInput = {
   set?: Date | string
 }
 
+export type PositionCreateNestedOneWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.PositionCreateWithoutUserInput, Prisma.PositionUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.PositionCreateOrConnectWithoutUserInput
+  connect?: Prisma.PositionWhereUniqueInput
+}
+
+export type PositionUpdateOneRequiredWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.PositionCreateWithoutUserInput, Prisma.PositionUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.PositionCreateOrConnectWithoutUserInput
+  upsert?: Prisma.PositionUpsertWithoutUserInput
+  connect?: Prisma.PositionWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.PositionUpdateToOneWithWhereWithoutUserInput, Prisma.PositionUpdateWithoutUserInput>, Prisma.PositionUncheckedUpdateWithoutUserInput>
+}
+
+export type PositionCreateWithoutUserInput = {
+  position_id?: string
+  position_name: string
+  created_at?: Date | string
+  updated_at?: Date | string
+}
+
+export type PositionUncheckedCreateWithoutUserInput = {
+  position_id?: string
+  position_name: string
+  created_at?: Date | string
+  updated_at?: Date | string
+}
+
+export type PositionCreateOrConnectWithoutUserInput = {
+  where: Prisma.PositionWhereUniqueInput
+  create: Prisma.XOR<Prisma.PositionCreateWithoutUserInput, Prisma.PositionUncheckedCreateWithoutUserInput>
+}
+
+export type PositionUpsertWithoutUserInput = {
+  update: Prisma.XOR<Prisma.PositionUpdateWithoutUserInput, Prisma.PositionUncheckedUpdateWithoutUserInput>
+  create: Prisma.XOR<Prisma.PositionCreateWithoutUserInput, Prisma.PositionUncheckedCreateWithoutUserInput>
+  where?: Prisma.PositionWhereInput
+}
+
+export type PositionUpdateToOneWithWhereWithoutUserInput = {
+  where?: Prisma.PositionWhereInput
+  data: Prisma.XOR<Prisma.PositionUpdateWithoutUserInput, Prisma.PositionUncheckedUpdateWithoutUserInput>
+}
+
+export type PositionUpdateWithoutUserInput = {
+  position_id?: Prisma.StringFieldUpdateOperationsInput | string
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type PositionUncheckedUpdateWithoutUserInput = {
+  position_id?: Prisma.StringFieldUpdateOperationsInput | string
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
 
 
-export type positionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+/**
+ * Count Type PositionCountOutputType
+ */
+
+export type PositionCountOutputType = {
+  user: number
+}
+
+export type PositionCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  user?: boolean | PositionCountOutputTypeCountUserArgs
+}
+
+/**
+ * PositionCountOutputType without action
+ */
+export type PositionCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PositionCountOutputType
+   */
+  select?: Prisma.PositionCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * PositionCountOutputType without action
+ */
+export type PositionCountOutputTypeCountUserArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.UserWhereInput
+}
+
+
+export type PositionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+  position_id?: boolean
+  position_name?: boolean
+  created_at?: boolean
+  updated_at?: boolean
+  user?: boolean | Prisma.Position$userArgs<ExtArgs>
+  _count?: boolean | Prisma.PositionCountOutputTypeDefaultArgs<ExtArgs>
+}, ExtArgs["result"]["position"]>
+
+export type PositionSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   position_id?: boolean
   position_name?: boolean
   created_at?: boolean
   updated_at?: boolean
 }, ExtArgs["result"]["position"]>
 
-export type positionSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type PositionSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   position_id?: boolean
   position_name?: boolean
   created_at?: boolean
   updated_at?: boolean
 }, ExtArgs["result"]["position"]>
 
-export type positionSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  position_id?: boolean
-  position_name?: boolean
-  created_at?: boolean
-  updated_at?: boolean
-}, ExtArgs["result"]["position"]>
-
-export type positionSelectScalar = {
+export type PositionSelectScalar = {
   position_id?: boolean
   position_name?: boolean
   created_at?: boolean
   updated_at?: boolean
 }
 
-export type positionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"position_id" | "position_name" | "created_at" | "updated_at", ExtArgs["result"]["position"]>
+export type PositionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"position_id" | "position_name" | "created_at" | "updated_at", ExtArgs["result"]["position"]>
+export type PositionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  user?: boolean | Prisma.Position$userArgs<ExtArgs>
+  _count?: boolean | Prisma.PositionCountOutputTypeDefaultArgs<ExtArgs>
+}
+export type PositionIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
+export type PositionIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
 
-export type $positionPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "position"
-  objects: {}
+export type $PositionPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Position"
+  objects: {
+    user: Prisma.$UserPayload<ExtArgs>[]
+  }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     position_id: string
     position_name: string
@@ -335,18 +444,18 @@ export type $positionPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
   composites: {}
 }
 
-export type positionGetPayload<S extends boolean | null | undefined | positionDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$positionPayload, S>
+export type PositionGetPayload<S extends boolean | null | undefined | PositionDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$PositionPayload, S>
 
-export type positionCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<positionFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type PositionCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<PositionFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: PositionCountAggregateInputType | true
   }
 
-export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['position'], meta: { name: 'position' } }
+export interface PositionDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Position'], meta: { name: 'Position' } }
   /**
    * Find zero or one Position that matches the filter.
-   * @param {positionFindUniqueArgs} args - Arguments to find a Position
+   * @param {PositionFindUniqueArgs} args - Arguments to find a Position
    * @example
    * // Get one Position
    * const position = await prisma.position.findUnique({
@@ -355,12 +464,12 @@ export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findUnique<T extends positionFindUniqueArgs>(args: Prisma.SelectSubset<T, positionFindUniqueArgs<ExtArgs>>): Prisma.Prisma__positionClient<runtime.Types.Result.GetResult<Prisma.$positionPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends PositionFindUniqueArgs>(args: Prisma.SelectSubset<T, PositionFindUniqueArgs<ExtArgs>>): Prisma.Prisma__PositionClient<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Position that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {positionFindUniqueOrThrowArgs} args - Arguments to find a Position
+   * @param {PositionFindUniqueOrThrowArgs} args - Arguments to find a Position
    * @example
    * // Get one Position
    * const position = await prisma.position.findUniqueOrThrow({
@@ -369,13 +478,13 @@ export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findUniqueOrThrow<T extends positionFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, positionFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__positionClient<runtime.Types.Result.GetResult<Prisma.$positionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends PositionFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, PositionFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__PositionClient<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Position that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {positionFindFirstArgs} args - Arguments to find a Position
+   * @param {PositionFindFirstArgs} args - Arguments to find a Position
    * @example
    * // Get one Position
    * const position = await prisma.position.findFirst({
@@ -384,14 +493,14 @@ export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findFirst<T extends positionFindFirstArgs>(args?: Prisma.SelectSubset<T, positionFindFirstArgs<ExtArgs>>): Prisma.Prisma__positionClient<runtime.Types.Result.GetResult<Prisma.$positionPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends PositionFindFirstArgs>(args?: Prisma.SelectSubset<T, PositionFindFirstArgs<ExtArgs>>): Prisma.Prisma__PositionClient<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Position that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {positionFindFirstOrThrowArgs} args - Arguments to find a Position
+   * @param {PositionFindFirstOrThrowArgs} args - Arguments to find a Position
    * @example
    * // Get one Position
    * const position = await prisma.position.findFirstOrThrow({
@@ -400,13 +509,13 @@ export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findFirstOrThrow<T extends positionFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, positionFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__positionClient<runtime.Types.Result.GetResult<Prisma.$positionPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends PositionFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, PositionFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__PositionClient<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Positions that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {positionFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {PositionFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Positions
    * const positions = await prisma.position.findMany()
@@ -418,11 +527,11 @@ export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * const positionWithPosition_idOnly = await prisma.position.findMany({ select: { position_id: true } })
    * 
    */
-  findMany<T extends positionFindManyArgs>(args?: Prisma.SelectSubset<T, positionFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$positionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends PositionFindManyArgs>(args?: Prisma.SelectSubset<T, PositionFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Position.
-   * @param {positionCreateArgs} args - Arguments to create a Position.
+   * @param {PositionCreateArgs} args - Arguments to create a Position.
    * @example
    * // Create one Position
    * const Position = await prisma.position.create({
@@ -432,11 +541,11 @@ export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  create<T extends positionCreateArgs>(args: Prisma.SelectSubset<T, positionCreateArgs<ExtArgs>>): Prisma.Prisma__positionClient<runtime.Types.Result.GetResult<Prisma.$positionPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends PositionCreateArgs>(args: Prisma.SelectSubset<T, PositionCreateArgs<ExtArgs>>): Prisma.Prisma__PositionClient<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Positions.
-   * @param {positionCreateManyArgs} args - Arguments to create many Positions.
+   * @param {PositionCreateManyArgs} args - Arguments to create many Positions.
    * @example
    * // Create many Positions
    * const position = await prisma.position.createMany({
@@ -446,11 +555,11 @@ export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    *     
    */
-  createMany<T extends positionCreateManyArgs>(args?: Prisma.SelectSubset<T, positionCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends PositionCreateManyArgs>(args?: Prisma.SelectSubset<T, PositionCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create many Positions and returns the data saved in the database.
-   * @param {positionCreateManyAndReturnArgs} args - Arguments to create many Positions.
+   * @param {PositionCreateManyAndReturnArgs} args - Arguments to create many Positions.
    * @example
    * // Create many Positions
    * const position = await prisma.position.createManyAndReturn({
@@ -470,11 +579,11 @@ export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  createManyAndReturn<T extends positionCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, positionCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$positionPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+  createManyAndReturn<T extends PositionCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, PositionCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Delete a Position.
-   * @param {positionDeleteArgs} args - Arguments to delete one Position.
+   * @param {PositionDeleteArgs} args - Arguments to delete one Position.
    * @example
    * // Delete one Position
    * const Position = await prisma.position.delete({
@@ -484,11 +593,11 @@ export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  delete<T extends positionDeleteArgs>(args: Prisma.SelectSubset<T, positionDeleteArgs<ExtArgs>>): Prisma.Prisma__positionClient<runtime.Types.Result.GetResult<Prisma.$positionPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends PositionDeleteArgs>(args: Prisma.SelectSubset<T, PositionDeleteArgs<ExtArgs>>): Prisma.Prisma__PositionClient<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Position.
-   * @param {positionUpdateArgs} args - Arguments to update one Position.
+   * @param {PositionUpdateArgs} args - Arguments to update one Position.
    * @example
    * // Update one Position
    * const position = await prisma.position.update({
@@ -501,11 +610,11 @@ export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  update<T extends positionUpdateArgs>(args: Prisma.SelectSubset<T, positionUpdateArgs<ExtArgs>>): Prisma.Prisma__positionClient<runtime.Types.Result.GetResult<Prisma.$positionPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends PositionUpdateArgs>(args: Prisma.SelectSubset<T, PositionUpdateArgs<ExtArgs>>): Prisma.Prisma__PositionClient<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Positions.
-   * @param {positionDeleteManyArgs} args - Arguments to filter Positions to delete.
+   * @param {PositionDeleteManyArgs} args - Arguments to filter Positions to delete.
    * @example
    * // Delete a few Positions
    * const { count } = await prisma.position.deleteMany({
@@ -515,13 +624,13 @@ export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  deleteMany<T extends positionDeleteManyArgs>(args?: Prisma.SelectSubset<T, positionDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends PositionDeleteManyArgs>(args?: Prisma.SelectSubset<T, PositionDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Positions.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {positionUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {PositionUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Positions
    * const position = await prisma.position.updateMany({
@@ -534,11 +643,11 @@ export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  updateMany<T extends positionUpdateManyArgs>(args: Prisma.SelectSubset<T, positionUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends PositionUpdateManyArgs>(args: Prisma.SelectSubset<T, PositionUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Positions and returns the data updated in the database.
-   * @param {positionUpdateManyAndReturnArgs} args - Arguments to update many Positions.
+   * @param {PositionUpdateManyAndReturnArgs} args - Arguments to update many Positions.
    * @example
    * // Update many Positions
    * const position = await prisma.position.updateManyAndReturn({
@@ -564,11 +673,11 @@ export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  updateManyAndReturn<T extends positionUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, positionUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$positionPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+  updateManyAndReturn<T extends PositionUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, PositionUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Create or update one Position.
-   * @param {positionUpsertArgs} args - Arguments to update or create a Position.
+   * @param {PositionUpsertArgs} args - Arguments to update or create a Position.
    * @example
    * // Update or create a Position
    * const position = await prisma.position.upsert({
@@ -583,14 +692,14 @@ export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  upsert<T extends positionUpsertArgs>(args: Prisma.SelectSubset<T, positionUpsertArgs<ExtArgs>>): Prisma.Prisma__positionClient<runtime.Types.Result.GetResult<Prisma.$positionPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends PositionUpsertArgs>(args: Prisma.SelectSubset<T, PositionUpsertArgs<ExtArgs>>): Prisma.Prisma__PositionClient<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Positions.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {positionCountArgs} args - Arguments to filter Positions to count.
+   * @param {PositionCountArgs} args - Arguments to filter Positions to count.
    * @example
    * // Count the number of Positions
    * const count = await prisma.position.count({
@@ -599,8 +708,8 @@ export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
   **/
-  count<T extends positionCountArgs>(
-    args?: Prisma.Subset<T, positionCountArgs>,
+  count<T extends PositionCountArgs>(
+    args?: Prisma.Subset<T, PositionCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -639,7 +748,7 @@ export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * Group by Position.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {positionGroupByArgs} args - Group by arguments.
+   * @param {PositionGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -654,14 +763,14 @@ export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * 
   **/
   groupBy<
-    T extends positionGroupByArgs,
+    T extends PositionGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: positionGroupByArgs['orderBy'] }
-      : { orderBy?: positionGroupByArgs['orderBy'] },
+      ? { orderBy: PositionGroupByArgs['orderBy'] }
+      : { orderBy?: PositionGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -710,21 +819,22 @@ export interface positionDelegate<ExtArgs extends runtime.Types.Extensions.Inter
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, positionGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPositionGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, PositionGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPositionGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the position model
+ * Fields of the Position model
  */
-readonly fields: positionFieldRefs;
+readonly fields: PositionFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for position.
+ * The delegate class that acts as a "Promise-like" for Position.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__positionClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__PositionClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  user<T extends Prisma.Position$userArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Position$userArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -751,379 +861,443 @@ export interface Prisma__positionClient<T, Null = never, ExtArgs extends runtime
 
 
 /**
- * Fields of the position model
+ * Fields of the Position model
  */
-export interface positionFieldRefs {
-  readonly position_id: Prisma.FieldRef<"position", 'String'>
-  readonly position_name: Prisma.FieldRef<"position", 'String'>
-  readonly created_at: Prisma.FieldRef<"position", 'DateTime'>
-  readonly updated_at: Prisma.FieldRef<"position", 'DateTime'>
+export interface PositionFieldRefs {
+  readonly position_id: Prisma.FieldRef<"Position", 'String'>
+  readonly position_name: Prisma.FieldRef<"Position", 'String'>
+  readonly created_at: Prisma.FieldRef<"Position", 'DateTime'>
+  readonly updated_at: Prisma.FieldRef<"Position", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * position findUnique
+ * Position findUnique
  */
-export type positionFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PositionFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the position
+   * Select specific fields to fetch from the Position
    */
-  select?: Prisma.positionSelect<ExtArgs> | null
+  select?: Prisma.PositionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the position
+   * Omit specific fields from the Position
    */
-  omit?: Prisma.positionOmit<ExtArgs> | null
+  omit?: Prisma.PositionOmit<ExtArgs> | null
   /**
-   * Filter, which position to fetch.
+   * Choose, which related nodes to fetch as well
    */
-  where: Prisma.positionWhereUniqueInput
+  include?: Prisma.PositionInclude<ExtArgs> | null
+  /**
+   * Filter, which Position to fetch.
+   */
+  where: Prisma.PositionWhereUniqueInput
 }
 
 /**
- * position findUniqueOrThrow
+ * Position findUniqueOrThrow
  */
-export type positionFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PositionFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the position
+   * Select specific fields to fetch from the Position
    */
-  select?: Prisma.positionSelect<ExtArgs> | null
+  select?: Prisma.PositionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the position
+   * Omit specific fields from the Position
    */
-  omit?: Prisma.positionOmit<ExtArgs> | null
+  omit?: Prisma.PositionOmit<ExtArgs> | null
   /**
-   * Filter, which position to fetch.
+   * Choose, which related nodes to fetch as well
    */
-  where: Prisma.positionWhereUniqueInput
+  include?: Prisma.PositionInclude<ExtArgs> | null
+  /**
+   * Filter, which Position to fetch.
+   */
+  where: Prisma.PositionWhereUniqueInput
 }
 
 /**
- * position findFirst
+ * Position findFirst
  */
-export type positionFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PositionFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the position
+   * Select specific fields to fetch from the Position
    */
-  select?: Prisma.positionSelect<ExtArgs> | null
+  select?: Prisma.PositionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the position
+   * Omit specific fields from the Position
    */
-  omit?: Prisma.positionOmit<ExtArgs> | null
+  omit?: Prisma.PositionOmit<ExtArgs> | null
   /**
-   * Filter, which position to fetch.
+   * Choose, which related nodes to fetch as well
    */
-  where?: Prisma.positionWhereInput
+  include?: Prisma.PositionInclude<ExtArgs> | null
+  /**
+   * Filter, which Position to fetch.
+   */
+  where?: Prisma.PositionWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of positions to fetch.
+   * Determine the order of Positions to fetch.
    */
-  orderBy?: Prisma.positionOrderByWithRelationInput | Prisma.positionOrderByWithRelationInput[]
+  orderBy?: Prisma.PositionOrderByWithRelationInput | Prisma.PositionOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for positions.
+   * Sets the position for searching for Positions.
    */
-  cursor?: Prisma.positionWhereUniqueInput
+  cursor?: Prisma.PositionWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` positions from the position of the cursor.
+   * Take `±n` Positions from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` positions.
+   * Skip the first `n` Positions.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of positions.
+   * Filter by unique combinations of Positions.
    */
   distinct?: Prisma.PositionScalarFieldEnum | Prisma.PositionScalarFieldEnum[]
 }
 
 /**
- * position findFirstOrThrow
+ * Position findFirstOrThrow
  */
-export type positionFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PositionFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the position
+   * Select specific fields to fetch from the Position
    */
-  select?: Prisma.positionSelect<ExtArgs> | null
+  select?: Prisma.PositionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the position
+   * Omit specific fields from the Position
    */
-  omit?: Prisma.positionOmit<ExtArgs> | null
+  omit?: Prisma.PositionOmit<ExtArgs> | null
   /**
-   * Filter, which position to fetch.
+   * Choose, which related nodes to fetch as well
    */
-  where?: Prisma.positionWhereInput
+  include?: Prisma.PositionInclude<ExtArgs> | null
+  /**
+   * Filter, which Position to fetch.
+   */
+  where?: Prisma.PositionWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of positions to fetch.
+   * Determine the order of Positions to fetch.
    */
-  orderBy?: Prisma.positionOrderByWithRelationInput | Prisma.positionOrderByWithRelationInput[]
+  orderBy?: Prisma.PositionOrderByWithRelationInput | Prisma.PositionOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for positions.
+   * Sets the position for searching for Positions.
    */
-  cursor?: Prisma.positionWhereUniqueInput
+  cursor?: Prisma.PositionWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` positions from the position of the cursor.
+   * Take `±n` Positions from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` positions.
+   * Skip the first `n` Positions.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of positions.
+   * Filter by unique combinations of Positions.
    */
   distinct?: Prisma.PositionScalarFieldEnum | Prisma.PositionScalarFieldEnum[]
 }
 
 /**
- * position findMany
+ * Position findMany
  */
-export type positionFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PositionFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the position
+   * Select specific fields to fetch from the Position
    */
-  select?: Prisma.positionSelect<ExtArgs> | null
+  select?: Prisma.PositionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the position
+   * Omit specific fields from the Position
    */
-  omit?: Prisma.positionOmit<ExtArgs> | null
+  omit?: Prisma.PositionOmit<ExtArgs> | null
   /**
-   * Filter, which positions to fetch.
+   * Choose, which related nodes to fetch as well
    */
-  where?: Prisma.positionWhereInput
+  include?: Prisma.PositionInclude<ExtArgs> | null
+  /**
+   * Filter, which Positions to fetch.
+   */
+  where?: Prisma.PositionWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of positions to fetch.
+   * Determine the order of Positions to fetch.
    */
-  orderBy?: Prisma.positionOrderByWithRelationInput | Prisma.positionOrderByWithRelationInput[]
+  orderBy?: Prisma.PositionOrderByWithRelationInput | Prisma.PositionOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing positions.
+   * Sets the position for listing Positions.
    */
-  cursor?: Prisma.positionWhereUniqueInput
+  cursor?: Prisma.PositionWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` positions from the position of the cursor.
+   * Take `±n` Positions from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` positions.
+   * Skip the first `n` Positions.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of positions.
+   * Filter by unique combinations of Positions.
    */
   distinct?: Prisma.PositionScalarFieldEnum | Prisma.PositionScalarFieldEnum[]
 }
 
 /**
- * position create
+ * Position create
  */
-export type positionCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PositionCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the position
+   * Select specific fields to fetch from the Position
    */
-  select?: Prisma.positionSelect<ExtArgs> | null
+  select?: Prisma.PositionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the position
+   * Omit specific fields from the Position
    */
-  omit?: Prisma.positionOmit<ExtArgs> | null
+  omit?: Prisma.PositionOmit<ExtArgs> | null
   /**
-   * The data needed to create a position.
+   * Choose, which related nodes to fetch as well
    */
-  data: Prisma.XOR<Prisma.positionCreateInput, Prisma.positionUncheckedCreateInput>
+  include?: Prisma.PositionInclude<ExtArgs> | null
+  /**
+   * The data needed to create a Position.
+   */
+  data: Prisma.XOR<Prisma.PositionCreateInput, Prisma.PositionUncheckedCreateInput>
 }
 
 /**
- * position createMany
+ * Position createMany
  */
-export type positionCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PositionCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many positions.
+   * The data used to create many Positions.
    */
-  data: Prisma.positionCreateManyInput | Prisma.positionCreateManyInput[]
+  data: Prisma.PositionCreateManyInput | Prisma.PositionCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * position createManyAndReturn
+ * Position createManyAndReturn
  */
-export type positionCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PositionCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the position
+   * Select specific fields to fetch from the Position
    */
-  select?: Prisma.positionSelectCreateManyAndReturn<ExtArgs> | null
+  select?: Prisma.PositionSelectCreateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the position
+   * Omit specific fields from the Position
    */
-  omit?: Prisma.positionOmit<ExtArgs> | null
+  omit?: Prisma.PositionOmit<ExtArgs> | null
   /**
-   * The data used to create many positions.
+   * The data used to create many Positions.
    */
-  data: Prisma.positionCreateManyInput | Prisma.positionCreateManyInput[]
+  data: Prisma.PositionCreateManyInput | Prisma.PositionCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * position update
+ * Position update
  */
-export type positionUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PositionUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the position
+   * Select specific fields to fetch from the Position
    */
-  select?: Prisma.positionSelect<ExtArgs> | null
+  select?: Prisma.PositionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the position
+   * Omit specific fields from the Position
    */
-  omit?: Prisma.positionOmit<ExtArgs> | null
+  omit?: Prisma.PositionOmit<ExtArgs> | null
   /**
-   * The data needed to update a position.
+   * Choose, which related nodes to fetch as well
    */
-  data: Prisma.XOR<Prisma.positionUpdateInput, Prisma.positionUncheckedUpdateInput>
+  include?: Prisma.PositionInclude<ExtArgs> | null
   /**
-   * Choose, which position to update.
+   * The data needed to update a Position.
    */
-  where: Prisma.positionWhereUniqueInput
+  data: Prisma.XOR<Prisma.PositionUpdateInput, Prisma.PositionUncheckedUpdateInput>
+  /**
+   * Choose, which Position to update.
+   */
+  where: Prisma.PositionWhereUniqueInput
 }
 
 /**
- * position updateMany
+ * Position updateMany
  */
-export type positionUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PositionUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update positions.
+   * The data used to update Positions.
    */
-  data: Prisma.XOR<Prisma.positionUpdateManyMutationInput, Prisma.positionUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.PositionUpdateManyMutationInput, Prisma.PositionUncheckedUpdateManyInput>
   /**
-   * Filter which positions to update
+   * Filter which Positions to update
    */
-  where?: Prisma.positionWhereInput
+  where?: Prisma.PositionWhereInput
   /**
-   * Limit how many positions to update.
+   * Limit how many Positions to update.
    */
   limit?: number
 }
 
 /**
- * position updateManyAndReturn
+ * Position updateManyAndReturn
  */
-export type positionUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PositionUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the position
+   * Select specific fields to fetch from the Position
    */
-  select?: Prisma.positionSelectUpdateManyAndReturn<ExtArgs> | null
+  select?: Prisma.PositionSelectUpdateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the position
+   * Omit specific fields from the Position
    */
-  omit?: Prisma.positionOmit<ExtArgs> | null
+  omit?: Prisma.PositionOmit<ExtArgs> | null
   /**
-   * The data used to update positions.
+   * The data used to update Positions.
    */
-  data: Prisma.XOR<Prisma.positionUpdateManyMutationInput, Prisma.positionUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.PositionUpdateManyMutationInput, Prisma.PositionUncheckedUpdateManyInput>
   /**
-   * Filter which positions to update
+   * Filter which Positions to update
    */
-  where?: Prisma.positionWhereInput
+  where?: Prisma.PositionWhereInput
   /**
-   * Limit how many positions to update.
+   * Limit how many Positions to update.
    */
   limit?: number
 }
 
 /**
- * position upsert
+ * Position upsert
  */
-export type positionUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PositionUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the position
+   * Select specific fields to fetch from the Position
    */
-  select?: Prisma.positionSelect<ExtArgs> | null
+  select?: Prisma.PositionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the position
+   * Omit specific fields from the Position
    */
-  omit?: Prisma.positionOmit<ExtArgs> | null
+  omit?: Prisma.PositionOmit<ExtArgs> | null
   /**
-   * The filter to search for the position to update in case it exists.
+   * Choose, which related nodes to fetch as well
    */
-  where: Prisma.positionWhereUniqueInput
+  include?: Prisma.PositionInclude<ExtArgs> | null
   /**
-   * In case the position found by the `where` argument doesn't exist, create a new position with this data.
+   * The filter to search for the Position to update in case it exists.
    */
-  create: Prisma.XOR<Prisma.positionCreateInput, Prisma.positionUncheckedCreateInput>
+  where: Prisma.PositionWhereUniqueInput
   /**
-   * In case the position was found with the provided `where` argument, update it with this data.
+   * In case the Position found by the `where` argument doesn't exist, create a new Position with this data.
    */
-  update: Prisma.XOR<Prisma.positionUpdateInput, Prisma.positionUncheckedUpdateInput>
+  create: Prisma.XOR<Prisma.PositionCreateInput, Prisma.PositionUncheckedCreateInput>
+  /**
+   * In case the Position was found with the provided `where` argument, update it with this data.
+   */
+  update: Prisma.XOR<Prisma.PositionUpdateInput, Prisma.PositionUncheckedUpdateInput>
 }
 
 /**
- * position delete
+ * Position delete
  */
-export type positionDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PositionDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the position
+   * Select specific fields to fetch from the Position
    */
-  select?: Prisma.positionSelect<ExtArgs> | null
+  select?: Prisma.PositionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the position
+   * Omit specific fields from the Position
    */
-  omit?: Prisma.positionOmit<ExtArgs> | null
+  omit?: Prisma.PositionOmit<ExtArgs> | null
   /**
-   * Filter which position to delete.
+   * Choose, which related nodes to fetch as well
    */
-  where: Prisma.positionWhereUniqueInput
+  include?: Prisma.PositionInclude<ExtArgs> | null
+  /**
+   * Filter which Position to delete.
+   */
+  where: Prisma.PositionWhereUniqueInput
 }
 
 /**
- * position deleteMany
+ * Position deleteMany
  */
-export type positionDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PositionDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which positions to delete
+   * Filter which Positions to delete
    */
-  where?: Prisma.positionWhereInput
+  where?: Prisma.PositionWhereInput
   /**
-   * Limit how many positions to delete.
+   * Limit how many Positions to delete.
    */
   limit?: number
 }
 
 /**
- * position without action
+ * Position.user
  */
-export type positionDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Position$userArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the position
+   * Select specific fields to fetch from the User
    */
-  select?: Prisma.positionSelect<ExtArgs> | null
+  select?: Prisma.UserSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the position
+   * Omit specific fields from the User
    */
-  omit?: Prisma.positionOmit<ExtArgs> | null
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  where?: Prisma.UserWhereInput
+  orderBy?: Prisma.UserOrderByWithRelationInput | Prisma.UserOrderByWithRelationInput[]
+  cursor?: Prisma.UserWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.UserScalarFieldEnum | Prisma.UserScalarFieldEnum[]
+}
+
+/**
+ * Position without action
+ */
+export type PositionDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Position
+   */
+  select?: Prisma.PositionSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Position
+   */
+  omit?: Prisma.PositionOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PositionInclude<ExtArgs> | null
 }

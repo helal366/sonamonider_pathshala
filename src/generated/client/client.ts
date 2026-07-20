@@ -42,15 +42,15 @@ export type PrismaClient<LogOpts extends Prisma.LogLevel = never, OmitOpts exten
 export { Prisma }
 
 /**
- * Model position
+ * Model Position
  * 
  */
-export type position = Prisma.positionModel
+export type Position = Prisma.PositionModel
 /**
- * Model responsibility
+ * Model Responsibility
  * 
  */
-export type responsibility = Prisma.responsibilityModel
+export type Responsibility = Prisma.ResponsibilityModel
 /**
  * Model Role
  * 

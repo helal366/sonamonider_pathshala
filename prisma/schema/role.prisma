@@ -2,7 +2,7 @@ model Role{
     role_id String @id @default(uuid())
     role_name String @unique
 
-    user User[]
+    user User[] @relation(name: "user_role_relation")
 
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt

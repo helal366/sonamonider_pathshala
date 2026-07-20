@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `responsibility` model and its related types.
+ * This file exports the `Responsibility` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model responsibility
+ * Model Responsibility
  * 
  */
-export type responsibilityModel = runtime.Types.Result.DefaultSelection<Prisma.$responsibilityPayload>
+export type ResponsibilityModel = runtime.Types.Result.DefaultSelection<Prisma.$ResponsibilityPayload>
 
 export type AggregateResponsibility = {
   _count: ResponsibilityCountAggregateOutputType | null
@@ -71,37 +71,37 @@ export type ResponsibilityCountAggregateInputType = {
 
 export type ResponsibilityAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which responsibility to aggregate.
+   * Filter which Responsibility to aggregate.
    */
-  where?: Prisma.responsibilityWhereInput
+  where?: Prisma.ResponsibilityWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of responsibilities to fetch.
+   * Determine the order of Responsibilities to fetch.
    */
-  orderBy?: Prisma.responsibilityOrderByWithRelationInput | Prisma.responsibilityOrderByWithRelationInput[]
+  orderBy?: Prisma.ResponsibilityOrderByWithRelationInput | Prisma.ResponsibilityOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.responsibilityWhereUniqueInput
+  cursor?: Prisma.ResponsibilityWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` responsibilities from the position of the cursor.
+   * Take `±n` Responsibilities from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` responsibilities.
+   * Skip the first `n` Responsibilities.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned responsibilities
+   * Count returned Responsibilities
   **/
   _count?: true | ResponsibilityCountAggregateInputType
   /**
@@ -129,11 +129,11 @@ export type GetResponsibilityAggregateType<T extends ResponsibilityAggregateArgs
 
 
 
-export type responsibilityGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.responsibilityWhereInput
-  orderBy?: Prisma.responsibilityOrderByWithAggregationInput | Prisma.responsibilityOrderByWithAggregationInput[]
+export type ResponsibilityGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ResponsibilityWhereInput
+  orderBy?: Prisma.ResponsibilityOrderByWithAggregationInput | Prisma.ResponsibilityOrderByWithAggregationInput[]
   by: Prisma.ResponsibilityScalarFieldEnum[] | Prisma.ResponsibilityScalarFieldEnum
-  having?: Prisma.responsibilityScalarWhereWithAggregatesInput
+  having?: Prisma.ResponsibilityScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: ResponsibilityCountAggregateInputType | true
@@ -151,7 +151,7 @@ export type ResponsibilityGroupByOutputType = {
   _max: ResponsibilityMaxAggregateOutputType | null
 }
 
-export type GetResponsibilityGroupByPayload<T extends responsibilityGroupByArgs> = Prisma.PrismaPromise<
+export type GetResponsibilityGroupByPayload<T extends ResponsibilityGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ResponsibilityGroupByOutputType, T['by']> &
       {
@@ -166,117 +166,117 @@ export type GetResponsibilityGroupByPayload<T extends responsibilityGroupByArgs>
 
 
 
-export type responsibilityWhereInput = {
-  AND?: Prisma.responsibilityWhereInput | Prisma.responsibilityWhereInput[]
-  OR?: Prisma.responsibilityWhereInput[]
-  NOT?: Prisma.responsibilityWhereInput | Prisma.responsibilityWhereInput[]
-  responsibility_id?: Prisma.StringFilter<"responsibility"> | string
-  responsibility_name?: Prisma.StringFilter<"responsibility"> | string
-  createdAt?: Prisma.DateTimeFilter<"responsibility"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"responsibility"> | Date | string
+export type ResponsibilityWhereInput = {
+  AND?: Prisma.ResponsibilityWhereInput | Prisma.ResponsibilityWhereInput[]
+  OR?: Prisma.ResponsibilityWhereInput[]
+  NOT?: Prisma.ResponsibilityWhereInput | Prisma.ResponsibilityWhereInput[]
+  responsibility_id?: Prisma.StringFilter<"Responsibility"> | string
+  responsibility_name?: Prisma.StringFilter<"Responsibility"> | string
+  createdAt?: Prisma.DateTimeFilter<"Responsibility"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Responsibility"> | Date | string
 }
 
-export type responsibilityOrderByWithRelationInput = {
+export type ResponsibilityOrderByWithRelationInput = {
   responsibility_id?: Prisma.SortOrder
   responsibility_name?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
-export type responsibilityWhereUniqueInput = Prisma.AtLeast<{
+export type ResponsibilityWhereUniqueInput = Prisma.AtLeast<{
   responsibility_id?: string
   responsibility_name?: string
-  AND?: Prisma.responsibilityWhereInput | Prisma.responsibilityWhereInput[]
-  OR?: Prisma.responsibilityWhereInput[]
-  NOT?: Prisma.responsibilityWhereInput | Prisma.responsibilityWhereInput[]
-  createdAt?: Prisma.DateTimeFilter<"responsibility"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"responsibility"> | Date | string
+  AND?: Prisma.ResponsibilityWhereInput | Prisma.ResponsibilityWhereInput[]
+  OR?: Prisma.ResponsibilityWhereInput[]
+  NOT?: Prisma.ResponsibilityWhereInput | Prisma.ResponsibilityWhereInput[]
+  createdAt?: Prisma.DateTimeFilter<"Responsibility"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Responsibility"> | Date | string
 }, "responsibility_id" | "responsibility_name">
 
-export type responsibilityOrderByWithAggregationInput = {
+export type ResponsibilityOrderByWithAggregationInput = {
   responsibility_id?: Prisma.SortOrder
   responsibility_name?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.responsibilityCountOrderByAggregateInput
-  _max?: Prisma.responsibilityMaxOrderByAggregateInput
-  _min?: Prisma.responsibilityMinOrderByAggregateInput
+  _count?: Prisma.ResponsibilityCountOrderByAggregateInput
+  _max?: Prisma.ResponsibilityMaxOrderByAggregateInput
+  _min?: Prisma.ResponsibilityMinOrderByAggregateInput
 }
 
-export type responsibilityScalarWhereWithAggregatesInput = {
-  AND?: Prisma.responsibilityScalarWhereWithAggregatesInput | Prisma.responsibilityScalarWhereWithAggregatesInput[]
-  OR?: Prisma.responsibilityScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.responsibilityScalarWhereWithAggregatesInput | Prisma.responsibilityScalarWhereWithAggregatesInput[]
-  responsibility_id?: Prisma.StringWithAggregatesFilter<"responsibility"> | string
-  responsibility_name?: Prisma.StringWithAggregatesFilter<"responsibility"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"responsibility"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"responsibility"> | Date | string
+export type ResponsibilityScalarWhereWithAggregatesInput = {
+  AND?: Prisma.ResponsibilityScalarWhereWithAggregatesInput | Prisma.ResponsibilityScalarWhereWithAggregatesInput[]
+  OR?: Prisma.ResponsibilityScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.ResponsibilityScalarWhereWithAggregatesInput | Prisma.ResponsibilityScalarWhereWithAggregatesInput[]
+  responsibility_id?: Prisma.StringWithAggregatesFilter<"Responsibility"> | string
+  responsibility_name?: Prisma.StringWithAggregatesFilter<"Responsibility"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Responsibility"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Responsibility"> | Date | string
 }
 
-export type responsibilityCreateInput = {
+export type ResponsibilityCreateInput = {
   responsibility_id?: string
   responsibility_name: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type responsibilityUncheckedCreateInput = {
+export type ResponsibilityUncheckedCreateInput = {
   responsibility_id?: string
   responsibility_name: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type responsibilityUpdateInput = {
+export type ResponsibilityUpdateInput = {
   responsibility_id?: Prisma.StringFieldUpdateOperationsInput | string
   responsibility_name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type responsibilityUncheckedUpdateInput = {
+export type ResponsibilityUncheckedUpdateInput = {
   responsibility_id?: Prisma.StringFieldUpdateOperationsInput | string
   responsibility_name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type responsibilityCreateManyInput = {
+export type ResponsibilityCreateManyInput = {
   responsibility_id?: string
   responsibility_name: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
 
-export type responsibilityUpdateManyMutationInput = {
+export type ResponsibilityUpdateManyMutationInput = {
   responsibility_id?: Prisma.StringFieldUpdateOperationsInput | string
   responsibility_name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type responsibilityUncheckedUpdateManyInput = {
+export type ResponsibilityUncheckedUpdateManyInput = {
   responsibility_id?: Prisma.StringFieldUpdateOperationsInput | string
   responsibility_name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type responsibilityCountOrderByAggregateInput = {
+export type ResponsibilityCountOrderByAggregateInput = {
   responsibility_id?: Prisma.SortOrder
   responsibility_name?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
-export type responsibilityMaxOrderByAggregateInput = {
+export type ResponsibilityMaxOrderByAggregateInput = {
   responsibility_id?: Prisma.SortOrder
   responsibility_name?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
-export type responsibilityMinOrderByAggregateInput = {
+export type ResponsibilityMinOrderByAggregateInput = {
   responsibility_id?: Prisma.SortOrder
   responsibility_name?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -285,38 +285,38 @@ export type responsibilityMinOrderByAggregateInput = {
 
 
 
-export type responsibilitySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type ResponsibilitySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   responsibility_id?: boolean
   responsibility_name?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }, ExtArgs["result"]["responsibility"]>
 
-export type responsibilitySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type ResponsibilitySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   responsibility_id?: boolean
   responsibility_name?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }, ExtArgs["result"]["responsibility"]>
 
-export type responsibilitySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type ResponsibilitySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   responsibility_id?: boolean
   responsibility_name?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }, ExtArgs["result"]["responsibility"]>
 
-export type responsibilitySelectScalar = {
+export type ResponsibilitySelectScalar = {
   responsibility_id?: boolean
   responsibility_name?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type responsibilityOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"responsibility_id" | "responsibility_name" | "createdAt" | "updatedAt", ExtArgs["result"]["responsibility"]>
+export type ResponsibilityOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"responsibility_id" | "responsibility_name" | "createdAt" | "updatedAt", ExtArgs["result"]["responsibility"]>
 
-export type $responsibilityPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "responsibility"
+export type $ResponsibilityPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Responsibility"
   objects: {}
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     responsibility_id: string
@@ -327,18 +327,18 @@ export type $responsibilityPayload<ExtArgs extends runtime.Types.Extensions.Inte
   composites: {}
 }
 
-export type responsibilityGetPayload<S extends boolean | null | undefined | responsibilityDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$responsibilityPayload, S>
+export type ResponsibilityGetPayload<S extends boolean | null | undefined | ResponsibilityDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ResponsibilityPayload, S>
 
-export type responsibilityCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<responsibilityFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type ResponsibilityCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<ResponsibilityFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: ResponsibilityCountAggregateInputType | true
   }
 
-export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['responsibility'], meta: { name: 'responsibility' } }
+export interface ResponsibilityDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Responsibility'], meta: { name: 'Responsibility' } }
   /**
    * Find zero or one Responsibility that matches the filter.
-   * @param {responsibilityFindUniqueArgs} args - Arguments to find a Responsibility
+   * @param {ResponsibilityFindUniqueArgs} args - Arguments to find a Responsibility
    * @example
    * // Get one Responsibility
    * const responsibility = await prisma.responsibility.findUnique({
@@ -347,12 +347,12 @@ export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions
    *   }
    * })
    */
-  findUnique<T extends responsibilityFindUniqueArgs>(args: Prisma.SelectSubset<T, responsibilityFindUniqueArgs<ExtArgs>>): Prisma.Prisma__responsibilityClient<runtime.Types.Result.GetResult<Prisma.$responsibilityPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends ResponsibilityFindUniqueArgs>(args: Prisma.SelectSubset<T, ResponsibilityFindUniqueArgs<ExtArgs>>): Prisma.Prisma__ResponsibilityClient<runtime.Types.Result.GetResult<Prisma.$ResponsibilityPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Responsibility that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {responsibilityFindUniqueOrThrowArgs} args - Arguments to find a Responsibility
+   * @param {ResponsibilityFindUniqueOrThrowArgs} args - Arguments to find a Responsibility
    * @example
    * // Get one Responsibility
    * const responsibility = await prisma.responsibility.findUniqueOrThrow({
@@ -361,13 +361,13 @@ export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions
    *   }
    * })
    */
-  findUniqueOrThrow<T extends responsibilityFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, responsibilityFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__responsibilityClient<runtime.Types.Result.GetResult<Prisma.$responsibilityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends ResponsibilityFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, ResponsibilityFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__ResponsibilityClient<runtime.Types.Result.GetResult<Prisma.$ResponsibilityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Responsibility that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {responsibilityFindFirstArgs} args - Arguments to find a Responsibility
+   * @param {ResponsibilityFindFirstArgs} args - Arguments to find a Responsibility
    * @example
    * // Get one Responsibility
    * const responsibility = await prisma.responsibility.findFirst({
@@ -376,14 +376,14 @@ export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions
    *   }
    * })
    */
-  findFirst<T extends responsibilityFindFirstArgs>(args?: Prisma.SelectSubset<T, responsibilityFindFirstArgs<ExtArgs>>): Prisma.Prisma__responsibilityClient<runtime.Types.Result.GetResult<Prisma.$responsibilityPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends ResponsibilityFindFirstArgs>(args?: Prisma.SelectSubset<T, ResponsibilityFindFirstArgs<ExtArgs>>): Prisma.Prisma__ResponsibilityClient<runtime.Types.Result.GetResult<Prisma.$ResponsibilityPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Responsibility that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {responsibilityFindFirstOrThrowArgs} args - Arguments to find a Responsibility
+   * @param {ResponsibilityFindFirstOrThrowArgs} args - Arguments to find a Responsibility
    * @example
    * // Get one Responsibility
    * const responsibility = await prisma.responsibility.findFirstOrThrow({
@@ -392,13 +392,13 @@ export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions
    *   }
    * })
    */
-  findFirstOrThrow<T extends responsibilityFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, responsibilityFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__responsibilityClient<runtime.Types.Result.GetResult<Prisma.$responsibilityPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends ResponsibilityFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, ResponsibilityFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__ResponsibilityClient<runtime.Types.Result.GetResult<Prisma.$ResponsibilityPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Responsibilities that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {responsibilityFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {ResponsibilityFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Responsibilities
    * const responsibilities = await prisma.responsibility.findMany()
@@ -410,11 +410,11 @@ export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions
    * const responsibilityWithResponsibility_idOnly = await prisma.responsibility.findMany({ select: { responsibility_id: true } })
    * 
    */
-  findMany<T extends responsibilityFindManyArgs>(args?: Prisma.SelectSubset<T, responsibilityFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$responsibilityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends ResponsibilityFindManyArgs>(args?: Prisma.SelectSubset<T, ResponsibilityFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ResponsibilityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Responsibility.
-   * @param {responsibilityCreateArgs} args - Arguments to create a Responsibility.
+   * @param {ResponsibilityCreateArgs} args - Arguments to create a Responsibility.
    * @example
    * // Create one Responsibility
    * const Responsibility = await prisma.responsibility.create({
@@ -424,11 +424,11 @@ export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions
    * })
    * 
    */
-  create<T extends responsibilityCreateArgs>(args: Prisma.SelectSubset<T, responsibilityCreateArgs<ExtArgs>>): Prisma.Prisma__responsibilityClient<runtime.Types.Result.GetResult<Prisma.$responsibilityPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends ResponsibilityCreateArgs>(args: Prisma.SelectSubset<T, ResponsibilityCreateArgs<ExtArgs>>): Prisma.Prisma__ResponsibilityClient<runtime.Types.Result.GetResult<Prisma.$ResponsibilityPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Responsibilities.
-   * @param {responsibilityCreateManyArgs} args - Arguments to create many Responsibilities.
+   * @param {ResponsibilityCreateManyArgs} args - Arguments to create many Responsibilities.
    * @example
    * // Create many Responsibilities
    * const responsibility = await prisma.responsibility.createMany({
@@ -438,11 +438,11 @@ export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions
    * })
    *     
    */
-  createMany<T extends responsibilityCreateManyArgs>(args?: Prisma.SelectSubset<T, responsibilityCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends ResponsibilityCreateManyArgs>(args?: Prisma.SelectSubset<T, ResponsibilityCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create many Responsibilities and returns the data saved in the database.
-   * @param {responsibilityCreateManyAndReturnArgs} args - Arguments to create many Responsibilities.
+   * @param {ResponsibilityCreateManyAndReturnArgs} args - Arguments to create many Responsibilities.
    * @example
    * // Create many Responsibilities
    * const responsibility = await prisma.responsibility.createManyAndReturn({
@@ -462,11 +462,11 @@ export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  createManyAndReturn<T extends responsibilityCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, responsibilityCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$responsibilityPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+  createManyAndReturn<T extends ResponsibilityCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, ResponsibilityCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ResponsibilityPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Delete a Responsibility.
-   * @param {responsibilityDeleteArgs} args - Arguments to delete one Responsibility.
+   * @param {ResponsibilityDeleteArgs} args - Arguments to delete one Responsibility.
    * @example
    * // Delete one Responsibility
    * const Responsibility = await prisma.responsibility.delete({
@@ -476,11 +476,11 @@ export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions
    * })
    * 
    */
-  delete<T extends responsibilityDeleteArgs>(args: Prisma.SelectSubset<T, responsibilityDeleteArgs<ExtArgs>>): Prisma.Prisma__responsibilityClient<runtime.Types.Result.GetResult<Prisma.$responsibilityPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends ResponsibilityDeleteArgs>(args: Prisma.SelectSubset<T, ResponsibilityDeleteArgs<ExtArgs>>): Prisma.Prisma__ResponsibilityClient<runtime.Types.Result.GetResult<Prisma.$ResponsibilityPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Responsibility.
-   * @param {responsibilityUpdateArgs} args - Arguments to update one Responsibility.
+   * @param {ResponsibilityUpdateArgs} args - Arguments to update one Responsibility.
    * @example
    * // Update one Responsibility
    * const responsibility = await prisma.responsibility.update({
@@ -493,11 +493,11 @@ export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions
    * })
    * 
    */
-  update<T extends responsibilityUpdateArgs>(args: Prisma.SelectSubset<T, responsibilityUpdateArgs<ExtArgs>>): Prisma.Prisma__responsibilityClient<runtime.Types.Result.GetResult<Prisma.$responsibilityPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends ResponsibilityUpdateArgs>(args: Prisma.SelectSubset<T, ResponsibilityUpdateArgs<ExtArgs>>): Prisma.Prisma__ResponsibilityClient<runtime.Types.Result.GetResult<Prisma.$ResponsibilityPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Responsibilities.
-   * @param {responsibilityDeleteManyArgs} args - Arguments to filter Responsibilities to delete.
+   * @param {ResponsibilityDeleteManyArgs} args - Arguments to filter Responsibilities to delete.
    * @example
    * // Delete a few Responsibilities
    * const { count } = await prisma.responsibility.deleteMany({
@@ -507,13 +507,13 @@ export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions
    * })
    * 
    */
-  deleteMany<T extends responsibilityDeleteManyArgs>(args?: Prisma.SelectSubset<T, responsibilityDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends ResponsibilityDeleteManyArgs>(args?: Prisma.SelectSubset<T, ResponsibilityDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Responsibilities.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {responsibilityUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {ResponsibilityUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Responsibilities
    * const responsibility = await prisma.responsibility.updateMany({
@@ -526,11 +526,11 @@ export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions
    * })
    * 
    */
-  updateMany<T extends responsibilityUpdateManyArgs>(args: Prisma.SelectSubset<T, responsibilityUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends ResponsibilityUpdateManyArgs>(args: Prisma.SelectSubset<T, ResponsibilityUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Responsibilities and returns the data updated in the database.
-   * @param {responsibilityUpdateManyAndReturnArgs} args - Arguments to update many Responsibilities.
+   * @param {ResponsibilityUpdateManyAndReturnArgs} args - Arguments to update many Responsibilities.
    * @example
    * // Update many Responsibilities
    * const responsibility = await prisma.responsibility.updateManyAndReturn({
@@ -556,11 +556,11 @@ export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  updateManyAndReturn<T extends responsibilityUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, responsibilityUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$responsibilityPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+  updateManyAndReturn<T extends ResponsibilityUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, ResponsibilityUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ResponsibilityPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Create or update one Responsibility.
-   * @param {responsibilityUpsertArgs} args - Arguments to update or create a Responsibility.
+   * @param {ResponsibilityUpsertArgs} args - Arguments to update or create a Responsibility.
    * @example
    * // Update or create a Responsibility
    * const responsibility = await prisma.responsibility.upsert({
@@ -575,14 +575,14 @@ export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions
    *   }
    * })
    */
-  upsert<T extends responsibilityUpsertArgs>(args: Prisma.SelectSubset<T, responsibilityUpsertArgs<ExtArgs>>): Prisma.Prisma__responsibilityClient<runtime.Types.Result.GetResult<Prisma.$responsibilityPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends ResponsibilityUpsertArgs>(args: Prisma.SelectSubset<T, ResponsibilityUpsertArgs<ExtArgs>>): Prisma.Prisma__ResponsibilityClient<runtime.Types.Result.GetResult<Prisma.$ResponsibilityPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Responsibilities.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {responsibilityCountArgs} args - Arguments to filter Responsibilities to count.
+   * @param {ResponsibilityCountArgs} args - Arguments to filter Responsibilities to count.
    * @example
    * // Count the number of Responsibilities
    * const count = await prisma.responsibility.count({
@@ -591,8 +591,8 @@ export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions
    *   }
    * })
   **/
-  count<T extends responsibilityCountArgs>(
-    args?: Prisma.Subset<T, responsibilityCountArgs>,
+  count<T extends ResponsibilityCountArgs>(
+    args?: Prisma.Subset<T, ResponsibilityCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -631,7 +631,7 @@ export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions
    * Group by Responsibility.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {responsibilityGroupByArgs} args - Group by arguments.
+   * @param {ResponsibilityGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -646,14 +646,14 @@ export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions
    * 
   **/
   groupBy<
-    T extends responsibilityGroupByArgs,
+    T extends ResponsibilityGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: responsibilityGroupByArgs['orderBy'] }
-      : { orderBy?: responsibilityGroupByArgs['orderBy'] },
+      ? { orderBy: ResponsibilityGroupByArgs['orderBy'] }
+      : { orderBy?: ResponsibilityGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -702,20 +702,20 @@ export interface responsibilityDelegate<ExtArgs extends runtime.Types.Extensions
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, responsibilityGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetResponsibilityGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, ResponsibilityGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetResponsibilityGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the responsibility model
+ * Fields of the Responsibility model
  */
-readonly fields: responsibilityFieldRefs;
+readonly fields: ResponsibilityFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for responsibility.
+ * The delegate class that acts as a "Promise-like" for Responsibility.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__responsibilityClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__ResponsibilityClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -743,379 +743,379 @@ export interface Prisma__responsibilityClient<T, Null = never, ExtArgs extends r
 
 
 /**
- * Fields of the responsibility model
+ * Fields of the Responsibility model
  */
-export interface responsibilityFieldRefs {
-  readonly responsibility_id: Prisma.FieldRef<"responsibility", 'String'>
-  readonly responsibility_name: Prisma.FieldRef<"responsibility", 'String'>
-  readonly createdAt: Prisma.FieldRef<"responsibility", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"responsibility", 'DateTime'>
+export interface ResponsibilityFieldRefs {
+  readonly responsibility_id: Prisma.FieldRef<"Responsibility", 'String'>
+  readonly responsibility_name: Prisma.FieldRef<"Responsibility", 'String'>
+  readonly createdAt: Prisma.FieldRef<"Responsibility", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"Responsibility", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * responsibility findUnique
+ * Responsibility findUnique
  */
-export type responsibilityFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ResponsibilityFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the responsibility
+   * Select specific fields to fetch from the Responsibility
    */
-  select?: Prisma.responsibilitySelect<ExtArgs> | null
+  select?: Prisma.ResponsibilitySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the responsibility
+   * Omit specific fields from the Responsibility
    */
-  omit?: Prisma.responsibilityOmit<ExtArgs> | null
+  omit?: Prisma.ResponsibilityOmit<ExtArgs> | null
   /**
-   * Filter, which responsibility to fetch.
+   * Filter, which Responsibility to fetch.
    */
-  where: Prisma.responsibilityWhereUniqueInput
+  where: Prisma.ResponsibilityWhereUniqueInput
 }
 
 /**
- * responsibility findUniqueOrThrow
+ * Responsibility findUniqueOrThrow
  */
-export type responsibilityFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ResponsibilityFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the responsibility
+   * Select specific fields to fetch from the Responsibility
    */
-  select?: Prisma.responsibilitySelect<ExtArgs> | null
+  select?: Prisma.ResponsibilitySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the responsibility
+   * Omit specific fields from the Responsibility
    */
-  omit?: Prisma.responsibilityOmit<ExtArgs> | null
+  omit?: Prisma.ResponsibilityOmit<ExtArgs> | null
   /**
-   * Filter, which responsibility to fetch.
+   * Filter, which Responsibility to fetch.
    */
-  where: Prisma.responsibilityWhereUniqueInput
+  where: Prisma.ResponsibilityWhereUniqueInput
 }
 
 /**
- * responsibility findFirst
+ * Responsibility findFirst
  */
-export type responsibilityFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ResponsibilityFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the responsibility
+   * Select specific fields to fetch from the Responsibility
    */
-  select?: Prisma.responsibilitySelect<ExtArgs> | null
+  select?: Prisma.ResponsibilitySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the responsibility
+   * Omit specific fields from the Responsibility
    */
-  omit?: Prisma.responsibilityOmit<ExtArgs> | null
+  omit?: Prisma.ResponsibilityOmit<ExtArgs> | null
   /**
-   * Filter, which responsibility to fetch.
+   * Filter, which Responsibility to fetch.
    */
-  where?: Prisma.responsibilityWhereInput
+  where?: Prisma.ResponsibilityWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of responsibilities to fetch.
+   * Determine the order of Responsibilities to fetch.
    */
-  orderBy?: Prisma.responsibilityOrderByWithRelationInput | Prisma.responsibilityOrderByWithRelationInput[]
+  orderBy?: Prisma.ResponsibilityOrderByWithRelationInput | Prisma.ResponsibilityOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for responsibilities.
+   * Sets the position for searching for Responsibilities.
    */
-  cursor?: Prisma.responsibilityWhereUniqueInput
+  cursor?: Prisma.ResponsibilityWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` responsibilities from the position of the cursor.
+   * Take `±n` Responsibilities from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` responsibilities.
+   * Skip the first `n` Responsibilities.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of responsibilities.
+   * Filter by unique combinations of Responsibilities.
    */
   distinct?: Prisma.ResponsibilityScalarFieldEnum | Prisma.ResponsibilityScalarFieldEnum[]
 }
 
 /**
- * responsibility findFirstOrThrow
+ * Responsibility findFirstOrThrow
  */
-export type responsibilityFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ResponsibilityFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the responsibility
+   * Select specific fields to fetch from the Responsibility
    */
-  select?: Prisma.responsibilitySelect<ExtArgs> | null
+  select?: Prisma.ResponsibilitySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the responsibility
+   * Omit specific fields from the Responsibility
    */
-  omit?: Prisma.responsibilityOmit<ExtArgs> | null
+  omit?: Prisma.ResponsibilityOmit<ExtArgs> | null
   /**
-   * Filter, which responsibility to fetch.
+   * Filter, which Responsibility to fetch.
    */
-  where?: Prisma.responsibilityWhereInput
+  where?: Prisma.ResponsibilityWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of responsibilities to fetch.
+   * Determine the order of Responsibilities to fetch.
    */
-  orderBy?: Prisma.responsibilityOrderByWithRelationInput | Prisma.responsibilityOrderByWithRelationInput[]
+  orderBy?: Prisma.ResponsibilityOrderByWithRelationInput | Prisma.ResponsibilityOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for responsibilities.
+   * Sets the position for searching for Responsibilities.
    */
-  cursor?: Prisma.responsibilityWhereUniqueInput
+  cursor?: Prisma.ResponsibilityWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` responsibilities from the position of the cursor.
+   * Take `±n` Responsibilities from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` responsibilities.
+   * Skip the first `n` Responsibilities.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of responsibilities.
+   * Filter by unique combinations of Responsibilities.
    */
   distinct?: Prisma.ResponsibilityScalarFieldEnum | Prisma.ResponsibilityScalarFieldEnum[]
 }
 
 /**
- * responsibility findMany
+ * Responsibility findMany
  */
-export type responsibilityFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ResponsibilityFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the responsibility
+   * Select specific fields to fetch from the Responsibility
    */
-  select?: Prisma.responsibilitySelect<ExtArgs> | null
+  select?: Prisma.ResponsibilitySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the responsibility
+   * Omit specific fields from the Responsibility
    */
-  omit?: Prisma.responsibilityOmit<ExtArgs> | null
+  omit?: Prisma.ResponsibilityOmit<ExtArgs> | null
   /**
-   * Filter, which responsibilities to fetch.
+   * Filter, which Responsibilities to fetch.
    */
-  where?: Prisma.responsibilityWhereInput
+  where?: Prisma.ResponsibilityWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of responsibilities to fetch.
+   * Determine the order of Responsibilities to fetch.
    */
-  orderBy?: Prisma.responsibilityOrderByWithRelationInput | Prisma.responsibilityOrderByWithRelationInput[]
+  orderBy?: Prisma.ResponsibilityOrderByWithRelationInput | Prisma.ResponsibilityOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing responsibilities.
+   * Sets the position for listing Responsibilities.
    */
-  cursor?: Prisma.responsibilityWhereUniqueInput
+  cursor?: Prisma.ResponsibilityWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` responsibilities from the position of the cursor.
+   * Take `±n` Responsibilities from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` responsibilities.
+   * Skip the first `n` Responsibilities.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of responsibilities.
+   * Filter by unique combinations of Responsibilities.
    */
   distinct?: Prisma.ResponsibilityScalarFieldEnum | Prisma.ResponsibilityScalarFieldEnum[]
 }
 
 /**
- * responsibility create
+ * Responsibility create
  */
-export type responsibilityCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ResponsibilityCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the responsibility
+   * Select specific fields to fetch from the Responsibility
    */
-  select?: Prisma.responsibilitySelect<ExtArgs> | null
+  select?: Prisma.ResponsibilitySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the responsibility
+   * Omit specific fields from the Responsibility
    */
-  omit?: Prisma.responsibilityOmit<ExtArgs> | null
+  omit?: Prisma.ResponsibilityOmit<ExtArgs> | null
   /**
-   * The data needed to create a responsibility.
+   * The data needed to create a Responsibility.
    */
-  data: Prisma.XOR<Prisma.responsibilityCreateInput, Prisma.responsibilityUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.ResponsibilityCreateInput, Prisma.ResponsibilityUncheckedCreateInput>
 }
 
 /**
- * responsibility createMany
+ * Responsibility createMany
  */
-export type responsibilityCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ResponsibilityCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many responsibilities.
+   * The data used to create many Responsibilities.
    */
-  data: Prisma.responsibilityCreateManyInput | Prisma.responsibilityCreateManyInput[]
+  data: Prisma.ResponsibilityCreateManyInput | Prisma.ResponsibilityCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * responsibility createManyAndReturn
+ * Responsibility createManyAndReturn
  */
-export type responsibilityCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ResponsibilityCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the responsibility
+   * Select specific fields to fetch from the Responsibility
    */
-  select?: Prisma.responsibilitySelectCreateManyAndReturn<ExtArgs> | null
+  select?: Prisma.ResponsibilitySelectCreateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the responsibility
+   * Omit specific fields from the Responsibility
    */
-  omit?: Prisma.responsibilityOmit<ExtArgs> | null
+  omit?: Prisma.ResponsibilityOmit<ExtArgs> | null
   /**
-   * The data used to create many responsibilities.
+   * The data used to create many Responsibilities.
    */
-  data: Prisma.responsibilityCreateManyInput | Prisma.responsibilityCreateManyInput[]
+  data: Prisma.ResponsibilityCreateManyInput | Prisma.ResponsibilityCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * responsibility update
+ * Responsibility update
  */
-export type responsibilityUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ResponsibilityUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the responsibility
+   * Select specific fields to fetch from the Responsibility
    */
-  select?: Prisma.responsibilitySelect<ExtArgs> | null
+  select?: Prisma.ResponsibilitySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the responsibility
+   * Omit specific fields from the Responsibility
    */
-  omit?: Prisma.responsibilityOmit<ExtArgs> | null
+  omit?: Prisma.ResponsibilityOmit<ExtArgs> | null
   /**
-   * The data needed to update a responsibility.
+   * The data needed to update a Responsibility.
    */
-  data: Prisma.XOR<Prisma.responsibilityUpdateInput, Prisma.responsibilityUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.ResponsibilityUpdateInput, Prisma.ResponsibilityUncheckedUpdateInput>
   /**
-   * Choose, which responsibility to update.
+   * Choose, which Responsibility to update.
    */
-  where: Prisma.responsibilityWhereUniqueInput
+  where: Prisma.ResponsibilityWhereUniqueInput
 }
 
 /**
- * responsibility updateMany
+ * Responsibility updateMany
  */
-export type responsibilityUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ResponsibilityUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update responsibilities.
+   * The data used to update Responsibilities.
    */
-  data: Prisma.XOR<Prisma.responsibilityUpdateManyMutationInput, Prisma.responsibilityUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.ResponsibilityUpdateManyMutationInput, Prisma.ResponsibilityUncheckedUpdateManyInput>
   /**
-   * Filter which responsibilities to update
+   * Filter which Responsibilities to update
    */
-  where?: Prisma.responsibilityWhereInput
+  where?: Prisma.ResponsibilityWhereInput
   /**
-   * Limit how many responsibilities to update.
+   * Limit how many Responsibilities to update.
    */
   limit?: number
 }
 
 /**
- * responsibility updateManyAndReturn
+ * Responsibility updateManyAndReturn
  */
-export type responsibilityUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ResponsibilityUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the responsibility
+   * Select specific fields to fetch from the Responsibility
    */
-  select?: Prisma.responsibilitySelectUpdateManyAndReturn<ExtArgs> | null
+  select?: Prisma.ResponsibilitySelectUpdateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the responsibility
+   * Omit specific fields from the Responsibility
    */
-  omit?: Prisma.responsibilityOmit<ExtArgs> | null
+  omit?: Prisma.ResponsibilityOmit<ExtArgs> | null
   /**
-   * The data used to update responsibilities.
+   * The data used to update Responsibilities.
    */
-  data: Prisma.XOR<Prisma.responsibilityUpdateManyMutationInput, Prisma.responsibilityUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.ResponsibilityUpdateManyMutationInput, Prisma.ResponsibilityUncheckedUpdateManyInput>
   /**
-   * Filter which responsibilities to update
+   * Filter which Responsibilities to update
    */
-  where?: Prisma.responsibilityWhereInput
+  where?: Prisma.ResponsibilityWhereInput
   /**
-   * Limit how many responsibilities to update.
+   * Limit how many Responsibilities to update.
    */
   limit?: number
 }
 
 /**
- * responsibility upsert
+ * Responsibility upsert
  */
-export type responsibilityUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ResponsibilityUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the responsibility
+   * Select specific fields to fetch from the Responsibility
    */
-  select?: Prisma.responsibilitySelect<ExtArgs> | null
+  select?: Prisma.ResponsibilitySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the responsibility
+   * Omit specific fields from the Responsibility
    */
-  omit?: Prisma.responsibilityOmit<ExtArgs> | null
+  omit?: Prisma.ResponsibilityOmit<ExtArgs> | null
   /**
-   * The filter to search for the responsibility to update in case it exists.
+   * The filter to search for the Responsibility to update in case it exists.
    */
-  where: Prisma.responsibilityWhereUniqueInput
+  where: Prisma.ResponsibilityWhereUniqueInput
   /**
-   * In case the responsibility found by the `where` argument doesn't exist, create a new responsibility with this data.
+   * In case the Responsibility found by the `where` argument doesn't exist, create a new Responsibility with this data.
    */
-  create: Prisma.XOR<Prisma.responsibilityCreateInput, Prisma.responsibilityUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.ResponsibilityCreateInput, Prisma.ResponsibilityUncheckedCreateInput>
   /**
-   * In case the responsibility was found with the provided `where` argument, update it with this data.
+   * In case the Responsibility was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.responsibilityUpdateInput, Prisma.responsibilityUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.ResponsibilityUpdateInput, Prisma.ResponsibilityUncheckedUpdateInput>
 }
 
 /**
- * responsibility delete
+ * Responsibility delete
  */
-export type responsibilityDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ResponsibilityDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the responsibility
+   * Select specific fields to fetch from the Responsibility
    */
-  select?: Prisma.responsibilitySelect<ExtArgs> | null
+  select?: Prisma.ResponsibilitySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the responsibility
+   * Omit specific fields from the Responsibility
    */
-  omit?: Prisma.responsibilityOmit<ExtArgs> | null
+  omit?: Prisma.ResponsibilityOmit<ExtArgs> | null
   /**
-   * Filter which responsibility to delete.
+   * Filter which Responsibility to delete.
    */
-  where: Prisma.responsibilityWhereUniqueInput
+  where: Prisma.ResponsibilityWhereUniqueInput
 }
 
 /**
- * responsibility deleteMany
+ * Responsibility deleteMany
  */
-export type responsibilityDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ResponsibilityDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which responsibilities to delete
+   * Filter which Responsibilities to delete
    */
-  where?: Prisma.responsibilityWhereInput
+  where?: Prisma.ResponsibilityWhereInput
   /**
-   * Limit how many responsibilities to delete.
+   * Limit how many Responsibilities to delete.
    */
   limit?: number
 }
 
 /**
- * responsibility without action
+ * Responsibility without action
  */
-export type responsibilityDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ResponsibilityDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the responsibility
+   * Select specific fields to fetch from the Responsibility
    */
-  select?: Prisma.responsibilitySelect<ExtArgs> | null
+  select?: Prisma.ResponsibilitySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the responsibility
+   * Omit specific fields from the Responsibility
    */
-  omit?: Prisma.responsibilityOmit<ExtArgs> | null
+  omit?: Prisma.ResponsibilityOmit<ExtArgs> | null
 }
