@@ -1,8 +1,9 @@
-model position{
+model Position{
     position_id String @id @default(uuid())
     position_name String @unique
 
-    
+    user User[]
+
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt
 

@@ -4,6 +4,9 @@ model User{
     mobile_number String
     role Role @relation(fields: [role_name], references: [role_name], onDelete: Restrict)
     role_name String
+
+    position_name String
+    position Position @relation(fields: [position_name], references: [position_name], onDelete: Restrict)
     gender Gender 
     blood_group BloodGroup?
     date_of_birth DateTime?

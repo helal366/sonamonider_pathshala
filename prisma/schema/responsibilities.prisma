@@ -1,4 +1,4 @@
-model responsibility{
+model Responsibility{
     responsibility_id String @id @default(uuid())
     responsibility_name String @unique
 
