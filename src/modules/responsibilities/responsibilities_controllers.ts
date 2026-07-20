@@ -25,6 +25,61 @@ const createResponsibility = catchAsync(
     });
   },
 );
+
+const getAllResponsibilities= catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
+    const result = await responsibilityServices.getAllResponsibilities();
+    sendResponse(res, {
+      success: true,
+      statusCode: StatusCodes.CREATED,
+      message: "Responsibilities retrieved successfully.",
+      data: result,
+    });
+});
+
+const getSingleResponsibilityDetails=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
+     const { responsibilityName } = req.body;
+    if (
+      !responsibilityName ||
+      Array.isArray(responsibilityName) ||
+      typeof responsibilityName !== "string" ||
+      responsibilityName.trim() === ""
+    ) {
+        throw new AppError("Invalid Responsibility Name", StatusCodes.BAD_REQUEST)
+    }
+    const result= await responsibilityServices.getSingleResponsibilityDetails(responsibilityName);
+    sendResponse(res, {
+      success: true,
+      statusCode: StatusCodes.CREATED,
+      message: "Responsibility retrieved successfully.",
+      data: result,
+    });
+});
+
+const deleteSingleResponsibility=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
+     const { responsibilityName } = req.body;
+    if (
+      !responsibilityName ||
+      Array.isArray(responsibilityName) ||
+      typeof responsibilityName !== "string" ||
+      responsibilityName.trim() === ""
+    ) {
+        throw new AppError("Invalid Responsibility Name", StatusCodes.BAD_REQUEST)
+    }
+    await responsibilityServices.deleteSingleResponsibility(responsibilityName);
+    sendResponse(res, {
+      success: true,
+      statusCode: StatusCodes.CREATED,
+      message: "Responsibility deleted successfully.",
+    });
+});
+
+const updateSingleResponsibility=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
+    const {presentResponsibility, updateResponsibility}=req.body;
+})
 export const responsibilityController = {
   createResponsibility,
+  getAllResponsibilities,
+  getSingleResponsibilityDetails,
+  deleteSingleResponsibility,
+  updateSingleResponsibility
 };

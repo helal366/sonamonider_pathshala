@@ -19,7 +19,50 @@ const createResponsibility=async(responsibilityName:string)=>{
     });
     return responsilibity
 };
+
+const getAllResponsibilities=async()=>{
+    const allResponsibilites=await prisma.responsibility.findMany();
+    const responsibilitiesInArray = allResponsibilites.map(responsibility=>responsibility.responsibility_name)
+    return {
+        responsibilitiesInArray,
+        allResponsibilites,
+    }
+};
+
+const getSingleResponsibilityDetails=async(responsibilityName:string)=>{
+    const cleanResponsibility = responsibilityName.trim().toUpperCase();
+    const singleResponsibility = await prisma.responsibility.findUniqueOrThrow({
+        where:{
+            responsibility_name: cleanResponsibility
+        }
+    });
+    return singleResponsibility
+};
+
+const deleteSingleResponsibility=async(responsibilityName:string)=>{
+    const cleanResponsibility = responsibilityName.trim().toUpperCase();
+    const existingResponsibilityName = await prisma.responsibility.findUnique({
+        where: {
+            responsibility_name:cleanResponsibility
+        }
+    });
+    if(!existingResponsibilityName){
+        throw new AppError("Responsibility not exists.", StatusCodes.BAD_REQUEST)
+    };
+    await prisma.responsibility.delete({
+        where:{
+            responsibility_name:cleanResponsibility
+        }
+    })
+};
+
+const updateSingleResponsibility=async(responsibilityName:string)=>{
+
+}
 export const responsibilityServices={
     createResponsibility,
-
+    getAllResponsibilities,
+    getSingleResponsibilityDetails,
+    deleteSingleResponsibility,
+    updateSingleResponsibility
 }
