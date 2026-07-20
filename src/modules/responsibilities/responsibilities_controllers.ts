@@ -75,6 +75,29 @@ const deleteSingleResponsibility=catchAsync(async(req:Request, res:Response, nex
 
 const updateSingleResponsibility=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
     const {presentResponsibility, updateResponsibility}=req.body;
+    if (
+      !presentResponsibility ||
+      Array.isArray(presentResponsibility) ||
+      typeof presentResponsibility !== "string" ||
+      presentResponsibility.trim() === ""
+    ) {
+        throw new AppError("Invalid Present Responsibility Name", StatusCodes.BAD_REQUEST)
+    }
+    if (
+      !updateResponsibility ||
+      Array.isArray(updateResponsibility) ||
+      typeof updateResponsibility !== "string" ||
+      updateResponsibility.trim() === ""
+    ) {
+        throw new AppError("Invalid Update Responsibility Name", StatusCodes.BAD_REQUEST)
+    }
+    const result = await responsibilityServices.updateSingleResponsibility(presentResponsibility, updateResponsibility);
+    sendResponse(res, {
+      success: true,
+      statusCode: StatusCodes.CREATED,
+      message: "Responsibility updated successfully.",
+      data: result,
+    });
 })
 export const responsibilityController = {
   createResponsibility,

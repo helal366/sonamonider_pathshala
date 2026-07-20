@@ -56,8 +56,23 @@ const deleteSingleResponsibility=async(responsibilityName:string)=>{
     })
 };
 
-const updateSingleResponsibility=async(responsibilityName:string)=>{
-
+const updateSingleResponsibility=async(presentResponsibility:string, updateResponsibility:string)=>{
+    const cleanPresentResponsibility= presentResponsibility.trim().toUpperCase();
+    const cleanUpdateResponsibility= updateResponsibility.trim().toUpperCase();
+    await prisma.responsibility.findUniqueOrThrow({
+        where:{
+            responsibility_name: cleanPresentResponsibility
+        }
+    });
+     const updatedResponsibility= await prisma.responsibility.update({
+        where:{
+            responsibility_name: cleanPresentResponsibility
+        },
+        data:{
+            responsibility_name: cleanUpdateResponsibility
+        }
+     });
+     return updatedResponsibility
 }
 export const responsibilityServices={
     createResponsibility,
