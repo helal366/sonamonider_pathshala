@@ -80,3 +80,11 @@ export const Months = {
 } as const
 
 export type Months = (typeof Months)[keyof typeof Months]
+
+
+export const ActiveStatus = {
+  ACTIVE: 'ACTIVE',
+  INACTIVE: 'INACTIVE'
+} as const
+
+export type ActiveStatus = (typeof ActiveStatus)[keyof typeof ActiveStatus]

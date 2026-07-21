@@ -1,4 +1,4 @@
-import { BloodGroup, Gender, Religion } from "#db-client";
+import { ActiveStatus, BloodGroup, Gender, Religion } from "#db-client";
 
 export interface IAuthLogin {
   full_name: string;
@@ -11,7 +11,7 @@ export interface IUser {
   mobile_number: string;
   role_name: string;
   position_name: string;
-  activation_status: boolean;
+  active_status: ActiveStatus;
   gender: Gender; // Use your custom enum
   blood_group?: BloodGroup | null; // Optional fields
   date_of_birth?: Date | string | null; // Can be ISO string

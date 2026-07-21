@@ -18,6 +18,11 @@ export { Prisma }
 export * as $Enums from './enums.js'
 export * from './enums.js';
 /**
+ * Model ActiveInactiveHistory
+ * 
+ */
+export type ActiveInactiveHistory = Prisma.ActiveInactiveHistoryModel
+/**
  * Model Position
  * 
  */
@@ -37,3 +42,8 @@ export type Role = Prisma.RoleModel
  * 
  */
 export type User = Prisma.UserModel
+/**
+ * Model UserHistoryView
+ * 
+ */
+export type UserHistoryView = Prisma.UserHistoryViewModel

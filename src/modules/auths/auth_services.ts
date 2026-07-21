@@ -16,7 +16,7 @@ const authLogin = async (payload: IAuthLogin) => {
   if (!existingAuth) {
     throw new AppError("No credential exists.", StatusCodes.BAD_REQUEST);
   }
-  if (!existingAuth.activation_status) {
+  if (!existingAuth.active_status) {
     throw new AppError("Inactive user.", StatusCodes.UNAUTHORIZED);
   }
 };

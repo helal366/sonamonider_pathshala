@@ -295,14 +295,6 @@ export type PositionScalarRelationFilter = {
   isNot?: Prisma.PositionWhereInput
 }
 
-export type StringFieldUpdateOperationsInput = {
-  set?: string
-}
-
-export type DateTimeFieldUpdateOperationsInput = {
-  set?: Date | string
-}
-
 export type PositionCreateNestedOneWithoutUserInput = {
   create?: Prisma.XOR<Prisma.PositionCreateWithoutUserInput, Prisma.PositionUncheckedCreateWithoutUserInput>
   connectOrCreate?: Prisma.PositionCreateOrConnectWithoutUserInput

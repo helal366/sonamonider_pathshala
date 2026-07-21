@@ -1,5 +1,6 @@
 model ActiveInactiveHistory{
     active_inactive_history_id String @id @default(uuid())
+
     active_status ActiveStatus
     activationTime DateTime?
     inactivationTime DateTime?  
@@ -10,5 +11,5 @@ model ActiveInactiveHistory{
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
-     @@map("active_inactive_histories")
+    @@map("active_inactive_histories")
 }

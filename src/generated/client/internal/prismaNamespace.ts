@@ -384,10 +384,12 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
+  ActiveInactiveHistory: 'ActiveInactiveHistory',
   Position: 'Position',
   Responsibility: 'Responsibility',
   Role: 'Role',
-  User: 'User'
+  User: 'User',
+  UserHistoryView: 'UserHistoryView'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -403,10 +405,84 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "position" | "responsibility" | "role" | "user"
+    modelProps: "activeInactiveHistory" | "position" | "responsibility" | "role" | "user" | "userHistoryView"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
+    ActiveInactiveHistory: {
+      payload: Prisma.$ActiveInactiveHistoryPayload<ExtArgs>
+      fields: Prisma.ActiveInactiveHistoryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ActiveInactiveHistoryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActiveInactiveHistoryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ActiveInactiveHistoryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActiveInactiveHistoryPayload>
+        }
+        findFirst: {
+          args: Prisma.ActiveInactiveHistoryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActiveInactiveHistoryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ActiveInactiveHistoryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActiveInactiveHistoryPayload>
+        }
+        findMany: {
+          args: Prisma.ActiveInactiveHistoryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActiveInactiveHistoryPayload>[]
+        }
+        create: {
+          args: Prisma.ActiveInactiveHistoryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActiveInactiveHistoryPayload>
+        }
+        createMany: {
+          args: Prisma.ActiveInactiveHistoryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ActiveInactiveHistoryCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActiveInactiveHistoryPayload>[]
+        }
+        delete: {
+          args: Prisma.ActiveInactiveHistoryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActiveInactiveHistoryPayload>
+        }
+        update: {
+          args: Prisma.ActiveInactiveHistoryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActiveInactiveHistoryPayload>
+        }
+        deleteMany: {
+          args: Prisma.ActiveInactiveHistoryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ActiveInactiveHistoryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ActiveInactiveHistoryUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActiveInactiveHistoryPayload>[]
+        }
+        upsert: {
+          args: Prisma.ActiveInactiveHistoryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActiveInactiveHistoryPayload>
+        }
+        aggregate: {
+          args: Prisma.ActiveInactiveHistoryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateActiveInactiveHistory>
+        }
+        groupBy: {
+          args: Prisma.ActiveInactiveHistoryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ActiveInactiveHistoryGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ActiveInactiveHistoryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ActiveInactiveHistoryCountAggregateOutputType> | number
+        }
+      }
+    }
     Position: {
       payload: Prisma.$PositionPayload<ExtArgs>
       fields: Prisma.PositionFieldRefs
@@ -703,6 +779,44 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    UserHistoryView: {
+      payload: Prisma.$UserHistoryViewPayload<ExtArgs>
+      fields: Prisma.UserHistoryViewFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.UserHistoryViewFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserHistoryViewPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.UserHistoryViewFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserHistoryViewPayload>
+        }
+        findFirst: {
+          args: Prisma.UserHistoryViewFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserHistoryViewPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.UserHistoryViewFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserHistoryViewPayload>
+        }
+        findMany: {
+          args: Prisma.UserHistoryViewFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserHistoryViewPayload>[]
+        }
+        aggregate: {
+          args: Prisma.UserHistoryViewAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateUserHistoryView>
+        }
+        groupBy: {
+          args: Prisma.UserHistoryViewGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.UserHistoryViewGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.UserHistoryViewCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.UserHistoryViewCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -742,6 +856,19 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+export const ActiveInactiveHistoryScalarFieldEnum = {
+  active_inactive_history_id: 'active_inactive_history_id',
+  active_status: 'active_status',
+  activationTime: 'activationTime',
+  inactivationTime: 'inactivationTime',
+  user_id: 'user_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ActiveInactiveHistoryScalarFieldEnum = (typeof ActiveInactiveHistoryScalarFieldEnum)[keyof typeof ActiveInactiveHistoryScalarFieldEnum]
+
+
 export const PositionScalarFieldEnum = {
   position_id: 'position_id',
   position_name: 'position_name',
@@ -778,6 +905,7 @@ export const UserScalarFieldEnum = {
   mobile_number: 'mobile_number',
   role_name: 'role_name',
   position_name: 'position_name',
+  active_status: 'active_status',
   gender: 'gender',
   blood_group: 'blood_group',
   date_of_birth: 'date_of_birth',
@@ -797,6 +925,20 @@ export const UserScalarFieldEnum = {
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const UserHistoryViewScalarFieldEnum = {
+  active_inactive_history_id: 'active_inactive_history_id',
+  user_id: 'user_id',
+  full_name: 'full_name',
+  mobile_number: 'mobile_number',
+  active_status: 'active_status',
+  activationTime: 'activationTime',
+  inactivationTime: 'inactivationTime',
+  createdAt: 'createdAt'
+} as const
+
+export type UserHistoryViewScalarFieldEnum = (typeof UserHistoryViewScalarFieldEnum)[keyof typeof UserHistoryViewScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -840,6 +982,20 @@ export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 
  * Reference to a field of type 'String[]'
  */
 export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
+    
+
+
+/**
+ * Reference to a field of type 'ActiveStatus'
+ */
+export type EnumActiveStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ActiveStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'ActiveStatus[]'
+ */
+export type ListEnumActiveStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ActiveStatus[]'>
     
 
 
@@ -1036,10 +1192,12 @@ export type PrismaClientOptions = ({
   queryPlanCacheMaxSize?: number
 }
 export type GlobalOmitConfig = {
+  activeInactiveHistory?: Prisma.ActiveInactiveHistoryOmit
   position?: Prisma.PositionOmit
   responsibility?: Prisma.ResponsibilityOmit
   role?: Prisma.RoleOmit
   user?: Prisma.UserOmit
+  userHistoryView?: Prisma.UserHistoryViewOmit
 }
 
 /* Types for Logging */

@@ -51,10 +51,12 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
+  ActiveInactiveHistory: 'ActiveInactiveHistory',
   Position: 'Position',
   Responsibility: 'Responsibility',
   Role: 'Role',
-  User: 'User'
+  User: 'User',
+  UserHistoryView: 'UserHistoryView'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -71,6 +73,19 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 } as const)
 
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
+
+
+export const ActiveInactiveHistoryScalarFieldEnum = {
+  active_inactive_history_id: 'active_inactive_history_id',
+  active_status: 'active_status',
+  activationTime: 'activationTime',
+  inactivationTime: 'inactivationTime',
+  user_id: 'user_id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ActiveInactiveHistoryScalarFieldEnum = (typeof ActiveInactiveHistoryScalarFieldEnum)[keyof typeof ActiveInactiveHistoryScalarFieldEnum]
 
 
 export const PositionScalarFieldEnum = {
@@ -109,6 +124,7 @@ export const UserScalarFieldEnum = {
   mobile_number: 'mobile_number',
   role_name: 'role_name',
   position_name: 'position_name',
+  active_status: 'active_status',
   gender: 'gender',
   blood_group: 'blood_group',
   date_of_birth: 'date_of_birth',
@@ -128,6 +144,20 @@ export const UserScalarFieldEnum = {
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const UserHistoryViewScalarFieldEnum = {
+  active_inactive_history_id: 'active_inactive_history_id',
+  user_id: 'user_id',
+  full_name: 'full_name',
+  mobile_number: 'mobile_number',
+  active_status: 'active_status',
+  activationTime: 'activationTime',
+  inactivationTime: 'inactivationTime',
+  createdAt: 'createdAt'
+} as const
+
+export type UserHistoryViewScalarFieldEnum = (typeof UserHistoryViewScalarFieldEnum)[keyof typeof UserHistoryViewScalarFieldEnum]
 
 
 export const SortOrder = {

@@ -1,4 +1,4 @@
-import { BloodGroup, Gender, Religion } from "#db-client";
+import { ActiveStatus, BloodGroup, Gender, Religion } from "#db-client";
 
 export interface ICreateUserRequest {
   // Required Core Fields
@@ -25,7 +25,7 @@ export interface ICreateUserRequest {
   mother_name?: string | null;
 
   // Optional System Authentication Fields
-  activation_status?: boolean;
+  active_status?: ActiveStatus;
   email?: string | null;
   user_name?: string | null;
   user_password?: string;
@@ -56,7 +56,7 @@ export interface IUpdateUserRequest {
   mother_name?: string | null;
 
   // System & Authentication (Optional)
-  activation_status?: boolean;
+  active_status?: ActiveStatus;
   email?: string | null;
   user_name?: string; // Usually synced with mobile_number automatically
   user_password?: string; // If they are resetting their password
