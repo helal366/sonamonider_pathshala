@@ -1,0 +1,12 @@
+view UserHistoryView {
+  active_inactive_history_id String       @unique
+  user_id                    String
+  full_name                  String 
+  mobile_number              String 
+  active_status              ActiveStatus
+  activationTime             DateTime
+  inactivationTime           DateTime?
+  createdAt                  DateTime
+
+  @@map("user_history_view")
+}

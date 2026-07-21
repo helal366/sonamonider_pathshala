@@ -1,0 +1,14 @@
+model ActiveInactiveHistory{
+    active_inactive_history_id String @id @default(uuid())
+    active_status ActiveStatus
+    activationTime DateTime?
+    inactivationTime DateTime?  
+
+    user_id String
+    user    User   @relation(name:"user_active_history", fields: [user_id], references: [user_id], onDelete: Restrict)   
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+     @@map("active_inactive_histories")
+}
