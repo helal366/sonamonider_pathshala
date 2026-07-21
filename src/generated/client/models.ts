@@ -9,6 +9,7 @@
  * 🟢 You can import this file directly.
  */
 export type * from './models/ActiveInactiveHistory.js'
+export type * from './models/Class.js'
 export type * from './models/Position.js'
 export type * from './models/Responsibility.js'
 export type * from './models/Role.js'

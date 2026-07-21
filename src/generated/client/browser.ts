@@ -23,6 +23,11 @@ export * from './enums.js';
  */
 export type ActiveInactiveHistory = Prisma.ActiveInactiveHistoryModel
 /**
+ * Model Class
+ * 
+ */
+export type Class = Prisma.ClassModel
+/**
  * Model Position
  * 
  */

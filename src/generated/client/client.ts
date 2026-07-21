@@ -47,6 +47,11 @@ export { Prisma }
  */
 export type ActiveInactiveHistory = Prisma.ActiveInactiveHistoryModel
 /**
+ * Model Class
+ * 
+ */
+export type Class = Prisma.ClassModel
+/**
  * Model Position
  * 
  */

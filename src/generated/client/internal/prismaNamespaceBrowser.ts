@@ -52,6 +52,7 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   ActiveInactiveHistory: 'ActiveInactiveHistory',
+  Class: 'Class',
   Position: 'Position',
   Responsibility: 'Responsibility',
   Role: 'Role',
@@ -86,6 +87,16 @@ export const ActiveInactiveHistoryScalarFieldEnum = {
 } as const
 
 export type ActiveInactiveHistoryScalarFieldEnum = (typeof ActiveInactiveHistoryScalarFieldEnum)[keyof typeof ActiveInactiveHistoryScalarFieldEnum]
+
+
+export const ClassScalarFieldEnum = {
+  class_id: 'class_id',
+  class_name: 'class_name',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ClassScalarFieldEnum = (typeof ClassScalarFieldEnum)[keyof typeof ClassScalarFieldEnum]
 
 
 export const PositionScalarFieldEnum = {
