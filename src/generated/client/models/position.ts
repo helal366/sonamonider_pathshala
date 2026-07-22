@@ -182,8 +182,8 @@ export type PositionWhereInput = {
   role_name?: Prisma.StringFilter<"Position"> | string
   created_at?: Prisma.DateTimeFilter<"Position"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"Position"> | Date | string
-  user?: Prisma.UserListRelationFilter
   role?: Prisma.XOR<Prisma.RoleScalarRelationFilter, Prisma.RoleWhereInput>
+  user?: Prisma.UserListRelationFilter
 }
 
 export type PositionOrderByWithRelationInput = {
@@ -192,8 +192,8 @@ export type PositionOrderByWithRelationInput = {
   role_name?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
-  user?: Prisma.UserOrderByRelationAggregateInput
   role?: Prisma.RoleOrderByWithRelationInput
+  user?: Prisma.UserOrderByRelationAggregateInput
 }
 
 export type PositionWhereUniqueInput = Prisma.AtLeast<{
@@ -205,8 +205,8 @@ export type PositionWhereUniqueInput = Prisma.AtLeast<{
   role_name?: Prisma.StringFilter<"Position"> | string
   created_at?: Prisma.DateTimeFilter<"Position"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"Position"> | Date | string
-  user?: Prisma.UserListRelationFilter
   role?: Prisma.XOR<Prisma.RoleScalarRelationFilter, Prisma.RoleWhereInput>
+  user?: Prisma.UserListRelationFilter
 }, "position_id" | "position_name">
 
 export type PositionOrderByWithAggregationInput = {
@@ -236,8 +236,8 @@ export type PositionCreateInput = {
   position_name: string
   created_at?: Date | string
   updated_at?: Date | string
+  role: Prisma.RoleCreateNestedOneWithoutPositionsInput
   user?: Prisma.UserCreateNestedManyWithoutPositionInput
-  role: Prisma.RoleCreateNestedOneWithoutPositionInput
 }
 
 export type PositionUncheckedCreateInput = {
@@ -254,8 +254,8 @@ export type PositionUpdateInput = {
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  role?: Prisma.RoleUpdateOneRequiredWithoutPositionsNestedInput
   user?: Prisma.UserUpdateManyWithoutPositionNestedInput
-  role?: Prisma.RoleUpdateOneRequiredWithoutPositionNestedInput
 }
 
 export type PositionUncheckedUpdateInput = {
@@ -443,7 +443,7 @@ export type PositionCreateWithoutUserInput = {
   position_name: string
   created_at?: Date | string
   updated_at?: Date | string
-  role: Prisma.RoleCreateNestedOneWithoutPositionInput
+  role: Prisma.RoleCreateNestedOneWithoutPositionsInput
 }
 
 export type PositionUncheckedCreateWithoutUserInput = {
@@ -475,7 +475,7 @@ export type PositionUpdateWithoutUserInput = {
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  role?: Prisma.RoleUpdateOneRequiredWithoutPositionNestedInput
+  role?: Prisma.RoleUpdateOneRequiredWithoutPositionsNestedInput
 }
 
 export type PositionUncheckedUpdateWithoutUserInput = {
@@ -553,8 +553,8 @@ export type PositionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   role_name?: boolean
   created_at?: boolean
   updated_at?: boolean
-  user?: boolean | Prisma.Position$userArgs<ExtArgs>
   role?: boolean | Prisma.RoleDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.Position$userArgs<ExtArgs>
   _count?: boolean | Prisma.PositionCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["position"]>
 
@@ -586,8 +586,8 @@ export type PositionSelectScalar = {
 
 export type PositionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"position_id" | "position_name" | "role_name" | "created_at" | "updated_at", ExtArgs["result"]["position"]>
 export type PositionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.Position$userArgs<ExtArgs>
   role?: boolean | Prisma.RoleDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.Position$userArgs<ExtArgs>
   _count?: boolean | Prisma.PositionCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type PositionIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -600,8 +600,8 @@ export type PositionIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
 export type $PositionPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Position"
   objects: {
-    user: Prisma.$UserPayload<ExtArgs>[]
     role: Prisma.$RolePayload<ExtArgs>
+    user: Prisma.$UserPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     position_id: string
@@ -1003,8 +1003,8 @@ readonly fields: PositionFieldRefs;
  */
 export interface Prisma__PositionClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  user<T extends Prisma.Position$userArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Position$userArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   role<T extends Prisma.RoleDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.RoleDefaultArgs<ExtArgs>>): Prisma.Prisma__RoleClient<runtime.Types.Result.GetResult<Prisma.$RolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  user<T extends Prisma.Position$userArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Position$userArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.

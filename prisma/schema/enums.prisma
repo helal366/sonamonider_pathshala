@@ -1,56 +1,59 @@
-
-enum Gender{
-    MALE
-    FEMALE
-    OTHER
-}
-enum BloodGroup{
-    A_POSITIVE
-    A_NEGATIVE
-    B_POSITIVE
-    B_NEGATIVE
-    AB_POSITIVE
-    AB_NEGATIVE
-    O_POSITIVE
-    O_NEGATIVE
-}
-enum Religion{
-    ISLAM
-    HINDU
-    CHRISTIAN
-    BUDDO
-    OTHER
-}
-enum Morning_Section{
-    madrashatul_atfal
-    sonamonider_pathshala
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
 }
 
-enum Days{
-    SATURDAY
-    SUNDAY
-    MONDAY
-    TUESDAY
-    WEDNESDAY
-    THURSDAY
-    FRIDAY
-}
-enum Months{
-    JANUARY
-    FEBRUARY
-    MARCH
-    APRIL
-    MAY
-    JUNE
-    JULY
-    AUGUST
-    SEPTEMBER
-    OCTOBER
-    NOVEMBER
-    DECEMBER
+enum BloodGroup {
+  A_POSITIVE
+  A_NEGATIVE
+  B_POSITIVE
+  B_NEGATIVE
+  AB_POSITIVE
+  AB_NEGATIVE
+  O_POSITIVE
+  O_NEGATIVE
 }
 
-enum ActiveStatus{
-    ACTIVE
-    INACTIVE
+enum Religion {
+  ISLAM
+  HINDU
+  CHRISTIAN
+  BUDDO
+  OTHER
+}
+
+enum Morning_Section {
+  madrashatul_atfal
+  sonamonider_pathshala
+}
+
+enum Days {
+  SATURDAY
+  SUNDAY
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+}
+
+enum Months {
+  JANUARY
+  FEBRUARY
+  MARCH
+  APRIL
+  MAY
+  JUNE
+  JULY
+  AUGUST
+  SEPTEMBER
+  OCTOBER
+  NOVEMBER
+  DECEMBER
+}
+
+enum ActiveStatus {
+  ACTIVE
+  INACTIVE
 }

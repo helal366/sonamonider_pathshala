@@ -30,10 +30,12 @@ const createUser = async (payload: ICreateUserRequest, userRole:string) => {
   })
   
   const unique_user_name = existingCount === 0 ? mobileNumber: `${mobileNumber}-${existingCount+1}`
-  const clean_role_name = payload.role_name.trim().toUpperCase();
+  const clean_role_name = payload?.role_name ?payload.role_name.trim().toUpperCase() : null;
   const clean_position_name = payload.position_name.trim().toUpperCase();
   // role and position and mobile number validity check
-  await checkRoleValidity(clean_role_name);
+  if(clean_role_name){
+    await checkRoleValidity(clean_role_name);
+  }
   await checkPositionValidity(clean_position_name);
   
 

@@ -8,8 +8,11 @@ import { ICreatePosition } from "./position_interfaces.js";
 
 const createPosition = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-    const payload = req.body as ICreatePosition;
-  
+    const payload: ICreatePosition = req.body;
+    const { position_name, role_name } = payload;
+    if (!position_name || !role_name || typeof position_name !== "string" || typeof role_name !== "string" || position_name.trim() === "" || role_name.trim() === "" ) {
+      throw new AppError("Invalid or missing field_values.", StatusCodes.BAD_REQUEST);
+    }
     const result = await positionServices.createPosition(payload);
     sendResponse(res, {
       success: true,

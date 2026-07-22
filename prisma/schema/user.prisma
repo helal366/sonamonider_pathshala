@@ -1,34 +1,30 @@
-model User{
-    user_id String @id @default(uuid())
-    full_name String
-    mobile_number String
-    
-    role_name String
-    role Role @relation(name: "user_role_relation", fields: [role_name], references: [role_name], onDelete: Restrict)
+model User {
+  user_id                  String                  @id @default(uuid())
+  full_name                String
+  mobile_number            String
+  role_name                String?
+  gender                   Gender
+  blood_group              BloodGroup?
+  date_of_birth            DateTime?
+  heightInCm               Float?
+  weightInKg               Float?
+  religion                 Religion?
+  nationality              String?
+  birth_certificate_number String?
+  nid_number               String?
+  father_name              String?
+  mother_name              String?
+  created_at               DateTime                @default(now())
+  updated_at               DateTime                @updatedAt
+  email                    String?                 @unique
+  user_name                String?                 @unique
+  user_password            String?                 @default("smps1234")
+  position_name            String
+  active_status            ActiveStatus            @default(ACTIVE)
+  active_inactive_history  ActiveInactiveHistory[] @relation("user_active_history")
+  position                 Position                @relation("user_position_relation", fields: [position_name], references: [position_name])
+  role                     Role?                    @relation("user_role_relation", fields: [role_name], references: [role_name])
 
-    position_name String
-    position Position @relation(name: "user_position_relation", fields: [position_name], references: [position_name], onDelete: Restrict)
-    
-    active_status ActiveStatus @default(ACTIVE)
-    active_inactive_history ActiveInactiveHistory[] @relation(name: "user_active_history")
-    
-    gender Gender 
-    blood_group BloodGroup?
-    date_of_birth DateTime?
-    heightInCm Float?
-    weightInKg Float?
-    religion Religion?
-    nationality String?
-    birth_certificate_number String?
-    nid_number String?
-    father_name String?
-    mother_name String?
-    email String? @unique
-    user_name String @unique
-    user_password String? @default("smps1234")
-    created_at DateTime @default(now())
-    updated_at DateTime @updatedAt
-
-    @@unique([full_name, mobile_number], name: "user_full_name_mobile_unique")
-    @@map("users")
+  @@unique([full_name, mobile_number], name: "user_full_name_mobile_unique")
+  @@map("users")
 }

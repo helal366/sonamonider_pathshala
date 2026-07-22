@@ -1,14 +1,11 @@
-model Position{
-    position_id String @id @default(uuid())
-    position_name String @unique
+model Position {
+  position_id   String   @id @default(uuid())
+  position_name String   @unique
+  role_name     String  
+  role          Role @relation(name:"role_position_relation", fields: [role_name], references: [role_name], onDelete: Restrict)
+  user          User[]   @relation("user_position_relation")
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
 
-    user User[] @relation(name: "user_position_relation")
-
-    role_name String
-    role Role @relation(name: "position_role_relation", fields: [role_name], references: [role_name], onDelete: Restrict)
-
-    created_at DateTime @default(now())
-    updated_at DateTime @updatedAt
-
-    @@map("positions")
+  @@map("positions")
 }

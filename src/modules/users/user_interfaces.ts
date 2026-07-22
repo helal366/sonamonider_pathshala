@@ -4,7 +4,7 @@ export interface ICreateUserRequest {
   // Required Core Fields
   full_name: string;
   mobile_number: string;
-  role_name: string; // Refers to the Role model key
+  role_name?: string; // Refers to the Role model key
   position_name: string; // Refers to your dynamic Position model key
   gender: Gender;
 

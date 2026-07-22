@@ -7,16 +7,20 @@ import { responsibilityServices } from "./responsibilities_services.js";
 
 const createResponsibility = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-    const { responsibilityName } = req.body;
+    const { responsibility_name } = req.body;
     if (
-      !responsibilityName ||
-      Array.isArray(responsibilityName) ||
-      typeof responsibilityName !== "string" ||
-      responsibilityName.trim() === ""
+      !responsibility_name ||
+      Array.isArray(responsibility_name) ||
+      typeof responsibility_name !== "string" ||
+      responsibility_name.trim() === ""
     ) {
-        throw new AppError("Invalid Responsibility Name", StatusCodes.BAD_REQUEST)
+      throw new AppError(
+        "Invalid Responsibility Name",
+        StatusCodes.BAD_REQUEST,
+      );
     }
-    const result = await responsibilityServices.createResponsibility(responsibilityName)
+    const result =
+      await responsibilityServices.createResponsibility(responsibility_name);
     sendResponse(res, {
       success: true,
       statusCode: StatusCodes.CREATED,
@@ -26,7 +30,8 @@ const createResponsibility = catchAsync(
   },
 );
 
-const getAllResponsibilities= catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
+const getAllResponsibilities = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
     const result = await responsibilityServices.getAllResponsibilities();
     sendResponse(res, {
       success: true,
@@ -34,54 +39,74 @@ const getAllResponsibilities= catchAsync(async(req:Request, res:Response, next:N
       message: "Responsibilities retrieved successfully.",
       data: result,
     });
-});
+  },
+);
 
-const getSingleResponsibilityDetails=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
-     const { responsibilityName } = req.body;
+const getSingleResponsibilityDetails = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { responsibility_name } = req.body;
     if (
-      !responsibilityName ||
-      Array.isArray(responsibilityName) ||
-      typeof responsibilityName !== "string" ||
-      responsibilityName.trim() === ""
+      !responsibility_name ||
+      Array.isArray(responsibility_name) ||
+      typeof responsibility_name !== "string" ||
+      responsibility_name.trim() === ""
     ) {
-        throw new AppError("Invalid Responsibility Name", StatusCodes.BAD_REQUEST)
+      throw new AppError(
+        "Invalid Responsibility Name",
+        StatusCodes.BAD_REQUEST,
+      );
     }
-    const result= await responsibilityServices.getSingleResponsibilityDetails(responsibilityName);
+    const result =
+      await responsibilityServices.getSingleResponsibilityDetails(
+        responsibility_name,
+      );
     sendResponse(res, {
       success: true,
       statusCode: StatusCodes.CREATED,
       message: "Responsibility retrieved successfully.",
       data: result,
     });
-});
+  },
+);
 
-const deleteSingleResponsibility=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
-     const { responsibilityName } = req.body;
+const deleteSingleResponsibility = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { responsibility_name } = req.body;
     if (
-      !responsibilityName ||
-      Array.isArray(responsibilityName) ||
-      typeof responsibilityName !== "string" ||
-      responsibilityName.trim() === ""
+      !responsibility_name ||
+      Array.isArray(responsibility_name) ||
+      typeof responsibility_name !== "string" ||
+      responsibility_name.trim() === ""
     ) {
-        throw new AppError("Invalid Responsibility Name", StatusCodes.BAD_REQUEST)
+      throw new AppError(
+        "Invalid Responsibility Name",
+        StatusCodes.BAD_REQUEST,
+      );
     }
-    await responsibilityServices.deleteSingleResponsibility(responsibilityName);
+    await responsibilityServices.deleteSingleResponsibility(
+      responsibility_name,
+    );
     sendResponse(res, {
       success: true,
       statusCode: StatusCodes.CREATED,
       message: "Responsibility deleted successfully.",
     });
-});
+  },
+);
 
-const updateSingleResponsibility=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
-    const {presentResponsibility, updateResponsibility}=req.body;
+const updateSingleResponsibility = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { presentResponsibility, updateResponsibility } = req.body;
     if (
       !presentResponsibility ||
       Array.isArray(presentResponsibility) ||
       typeof presentResponsibility !== "string" ||
       presentResponsibility.trim() === ""
     ) {
-        throw new AppError("Invalid Present Responsibility Name", StatusCodes.BAD_REQUEST)
+      throw new AppError(
+        "Invalid Present Responsibility Name",
+        StatusCodes.BAD_REQUEST,
+      );
     }
     if (
       !updateResponsibility ||
@@ -89,20 +114,28 @@ const updateSingleResponsibility=catchAsync(async(req:Request, res:Response, nex
       typeof updateResponsibility !== "string" ||
       updateResponsibility.trim() === ""
     ) {
-        throw new AppError("Invalid Update Responsibility Name", StatusCodes.BAD_REQUEST)
+      throw new AppError(
+        "Invalid Update Responsibility Name",
+        StatusCodes.BAD_REQUEST,
+      );
     }
-    const result = await responsibilityServices.updateSingleResponsibility(presentResponsibility, updateResponsibility);
+    const result = await responsibilityServices.updateSingleResponsibility(
+      presentResponsibility,
+      updateResponsibility,
+    );
     sendResponse(res, {
       success: true,
       statusCode: StatusCodes.CREATED,
       message: "Responsibility updated successfully.",
       data: result,
     });
-})
+  },
+);
+
 export const responsibilityController = {
   createResponsibility,
   getAllResponsibilities,
   getSingleResponsibilityDetails,
   deleteSingleResponsibility,
-  updateSingleResponsibility
+  updateSingleResponsibility,
 };

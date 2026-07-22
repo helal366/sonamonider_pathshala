@@ -389,8 +389,7 @@ export const ModelName = {
   Position: 'Position',
   Responsibility: 'Responsibility',
   Role: 'Role',
-  User: 'User',
-  UserHistoryView: 'UserHistoryView'
+  User: 'User'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -406,7 +405,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "activeInactiveHistory" | "class" | "position" | "responsibility" | "role" | "user" | "userHistoryView"
+    modelProps: "activeInactiveHistory" | "class" | "position" | "responsibility" | "role" | "user"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -854,44 +853,6 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    UserHistoryView: {
-      payload: Prisma.$UserHistoryViewPayload<ExtArgs>
-      fields: Prisma.UserHistoryViewFieldRefs
-      operations: {
-        findUnique: {
-          args: Prisma.UserHistoryViewFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserHistoryViewPayload> | null
-        }
-        findUniqueOrThrow: {
-          args: Prisma.UserHistoryViewFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserHistoryViewPayload>
-        }
-        findFirst: {
-          args: Prisma.UserHistoryViewFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserHistoryViewPayload> | null
-        }
-        findFirstOrThrow: {
-          args: Prisma.UserHistoryViewFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserHistoryViewPayload>
-        }
-        findMany: {
-          args: Prisma.UserHistoryViewFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserHistoryViewPayload>[]
-        }
-        aggregate: {
-          args: Prisma.UserHistoryViewAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateUserHistoryView>
-        }
-        groupBy: {
-          args: Prisma.UserHistoryViewGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.UserHistoryViewGroupByOutputType>[]
-        }
-        count: {
-          args: Prisma.UserHistoryViewCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.UserHistoryViewCountAggregateOutputType> | number
-        }
-      }
-    }
   }
 } & {
   other: {
@@ -990,8 +951,6 @@ export const UserScalarFieldEnum = {
   full_name: 'full_name',
   mobile_number: 'mobile_number',
   role_name: 'role_name',
-  position_name: 'position_name',
-  active_status: 'active_status',
   gender: 'gender',
   blood_group: 'blood_group',
   date_of_birth: 'date_of_birth',
@@ -1003,28 +962,16 @@ export const UserScalarFieldEnum = {
   nid_number: 'nid_number',
   father_name: 'father_name',
   mother_name: 'mother_name',
+  created_at: 'created_at',
+  updated_at: 'updated_at',
   email: 'email',
   user_name: 'user_name',
   user_password: 'user_password',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
+  position_name: 'position_name',
+  active_status: 'active_status'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
-
-
-export const UserHistoryViewScalarFieldEnum = {
-  active_inactive_history_id: 'active_inactive_history_id',
-  user_id: 'user_id',
-  full_name: 'full_name',
-  mobile_number: 'mobile_number',
-  active_status: 'active_status',
-  activationTime: 'activationTime',
-  inactivationTime: 'inactivationTime',
-  createdAt: 'createdAt'
-} as const
-
-export type UserHistoryViewScalarFieldEnum = (typeof UserHistoryViewScalarFieldEnum)[keyof typeof UserHistoryViewScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1284,7 +1231,6 @@ export type GlobalOmitConfig = {
   responsibility?: Prisma.ResponsibilityOmit
   role?: Prisma.RoleOmit
   user?: Prisma.UserOmit
-  userHistoryView?: Prisma.UserHistoryViewOmit
 }
 
 /* Types for Logging */

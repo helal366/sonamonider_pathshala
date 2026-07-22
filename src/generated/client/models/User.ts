@@ -41,8 +41,6 @@ export type UserMinAggregateOutputType = {
   full_name: string | null
   mobile_number: string | null
   role_name: string | null
-  position_name: string | null
-  active_status: $Enums.ActiveStatus | null
   gender: $Enums.Gender | null
   blood_group: $Enums.BloodGroup | null
   date_of_birth: Date | null
@@ -54,11 +52,13 @@ export type UserMinAggregateOutputType = {
   nid_number: string | null
   father_name: string | null
   mother_name: string | null
+  created_at: Date | null
+  updated_at: Date | null
   email: string | null
   user_name: string | null
   user_password: string | null
-  created_at: Date | null
-  updated_at: Date | null
+  position_name: string | null
+  active_status: $Enums.ActiveStatus | null
 }
 
 export type UserMaxAggregateOutputType = {
@@ -66,8 +66,6 @@ export type UserMaxAggregateOutputType = {
   full_name: string | null
   mobile_number: string | null
   role_name: string | null
-  position_name: string | null
-  active_status: $Enums.ActiveStatus | null
   gender: $Enums.Gender | null
   blood_group: $Enums.BloodGroup | null
   date_of_birth: Date | null
@@ -79,11 +77,13 @@ export type UserMaxAggregateOutputType = {
   nid_number: string | null
   father_name: string | null
   mother_name: string | null
+  created_at: Date | null
+  updated_at: Date | null
   email: string | null
   user_name: string | null
   user_password: string | null
-  created_at: Date | null
-  updated_at: Date | null
+  position_name: string | null
+  active_status: $Enums.ActiveStatus | null
 }
 
 export type UserCountAggregateOutputType = {
@@ -91,8 +91,6 @@ export type UserCountAggregateOutputType = {
   full_name: number
   mobile_number: number
   role_name: number
-  position_name: number
-  active_status: number
   gender: number
   blood_group: number
   date_of_birth: number
@@ -104,11 +102,13 @@ export type UserCountAggregateOutputType = {
   nid_number: number
   father_name: number
   mother_name: number
+  created_at: number
+  updated_at: number
   email: number
   user_name: number
   user_password: number
-  created_at: number
-  updated_at: number
+  position_name: number
+  active_status: number
   _all: number
 }
 
@@ -128,8 +128,6 @@ export type UserMinAggregateInputType = {
   full_name?: true
   mobile_number?: true
   role_name?: true
-  position_name?: true
-  active_status?: true
   gender?: true
   blood_group?: true
   date_of_birth?: true
@@ -141,11 +139,13 @@ export type UserMinAggregateInputType = {
   nid_number?: true
   father_name?: true
   mother_name?: true
+  created_at?: true
+  updated_at?: true
   email?: true
   user_name?: true
   user_password?: true
-  created_at?: true
-  updated_at?: true
+  position_name?: true
+  active_status?: true
 }
 
 export type UserMaxAggregateInputType = {
@@ -153,8 +153,6 @@ export type UserMaxAggregateInputType = {
   full_name?: true
   mobile_number?: true
   role_name?: true
-  position_name?: true
-  active_status?: true
   gender?: true
   blood_group?: true
   date_of_birth?: true
@@ -166,11 +164,13 @@ export type UserMaxAggregateInputType = {
   nid_number?: true
   father_name?: true
   mother_name?: true
+  created_at?: true
+  updated_at?: true
   email?: true
   user_name?: true
   user_password?: true
-  created_at?: true
-  updated_at?: true
+  position_name?: true
+  active_status?: true
 }
 
 export type UserCountAggregateInputType = {
@@ -178,8 +178,6 @@ export type UserCountAggregateInputType = {
   full_name?: true
   mobile_number?: true
   role_name?: true
-  position_name?: true
-  active_status?: true
   gender?: true
   blood_group?: true
   date_of_birth?: true
@@ -191,11 +189,13 @@ export type UserCountAggregateInputType = {
   nid_number?: true
   father_name?: true
   mother_name?: true
+  created_at?: true
+  updated_at?: true
   email?: true
   user_name?: true
   user_password?: true
-  created_at?: true
-  updated_at?: true
+  position_name?: true
+  active_status?: true
   _all?: true
 }
 
@@ -289,9 +289,7 @@ export type UserGroupByOutputType = {
   user_id: string
   full_name: string
   mobile_number: string
-  role_name: string
-  position_name: string
-  active_status: $Enums.ActiveStatus
+  role_name: string | null
   gender: $Enums.Gender
   blood_group: $Enums.BloodGroup | null
   date_of_birth: Date | null
@@ -303,11 +301,13 @@ export type UserGroupByOutputType = {
   nid_number: string | null
   father_name: string | null
   mother_name: string | null
-  email: string | null
-  user_name: string
-  user_password: string | null
   created_at: Date
   updated_at: Date
+  email: string | null
+  user_name: string | null
+  user_password: string | null
+  position_name: string
+  active_status: $Enums.ActiveStatus
   _count: UserCountAggregateOutputType | null
   _avg: UserAvgAggregateOutputType | null
   _sum: UserSumAggregateOutputType | null
@@ -337,9 +337,7 @@ export type UserWhereInput = {
   user_id?: Prisma.StringFilter<"User"> | string
   full_name?: Prisma.StringFilter<"User"> | string
   mobile_number?: Prisma.StringFilter<"User"> | string
-  role_name?: Prisma.StringFilter<"User"> | string
-  position_name?: Prisma.StringFilter<"User"> | string
-  active_status?: Prisma.EnumActiveStatusFilter<"User"> | $Enums.ActiveStatus
+  role_name?: Prisma.StringNullableFilter<"User"> | string | null
   gender?: Prisma.EnumGenderFilter<"User"> | $Enums.Gender
   blood_group?: Prisma.EnumBloodGroupNullableFilter<"User"> | $Enums.BloodGroup | null
   date_of_birth?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
@@ -351,23 +349,23 @@ export type UserWhereInput = {
   nid_number?: Prisma.StringNullableFilter<"User"> | string | null
   father_name?: Prisma.StringNullableFilter<"User"> | string | null
   mother_name?: Prisma.StringNullableFilter<"User"> | string | null
-  email?: Prisma.StringNullableFilter<"User"> | string | null
-  user_name?: Prisma.StringFilter<"User"> | string
-  user_password?: Prisma.StringNullableFilter<"User"> | string | null
   created_at?: Prisma.DateTimeFilter<"User"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"User"> | Date | string
-  role?: Prisma.XOR<Prisma.RoleScalarRelationFilter, Prisma.RoleWhereInput>
-  position?: Prisma.XOR<Prisma.PositionScalarRelationFilter, Prisma.PositionWhereInput>
+  email?: Prisma.StringNullableFilter<"User"> | string | null
+  user_name?: Prisma.StringNullableFilter<"User"> | string | null
+  user_password?: Prisma.StringNullableFilter<"User"> | string | null
+  position_name?: Prisma.StringFilter<"User"> | string
+  active_status?: Prisma.EnumActiveStatusFilter<"User"> | $Enums.ActiveStatus
   active_inactive_history?: Prisma.ActiveInactiveHistoryListRelationFilter
+  position?: Prisma.XOR<Prisma.PositionScalarRelationFilter, Prisma.PositionWhereInput>
+  role?: Prisma.XOR<Prisma.RoleNullableScalarRelationFilter, Prisma.RoleWhereInput> | null
 }
 
 export type UserOrderByWithRelationInput = {
   user_id?: Prisma.SortOrder
   full_name?: Prisma.SortOrder
   mobile_number?: Prisma.SortOrder
-  role_name?: Prisma.SortOrder
-  position_name?: Prisma.SortOrder
-  active_status?: Prisma.SortOrder
+  role_name?: Prisma.SortOrderInput | Prisma.SortOrder
   gender?: Prisma.SortOrder
   blood_group?: Prisma.SortOrderInput | Prisma.SortOrder
   date_of_birth?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -379,14 +377,16 @@ export type UserOrderByWithRelationInput = {
   nid_number?: Prisma.SortOrderInput | Prisma.SortOrder
   father_name?: Prisma.SortOrderInput | Prisma.SortOrder
   mother_name?: Prisma.SortOrderInput | Prisma.SortOrder
-  email?: Prisma.SortOrderInput | Prisma.SortOrder
-  user_name?: Prisma.SortOrder
-  user_password?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
-  role?: Prisma.RoleOrderByWithRelationInput
-  position?: Prisma.PositionOrderByWithRelationInput
+  email?: Prisma.SortOrderInput | Prisma.SortOrder
+  user_name?: Prisma.SortOrderInput | Prisma.SortOrder
+  user_password?: Prisma.SortOrderInput | Prisma.SortOrder
+  position_name?: Prisma.SortOrder
+  active_status?: Prisma.SortOrder
   active_inactive_history?: Prisma.ActiveInactiveHistoryOrderByRelationAggregateInput
+  position?: Prisma.PositionOrderByWithRelationInput
+  role?: Prisma.RoleOrderByWithRelationInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -399,9 +399,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   full_name?: Prisma.StringFilter<"User"> | string
   mobile_number?: Prisma.StringFilter<"User"> | string
-  role_name?: Prisma.StringFilter<"User"> | string
-  position_name?: Prisma.StringFilter<"User"> | string
-  active_status?: Prisma.EnumActiveStatusFilter<"User"> | $Enums.ActiveStatus
+  role_name?: Prisma.StringNullableFilter<"User"> | string | null
   gender?: Prisma.EnumGenderFilter<"User"> | $Enums.Gender
   blood_group?: Prisma.EnumBloodGroupNullableFilter<"User"> | $Enums.BloodGroup | null
   date_of_birth?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
@@ -413,21 +411,21 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   nid_number?: Prisma.StringNullableFilter<"User"> | string | null
   father_name?: Prisma.StringNullableFilter<"User"> | string | null
   mother_name?: Prisma.StringNullableFilter<"User"> | string | null
-  user_password?: Prisma.StringNullableFilter<"User"> | string | null
   created_at?: Prisma.DateTimeFilter<"User"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"User"> | Date | string
-  role?: Prisma.XOR<Prisma.RoleScalarRelationFilter, Prisma.RoleWhereInput>
-  position?: Prisma.XOR<Prisma.PositionScalarRelationFilter, Prisma.PositionWhereInput>
+  user_password?: Prisma.StringNullableFilter<"User"> | string | null
+  position_name?: Prisma.StringFilter<"User"> | string
+  active_status?: Prisma.EnumActiveStatusFilter<"User"> | $Enums.ActiveStatus
   active_inactive_history?: Prisma.ActiveInactiveHistoryListRelationFilter
+  position?: Prisma.XOR<Prisma.PositionScalarRelationFilter, Prisma.PositionWhereInput>
+  role?: Prisma.XOR<Prisma.RoleNullableScalarRelationFilter, Prisma.RoleWhereInput> | null
 }, "user_id" | "email" | "user_name" | "user_full_name_mobile_unique">
 
 export type UserOrderByWithAggregationInput = {
   user_id?: Prisma.SortOrder
   full_name?: Prisma.SortOrder
   mobile_number?: Prisma.SortOrder
-  role_name?: Prisma.SortOrder
-  position_name?: Prisma.SortOrder
-  active_status?: Prisma.SortOrder
+  role_name?: Prisma.SortOrderInput | Prisma.SortOrder
   gender?: Prisma.SortOrder
   blood_group?: Prisma.SortOrderInput | Prisma.SortOrder
   date_of_birth?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -439,11 +437,13 @@ export type UserOrderByWithAggregationInput = {
   nid_number?: Prisma.SortOrderInput | Prisma.SortOrder
   father_name?: Prisma.SortOrderInput | Prisma.SortOrder
   mother_name?: Prisma.SortOrderInput | Prisma.SortOrder
-  email?: Prisma.SortOrderInput | Prisma.SortOrder
-  user_name?: Prisma.SortOrder
-  user_password?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
+  email?: Prisma.SortOrderInput | Prisma.SortOrder
+  user_name?: Prisma.SortOrderInput | Prisma.SortOrder
+  user_password?: Prisma.SortOrderInput | Prisma.SortOrder
+  position_name?: Prisma.SortOrder
+  active_status?: Prisma.SortOrder
   _count?: Prisma.UserCountOrderByAggregateInput
   _avg?: Prisma.UserAvgOrderByAggregateInput
   _max?: Prisma.UserMaxOrderByAggregateInput
@@ -458,9 +458,7 @@ export type UserScalarWhereWithAggregatesInput = {
   user_id?: Prisma.StringWithAggregatesFilter<"User"> | string
   full_name?: Prisma.StringWithAggregatesFilter<"User"> | string
   mobile_number?: Prisma.StringWithAggregatesFilter<"User"> | string
-  role_name?: Prisma.StringWithAggregatesFilter<"User"> | string
-  position_name?: Prisma.StringWithAggregatesFilter<"User"> | string
-  active_status?: Prisma.EnumActiveStatusWithAggregatesFilter<"User"> | $Enums.ActiveStatus
+  role_name?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   gender?: Prisma.EnumGenderWithAggregatesFilter<"User"> | $Enums.Gender
   blood_group?: Prisma.EnumBloodGroupNullableWithAggregatesFilter<"User"> | $Enums.BloodGroup | null
   date_of_birth?: Prisma.DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
@@ -472,18 +470,19 @@ export type UserScalarWhereWithAggregatesInput = {
   nid_number?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   father_name?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   mother_name?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
-  email?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
-  user_name?: Prisma.StringWithAggregatesFilter<"User"> | string
-  user_password?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   created_at?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
   updated_at?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
+  email?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  user_name?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  user_password?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  position_name?: Prisma.StringWithAggregatesFilter<"User"> | string
+  active_status?: Prisma.EnumActiveStatusWithAggregatesFilter<"User"> | $Enums.ActiveStatus
 }
 
 export type UserCreateInput = {
   user_id?: string
   full_name: string
   mobile_number: string
-  active_status?: $Enums.ActiveStatus
   gender: $Enums.Gender
   blood_group?: $Enums.BloodGroup | null
   date_of_birth?: Date | string | null
@@ -495,23 +494,22 @@ export type UserCreateInput = {
   nid_number?: string | null
   father_name?: string | null
   mother_name?: string | null
-  email?: string | null
-  user_name: string
-  user_password?: string | null
   created_at?: Date | string
   updated_at?: Date | string
-  role: Prisma.RoleCreateNestedOneWithoutUserInput
-  position: Prisma.PositionCreateNestedOneWithoutUserInput
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  active_status?: $Enums.ActiveStatus
   active_inactive_history?: Prisma.ActiveInactiveHistoryCreateNestedManyWithoutUserInput
+  position: Prisma.PositionCreateNestedOneWithoutUserInput
+  role?: Prisma.RoleCreateNestedOneWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
   user_id?: string
   full_name: string
   mobile_number: string
-  role_name: string
-  position_name: string
-  active_status?: $Enums.ActiveStatus
+  role_name?: string | null
   gender: $Enums.Gender
   blood_group?: $Enums.BloodGroup | null
   date_of_birth?: Date | string | null
@@ -523,11 +521,13 @@ export type UserUncheckedCreateInput = {
   nid_number?: string | null
   father_name?: string | null
   mother_name?: string | null
-  email?: string | null
-  user_name: string
-  user_password?: string | null
   created_at?: Date | string
   updated_at?: Date | string
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  position_name: string
+  active_status?: $Enums.ActiveStatus
   active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedCreateNestedManyWithoutUserInput
 }
 
@@ -535,7 +535,6 @@ export type UserUpdateInput = {
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   full_name?: Prisma.StringFieldUpdateOperationsInput | string
   mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
-  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
   blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
   date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -547,23 +546,22 @@ export type UserUpdateInput = {
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_name?: Prisma.StringFieldUpdateOperationsInput | string
-  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  role?: Prisma.RoleUpdateOneRequiredWithoutUserNestedInput
-  position?: Prisma.PositionUpdateOneRequiredWithoutUserNestedInput
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   active_inactive_history?: Prisma.ActiveInactiveHistoryUpdateManyWithoutUserNestedInput
+  position?: Prisma.PositionUpdateOneRequiredWithoutUserNestedInput
+  role?: Prisma.RoleUpdateOneWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   full_name?: Prisma.StringFieldUpdateOperationsInput | string
   mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
-  role_name?: Prisma.StringFieldUpdateOperationsInput | string
-  position_name?: Prisma.StringFieldUpdateOperationsInput | string
-  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
   blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
   date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -575,11 +573,13 @@ export type UserUncheckedUpdateInput = {
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_name?: Prisma.StringFieldUpdateOperationsInput | string
-  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedUpdateManyWithoutUserNestedInput
 }
 
@@ -587,9 +587,7 @@ export type UserCreateManyInput = {
   user_id?: string
   full_name: string
   mobile_number: string
-  role_name: string
-  position_name: string
-  active_status?: $Enums.ActiveStatus
+  role_name?: string | null
   gender: $Enums.Gender
   blood_group?: $Enums.BloodGroup | null
   date_of_birth?: Date | string | null
@@ -601,18 +599,19 @@ export type UserCreateManyInput = {
   nid_number?: string | null
   father_name?: string | null
   mother_name?: string | null
-  email?: string | null
-  user_name: string
-  user_password?: string | null
   created_at?: Date | string
   updated_at?: Date | string
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  position_name: string
+  active_status?: $Enums.ActiveStatus
 }
 
 export type UserUpdateManyMutationInput = {
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   full_name?: Prisma.StringFieldUpdateOperationsInput | string
   mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
-  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
   blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
   date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -624,20 +623,19 @@ export type UserUpdateManyMutationInput = {
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_name?: Prisma.StringFieldUpdateOperationsInput | string
-  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
 }
 
 export type UserUncheckedUpdateManyInput = {
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   full_name?: Prisma.StringFieldUpdateOperationsInput | string
   mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
-  role_name?: Prisma.StringFieldUpdateOperationsInput | string
-  position_name?: Prisma.StringFieldUpdateOperationsInput | string
-  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
   blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
   date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -649,11 +647,13 @@ export type UserUncheckedUpdateManyInput = {
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_name?: Prisma.StringFieldUpdateOperationsInput | string
-  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
 }
 
 export type UserScalarRelationFilter = {
@@ -681,8 +681,6 @@ export type UserCountOrderByAggregateInput = {
   full_name?: Prisma.SortOrder
   mobile_number?: Prisma.SortOrder
   role_name?: Prisma.SortOrder
-  position_name?: Prisma.SortOrder
-  active_status?: Prisma.SortOrder
   gender?: Prisma.SortOrder
   blood_group?: Prisma.SortOrder
   date_of_birth?: Prisma.SortOrder
@@ -694,11 +692,13 @@ export type UserCountOrderByAggregateInput = {
   nid_number?: Prisma.SortOrder
   father_name?: Prisma.SortOrder
   mother_name?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
   email?: Prisma.SortOrder
   user_name?: Prisma.SortOrder
   user_password?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  position_name?: Prisma.SortOrder
+  active_status?: Prisma.SortOrder
 }
 
 export type UserAvgOrderByAggregateInput = {
@@ -711,8 +711,6 @@ export type UserMaxOrderByAggregateInput = {
   full_name?: Prisma.SortOrder
   mobile_number?: Prisma.SortOrder
   role_name?: Prisma.SortOrder
-  position_name?: Prisma.SortOrder
-  active_status?: Prisma.SortOrder
   gender?: Prisma.SortOrder
   blood_group?: Prisma.SortOrder
   date_of_birth?: Prisma.SortOrder
@@ -724,11 +722,13 @@ export type UserMaxOrderByAggregateInput = {
   nid_number?: Prisma.SortOrder
   father_name?: Prisma.SortOrder
   mother_name?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
   email?: Prisma.SortOrder
   user_name?: Prisma.SortOrder
   user_password?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  position_name?: Prisma.SortOrder
+  active_status?: Prisma.SortOrder
 }
 
 export type UserMinOrderByAggregateInput = {
@@ -736,8 +736,6 @@ export type UserMinOrderByAggregateInput = {
   full_name?: Prisma.SortOrder
   mobile_number?: Prisma.SortOrder
   role_name?: Prisma.SortOrder
-  position_name?: Prisma.SortOrder
-  active_status?: Prisma.SortOrder
   gender?: Prisma.SortOrder
   blood_group?: Prisma.SortOrder
   date_of_birth?: Prisma.SortOrder
@@ -749,11 +747,13 @@ export type UserMinOrderByAggregateInput = {
   nid_number?: Prisma.SortOrder
   father_name?: Prisma.SortOrder
   mother_name?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
   email?: Prisma.SortOrder
   user_name?: Prisma.SortOrder
   user_password?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  position_name?: Prisma.SortOrder
+  active_status?: Prisma.SortOrder
 }
 
 export type UserSumOrderByAggregateInput = {
@@ -887,7 +887,6 @@ export type UserCreateWithoutActive_inactive_historyInput = {
   user_id?: string
   full_name: string
   mobile_number: string
-  active_status?: $Enums.ActiveStatus
   gender: $Enums.Gender
   blood_group?: $Enums.BloodGroup | null
   date_of_birth?: Date | string | null
@@ -899,22 +898,21 @@ export type UserCreateWithoutActive_inactive_historyInput = {
   nid_number?: string | null
   father_name?: string | null
   mother_name?: string | null
-  email?: string | null
-  user_name: string
-  user_password?: string | null
   created_at?: Date | string
   updated_at?: Date | string
-  role: Prisma.RoleCreateNestedOneWithoutUserInput
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  active_status?: $Enums.ActiveStatus
   position: Prisma.PositionCreateNestedOneWithoutUserInput
+  role?: Prisma.RoleCreateNestedOneWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutActive_inactive_historyInput = {
   user_id?: string
   full_name: string
   mobile_number: string
-  role_name: string
-  position_name: string
-  active_status?: $Enums.ActiveStatus
+  role_name?: string | null
   gender: $Enums.Gender
   blood_group?: $Enums.BloodGroup | null
   date_of_birth?: Date | string | null
@@ -926,11 +924,13 @@ export type UserUncheckedCreateWithoutActive_inactive_historyInput = {
   nid_number?: string | null
   father_name?: string | null
   mother_name?: string | null
-  email?: string | null
-  user_name: string
-  user_password?: string | null
   created_at?: Date | string
   updated_at?: Date | string
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  position_name: string
+  active_status?: $Enums.ActiveStatus
 }
 
 export type UserCreateOrConnectWithoutActive_inactive_historyInput = {
@@ -953,7 +953,6 @@ export type UserUpdateWithoutActive_inactive_historyInput = {
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   full_name?: Prisma.StringFieldUpdateOperationsInput | string
   mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
-  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
   blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
   date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -965,22 +964,21 @@ export type UserUpdateWithoutActive_inactive_historyInput = {
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_name?: Prisma.StringFieldUpdateOperationsInput | string
-  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  role?: Prisma.RoleUpdateOneRequiredWithoutUserNestedInput
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   position?: Prisma.PositionUpdateOneRequiredWithoutUserNestedInput
+  role?: Prisma.RoleUpdateOneWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActive_inactive_historyInput = {
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   full_name?: Prisma.StringFieldUpdateOperationsInput | string
   mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
-  role_name?: Prisma.StringFieldUpdateOperationsInput | string
-  position_name?: Prisma.StringFieldUpdateOperationsInput | string
-  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
   blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
   date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -992,18 +990,19 @@ export type UserUncheckedUpdateWithoutActive_inactive_historyInput = {
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_name?: Prisma.StringFieldUpdateOperationsInput | string
-  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
 }
 
 export type UserCreateWithoutPositionInput = {
   user_id?: string
   full_name: string
   mobile_number: string
-  active_status?: $Enums.ActiveStatus
   gender: $Enums.Gender
   blood_group?: $Enums.BloodGroup | null
   date_of_birth?: Date | string | null
@@ -1015,21 +1014,21 @@ export type UserCreateWithoutPositionInput = {
   nid_number?: string | null
   father_name?: string | null
   mother_name?: string | null
-  email?: string | null
-  user_name: string
-  user_password?: string | null
   created_at?: Date | string
   updated_at?: Date | string
-  role: Prisma.RoleCreateNestedOneWithoutUserInput
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  active_status?: $Enums.ActiveStatus
   active_inactive_history?: Prisma.ActiveInactiveHistoryCreateNestedManyWithoutUserInput
+  role?: Prisma.RoleCreateNestedOneWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutPositionInput = {
   user_id?: string
   full_name: string
   mobile_number: string
-  role_name: string
-  active_status?: $Enums.ActiveStatus
+  role_name?: string | null
   gender: $Enums.Gender
   blood_group?: $Enums.BloodGroup | null
   date_of_birth?: Date | string | null
@@ -1041,11 +1040,12 @@ export type UserUncheckedCreateWithoutPositionInput = {
   nid_number?: string | null
   father_name?: string | null
   mother_name?: string | null
-  email?: string | null
-  user_name: string
-  user_password?: string | null
   created_at?: Date | string
   updated_at?: Date | string
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  active_status?: $Enums.ActiveStatus
   active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedCreateNestedManyWithoutUserInput
 }
 
@@ -1082,9 +1082,7 @@ export type UserScalarWhereInput = {
   user_id?: Prisma.StringFilter<"User"> | string
   full_name?: Prisma.StringFilter<"User"> | string
   mobile_number?: Prisma.StringFilter<"User"> | string
-  role_name?: Prisma.StringFilter<"User"> | string
-  position_name?: Prisma.StringFilter<"User"> | string
-  active_status?: Prisma.EnumActiveStatusFilter<"User"> | $Enums.ActiveStatus
+  role_name?: Prisma.StringNullableFilter<"User"> | string | null
   gender?: Prisma.EnumGenderFilter<"User"> | $Enums.Gender
   blood_group?: Prisma.EnumBloodGroupNullableFilter<"User"> | $Enums.BloodGroup | null
   date_of_birth?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
@@ -1096,18 +1094,19 @@ export type UserScalarWhereInput = {
   nid_number?: Prisma.StringNullableFilter<"User"> | string | null
   father_name?: Prisma.StringNullableFilter<"User"> | string | null
   mother_name?: Prisma.StringNullableFilter<"User"> | string | null
-  email?: Prisma.StringNullableFilter<"User"> | string | null
-  user_name?: Prisma.StringFilter<"User"> | string
-  user_password?: Prisma.StringNullableFilter<"User"> | string | null
   created_at?: Prisma.DateTimeFilter<"User"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"User"> | Date | string
+  email?: Prisma.StringNullableFilter<"User"> | string | null
+  user_name?: Prisma.StringNullableFilter<"User"> | string | null
+  user_password?: Prisma.StringNullableFilter<"User"> | string | null
+  position_name?: Prisma.StringFilter<"User"> | string
+  active_status?: Prisma.EnumActiveStatusFilter<"User"> | $Enums.ActiveStatus
 }
 
 export type UserCreateWithoutRoleInput = {
   user_id?: string
   full_name: string
   mobile_number: string
-  active_status?: $Enums.ActiveStatus
   gender: $Enums.Gender
   blood_group?: $Enums.BloodGroup | null
   date_of_birth?: Date | string | null
@@ -1119,21 +1118,20 @@ export type UserCreateWithoutRoleInput = {
   nid_number?: string | null
   father_name?: string | null
   mother_name?: string | null
-  email?: string | null
-  user_name: string
-  user_password?: string | null
   created_at?: Date | string
   updated_at?: Date | string
-  position: Prisma.PositionCreateNestedOneWithoutUserInput
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  active_status?: $Enums.ActiveStatus
   active_inactive_history?: Prisma.ActiveInactiveHistoryCreateNestedManyWithoutUserInput
+  position: Prisma.PositionCreateNestedOneWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutRoleInput = {
   user_id?: string
   full_name: string
   mobile_number: string
-  position_name: string
-  active_status?: $Enums.ActiveStatus
   gender: $Enums.Gender
   blood_group?: $Enums.BloodGroup | null
   date_of_birth?: Date | string | null
@@ -1145,11 +1143,13 @@ export type UserUncheckedCreateWithoutRoleInput = {
   nid_number?: string | null
   father_name?: string | null
   mother_name?: string | null
-  email?: string | null
-  user_name: string
-  user_password?: string | null
   created_at?: Date | string
   updated_at?: Date | string
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  position_name: string
+  active_status?: $Enums.ActiveStatus
   active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedCreateNestedManyWithoutUserInput
 }
 
@@ -1183,8 +1183,7 @@ export type UserCreateManyPositionInput = {
   user_id?: string
   full_name: string
   mobile_number: string
-  role_name: string
-  active_status?: $Enums.ActiveStatus
+  role_name?: string | null
   gender: $Enums.Gender
   blood_group?: $Enums.BloodGroup | null
   date_of_birth?: Date | string | null
@@ -1196,18 +1195,18 @@ export type UserCreateManyPositionInput = {
   nid_number?: string | null
   father_name?: string | null
   mother_name?: string | null
-  email?: string | null
-  user_name: string
-  user_password?: string | null
   created_at?: Date | string
   updated_at?: Date | string
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  active_status?: $Enums.ActiveStatus
 }
 
 export type UserUpdateWithoutPositionInput = {
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   full_name?: Prisma.StringFieldUpdateOperationsInput | string
   mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
-  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
   blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
   date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1219,21 +1218,21 @@ export type UserUpdateWithoutPositionInput = {
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_name?: Prisma.StringFieldUpdateOperationsInput | string
-  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  role?: Prisma.RoleUpdateOneRequiredWithoutUserNestedInput
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   active_inactive_history?: Prisma.ActiveInactiveHistoryUpdateManyWithoutUserNestedInput
+  role?: Prisma.RoleUpdateOneWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPositionInput = {
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   full_name?: Prisma.StringFieldUpdateOperationsInput | string
   mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
-  role_name?: Prisma.StringFieldUpdateOperationsInput | string
-  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
   blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
   date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1245,11 +1244,12 @@ export type UserUncheckedUpdateWithoutPositionInput = {
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_name?: Prisma.StringFieldUpdateOperationsInput | string
-  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedUpdateManyWithoutUserNestedInput
 }
 
@@ -1257,8 +1257,7 @@ export type UserUncheckedUpdateManyWithoutPositionInput = {
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   full_name?: Prisma.StringFieldUpdateOperationsInput | string
   mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
-  role_name?: Prisma.StringFieldUpdateOperationsInput | string
-  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
   blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
   date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1270,19 +1269,18 @@ export type UserUncheckedUpdateManyWithoutPositionInput = {
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_name?: Prisma.StringFieldUpdateOperationsInput | string
-  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
 }
 
 export type UserCreateManyRoleInput = {
   user_id?: string
   full_name: string
   mobile_number: string
-  position_name: string
-  active_status?: $Enums.ActiveStatus
   gender: $Enums.Gender
   blood_group?: $Enums.BloodGroup | null
   date_of_birth?: Date | string | null
@@ -1294,18 +1292,19 @@ export type UserCreateManyRoleInput = {
   nid_number?: string | null
   father_name?: string | null
   mother_name?: string | null
-  email?: string | null
-  user_name: string
-  user_password?: string | null
   created_at?: Date | string
   updated_at?: Date | string
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  position_name: string
+  active_status?: $Enums.ActiveStatus
 }
 
 export type UserUpdateWithoutRoleInput = {
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   full_name?: Prisma.StringFieldUpdateOperationsInput | string
   mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
-  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
   blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
   date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1317,21 +1316,20 @@ export type UserUpdateWithoutRoleInput = {
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_name?: Prisma.StringFieldUpdateOperationsInput | string
-  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  position?: Prisma.PositionUpdateOneRequiredWithoutUserNestedInput
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   active_inactive_history?: Prisma.ActiveInactiveHistoryUpdateManyWithoutUserNestedInput
+  position?: Prisma.PositionUpdateOneRequiredWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutRoleInput = {
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   full_name?: Prisma.StringFieldUpdateOperationsInput | string
   mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
-  position_name?: Prisma.StringFieldUpdateOperationsInput | string
-  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
   blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
   date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1343,11 +1341,13 @@ export type UserUncheckedUpdateWithoutRoleInput = {
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_name?: Prisma.StringFieldUpdateOperationsInput | string
-  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedUpdateManyWithoutUserNestedInput
 }
 
@@ -1355,8 +1355,6 @@ export type UserUncheckedUpdateManyWithoutRoleInput = {
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   full_name?: Prisma.StringFieldUpdateOperationsInput | string
   mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
-  position_name?: Prisma.StringFieldUpdateOperationsInput | string
-  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
   blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
   date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1368,11 +1366,13 @@ export type UserUncheckedUpdateManyWithoutRoleInput = {
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_name?: Prisma.StringFieldUpdateOperationsInput | string
-  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
 }
 
 
@@ -1411,8 +1411,6 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   full_name?: boolean
   mobile_number?: boolean
   role_name?: boolean
-  position_name?: boolean
-  active_status?: boolean
   gender?: boolean
   blood_group?: boolean
   date_of_birth?: boolean
@@ -1424,14 +1422,16 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   nid_number?: boolean
   father_name?: boolean
   mother_name?: boolean
+  created_at?: boolean
+  updated_at?: boolean
   email?: boolean
   user_name?: boolean
   user_password?: boolean
-  created_at?: boolean
-  updated_at?: boolean
-  role?: boolean | Prisma.RoleDefaultArgs<ExtArgs>
-  position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
+  position_name?: boolean
+  active_status?: boolean
   active_inactive_history?: boolean | Prisma.User$active_inactive_historyArgs<ExtArgs>
+  position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
+  role?: boolean | Prisma.User$roleArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -1440,8 +1440,6 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   full_name?: boolean
   mobile_number?: boolean
   role_name?: boolean
-  position_name?: boolean
-  active_status?: boolean
   gender?: boolean
   blood_group?: boolean
   date_of_birth?: boolean
@@ -1453,13 +1451,15 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   nid_number?: boolean
   father_name?: boolean
   mother_name?: boolean
+  created_at?: boolean
+  updated_at?: boolean
   email?: boolean
   user_name?: boolean
   user_password?: boolean
-  created_at?: boolean
-  updated_at?: boolean
-  role?: boolean | Prisma.RoleDefaultArgs<ExtArgs>
+  position_name?: boolean
+  active_status?: boolean
   position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
+  role?: boolean | Prisma.User$roleArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1467,8 +1467,6 @@ export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   full_name?: boolean
   mobile_number?: boolean
   role_name?: boolean
-  position_name?: boolean
-  active_status?: boolean
   gender?: boolean
   blood_group?: boolean
   date_of_birth?: boolean
@@ -1480,13 +1478,15 @@ export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   nid_number?: boolean
   father_name?: boolean
   mother_name?: boolean
+  created_at?: boolean
+  updated_at?: boolean
   email?: boolean
   user_name?: boolean
   user_password?: boolean
-  created_at?: boolean
-  updated_at?: boolean
-  role?: boolean | Prisma.RoleDefaultArgs<ExtArgs>
+  position_name?: boolean
+  active_status?: boolean
   position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
+  role?: boolean | Prisma.User$roleArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectScalar = {
@@ -1494,8 +1494,6 @@ export type UserSelectScalar = {
   full_name?: boolean
   mobile_number?: boolean
   role_name?: boolean
-  position_name?: boolean
-  active_status?: boolean
   gender?: boolean
   blood_group?: boolean
   date_of_birth?: boolean
@@ -1507,43 +1505,43 @@ export type UserSelectScalar = {
   nid_number?: boolean
   father_name?: boolean
   mother_name?: boolean
+  created_at?: boolean
+  updated_at?: boolean
   email?: boolean
   user_name?: boolean
   user_password?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  position_name?: boolean
+  active_status?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"user_id" | "full_name" | "mobile_number" | "role_name" | "position_name" | "active_status" | "gender" | "blood_group" | "date_of_birth" | "heightInCm" | "weightInKg" | "religion" | "nationality" | "birth_certificate_number" | "nid_number" | "father_name" | "mother_name" | "email" | "user_name" | "user_password" | "created_at" | "updated_at", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"user_id" | "full_name" | "mobile_number" | "role_name" | "gender" | "blood_group" | "date_of_birth" | "heightInCm" | "weightInKg" | "religion" | "nationality" | "birth_certificate_number" | "nid_number" | "father_name" | "mother_name" | "created_at" | "updated_at" | "email" | "user_name" | "user_password" | "position_name" | "active_status", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  role?: boolean | Prisma.RoleDefaultArgs<ExtArgs>
-  position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
   active_inactive_history?: boolean | Prisma.User$active_inactive_historyArgs<ExtArgs>
+  position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
+  role?: boolean | Prisma.User$roleArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  role?: boolean | Prisma.RoleDefaultArgs<ExtArgs>
   position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
+  role?: boolean | Prisma.User$roleArgs<ExtArgs>
 }
 export type UserIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  role?: boolean | Prisma.RoleDefaultArgs<ExtArgs>
   position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
+  role?: boolean | Prisma.User$roleArgs<ExtArgs>
 }
 
 export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "User"
   objects: {
-    role: Prisma.$RolePayload<ExtArgs>
-    position: Prisma.$PositionPayload<ExtArgs>
     active_inactive_history: Prisma.$ActiveInactiveHistoryPayload<ExtArgs>[]
+    position: Prisma.$PositionPayload<ExtArgs>
+    role: Prisma.$RolePayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     user_id: string
     full_name: string
     mobile_number: string
-    role_name: string
-    position_name: string
-    active_status: $Enums.ActiveStatus
+    role_name: string | null
     gender: $Enums.Gender
     blood_group: $Enums.BloodGroup | null
     date_of_birth: Date | null
@@ -1555,11 +1553,13 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     nid_number: string | null
     father_name: string | null
     mother_name: string | null
-    email: string | null
-    user_name: string
-    user_password: string | null
     created_at: Date
     updated_at: Date
+    email: string | null
+    user_name: string | null
+    user_password: string | null
+    position_name: string
+    active_status: $Enums.ActiveStatus
   }, ExtArgs["result"]["user"]>
   composites: {}
 }
@@ -1954,9 +1954,9 @@ readonly fields: UserFieldRefs;
  */
 export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  role<T extends Prisma.RoleDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.RoleDefaultArgs<ExtArgs>>): Prisma.Prisma__RoleClient<runtime.Types.Result.GetResult<Prisma.$RolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  position<T extends Prisma.PositionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PositionDefaultArgs<ExtArgs>>): Prisma.Prisma__PositionClient<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   active_inactive_history<T extends Prisma.User$active_inactive_historyArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$active_inactive_historyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ActiveInactiveHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  position<T extends Prisma.PositionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PositionDefaultArgs<ExtArgs>>): Prisma.Prisma__PositionClient<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  role<T extends Prisma.User$roleArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$roleArgs<ExtArgs>>): Prisma.Prisma__RoleClient<runtime.Types.Result.GetResult<Prisma.$RolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1990,8 +1990,6 @@ export interface UserFieldRefs {
   readonly full_name: Prisma.FieldRef<"User", 'String'>
   readonly mobile_number: Prisma.FieldRef<"User", 'String'>
   readonly role_name: Prisma.FieldRef<"User", 'String'>
-  readonly position_name: Prisma.FieldRef<"User", 'String'>
-  readonly active_status: Prisma.FieldRef<"User", 'ActiveStatus'>
   readonly gender: Prisma.FieldRef<"User", 'Gender'>
   readonly blood_group: Prisma.FieldRef<"User", 'BloodGroup'>
   readonly date_of_birth: Prisma.FieldRef<"User", 'DateTime'>
@@ -2003,11 +2001,13 @@ export interface UserFieldRefs {
   readonly nid_number: Prisma.FieldRef<"User", 'String'>
   readonly father_name: Prisma.FieldRef<"User", 'String'>
   readonly mother_name: Prisma.FieldRef<"User", 'String'>
+  readonly created_at: Prisma.FieldRef<"User", 'DateTime'>
+  readonly updated_at: Prisma.FieldRef<"User", 'DateTime'>
   readonly email: Prisma.FieldRef<"User", 'String'>
   readonly user_name: Prisma.FieldRef<"User", 'String'>
   readonly user_password: Prisma.FieldRef<"User", 'String'>
-  readonly created_at: Prisma.FieldRef<"User", 'DateTime'>
-  readonly updated_at: Prisma.FieldRef<"User", 'DateTime'>
+  readonly position_name: Prisma.FieldRef<"User", 'String'>
+  readonly active_status: Prisma.FieldRef<"User", 'ActiveStatus'>
 }
     
 
@@ -2430,6 +2430,25 @@ export type User$active_inactive_historyArgs<ExtArgs extends runtime.Types.Exten
   take?: number
   skip?: number
   distinct?: Prisma.ActiveInactiveHistoryScalarFieldEnum | Prisma.ActiveInactiveHistoryScalarFieldEnum[]
+}
+
+/**
+ * User.role
+ */
+export type User$roleArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Role
+   */
+  select?: Prisma.RoleSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Role
+   */
+  omit?: Prisma.RoleOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.RoleInclude<ExtArgs> | null
+  where?: Prisma.RoleWhereInput
 }
 
 /**

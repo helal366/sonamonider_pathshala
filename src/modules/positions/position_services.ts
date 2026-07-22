@@ -4,8 +4,17 @@ import { AppError } from "../../utils/appError.js";
 import { ICreatePosition } from "./position_interfaces.js";
 
 const createPosition = async (payload:ICreatePosition) => {
-    const {position_name, role_name}= payload;
+  const {position_name, role_name}= payload;
   const clean_position_name = position_name.trim().toUpperCase();
+  const clean_role_name = role_name.trim().toUpperCase();
+  const isRoleExists = await prisma.role.count({
+    where:{
+      role_name:clean_role_name
+    }
+  }) > 0;
+  if(!isRoleExists){
+    throw new AppError("Invalid role provided.", StatusCodes.BAD_REQUEST)
+  }
   const existing = await prisma.position.findUnique({
     where: {
       position_name: clean_position_name,
@@ -17,7 +26,7 @@ const createPosition = async (payload:ICreatePosition) => {
   const createdPosition = await prisma.position.create({
     data: {
       position_name: clean_position_name,
-      role_name
+      role_name:clean_role_name
     },
   });
   return createdPosition;
