@@ -9,11 +9,12 @@ import bcrypt from "bcryptjs";
 import { envVars } from "../../configs/index.js";
 
 const createUser = async (payload: ICreateUserRequest) => {
+  const mobileNumber = await validateStrictBDMobile(payload.mobile_number);
   const existingUser = await prisma.user.findUnique({
     where: {
       user_full_name_mobile_unique: {
         full_name: payload.full_name,
-        mobile_number: payload.mobile_number,
+        mobile_number: mobileNumber,
       },
     },
     select: { user_id: true },
@@ -22,12 +23,19 @@ const createUser = async (payload: ICreateUserRequest) => {
     throw new AppError("User already exists.", StatusCodes.CONFLICT);
   }
 
+  const existingCount = await prisma.user.count({
+    where: {
+      mobile_number:mobileNumber
+    }
+  })
+  
+  const unique_user_name = existingCount === 0 ? mobileNumber: `${mobileNumber}-${existingCount+1}`
   const clean_role_name = payload.role_name.trim().toUpperCase();
   const clean_position_name = payload.position_name.trim().toUpperCase();
   // role and position and mobile number validity check
   await checkRoleValidity(clean_role_name);
   await checkPositionValidity(clean_position_name);
-  const mobileNumber = await validateStrictBDMobile(payload.mobile_number);
+  
 
   const defaultPassword = payload.user_password || "smps1234";
   const hashedPassword = await bcrypt.hash(
@@ -49,14 +57,11 @@ const createUser = async (payload: ICreateUserRequest) => {
     position_name: clean_position_name,
     mobile_number: mobileNumber,
     date_of_birth: parsedDOB,
-    user_name: mobileNumber,
+    user_name: unique_user_name,
     user_password: hashedPassword,
     active_status: initialStatus
   };
 
-//   const createdUser = await prisma.user.create({
-//     data: finalPayload,
-//   });
 const createdUser = await prisma.$transaction(async(tx)=>{
     const user = await tx.user.create({
         data: finalPayload
@@ -78,7 +83,9 @@ const createdUser = await prisma.$transaction(async(tx)=>{
   return secureUser;
 };
 
-const updateUser = async (payload: IUpdateUserRequest) => {};
+const updateUser = async (payload: IUpdateUserRequest) => {
+  return null;
+};
 export const userServices = {
   createUser,
   updateUser,
