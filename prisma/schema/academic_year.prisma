@@ -1,0 +1,9 @@
+model AcademicYear{
+    academic_year_id String @id @default(uuid())
+    academic_year_number Int
+
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+
+    @@map("academic_years")
+}

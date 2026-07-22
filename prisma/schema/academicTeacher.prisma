@@ -7,8 +7,10 @@ model AcademicTeacher{
 
     user User? @relation(name:"user_academic_teacher")
 
+    grade_teacher String?
+
     created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+    updated_at DateTime @updatedAt
 
     @@map("academic_teachers")
 }
