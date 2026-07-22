@@ -2,7 +2,6 @@ model User {
   user_id                  String                  @id @default(uuid())
   full_name                String
   mobile_number            String
-  role_name                String?
   gender                   Gender
   blood_group              BloodGroup?
   date_of_birth            DateTime?
@@ -12,19 +11,38 @@ model User {
   nationality              String?
   birth_certificate_number String?
   nid_number               String?
-  father_name              String?
-  mother_name              String?
-  created_at               DateTime                @default(now())
-  updated_at               DateTime                @updatedAt
+
+  father_details_id        String?
+  father_details           FatherDetails?           @relation(name:"user_father_details", fields: [father_details_id], references: [father_details_id], onDelete: Restrict)
+  
+  mother_details_id        String?
+  mother_details           MotherDetails?  @relation(name: "user_mother_details", fields: [mother_details_id], references: [mother_details_id], onDelete: Restrict)
+  
   email                    String?                 @unique
   user_name                String?                 @unique
   user_password            String?                 @default("sm1234ps")
-  position_name            String
+
   active_status            ActiveStatus            @default(ACTIVE)
   active_inactive_history  ActiveInactiveHistory[] @relation("user_active_history")
+  
+  position_name            String
   position                 Position                @relation("user_position_relation", fields: [position_name], references: [position_name])
+  
+  role_name                String?
   role                     Role?                    @relation("user_role_relation", fields: [role_name], references: [role_name])
 
+  present_address_id String?    @unique
+  present_address PresentAddress? @relation(name: "user_present_address_relation", fields: [present_address_id], references: [present_address_id])
+
+  permanent_address_id String?    @unique
+  permanent_address PermanentAddress? @relation(name: "user_permanent_address_relation", fields: [permanent_address_id], references: [permanent_address_id])
+
+  academic_teacher_id String? @unique
+  academic_teacher AcademicTeacher? @relation(name:"user_academic_teacher", fields: [academic_teacher_id],references: [academic_teacher_id], onDelete: Restrict)
+
+  created_at               DateTime                @default(now())
+  updated_at               DateTime                @updatedAt
+  
   @@unique([full_name, mobile_number], name: "user_full_name_mobile_unique")
   @@map("users")
 }

@@ -1,8 +1,10 @@
 model Responsibility {
   responsibility_id   String   @id @default(uuid())
   responsibility_name String   @unique
-  createdAt           DateTime @default(now())
-  updatedAt           DateTime @updatedAt
+
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 
   @@map("responsibilities")
 }

@@ -1,10 +1,11 @@
 model Role {
   role_id    String   @id @default(uuid())
   role_name  String   @unique
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
   user       User[]   @relation("user_role_relation")
   positions  Position[] @relation("role_position_relation")
-  @@unique([role_id, role_name])
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  
   @@map("roles")
 }

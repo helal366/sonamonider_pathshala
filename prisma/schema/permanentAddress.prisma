@@ -1,0 +1,22 @@
+model PermanentAddress{
+    permanent_address_id String @id @default(uuid())
+     house_no String?
+    house_name String?
+    plot_no String?
+    road_no String?
+    neighbourhood String?
+    region String?
+    village String?
+    post_code Int?
+    post_office String?
+    thana String
+    district String
+    country String @default("Bangladesh")
+    
+    user User? @relation(name: "user_permanent_address_relation")
+
+    created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+    @@map("permanent_addresses")
+}

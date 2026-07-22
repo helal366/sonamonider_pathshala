@@ -1,0 +1,14 @@
+model AcademicTeacher{
+    academic_teacher_id String @id @default(uuid())
+    teaching_experience String 
+    applied_post String
+    mobile_no_2 String?
+    mobile_no_3 String?
+
+    user User? @relation(name:"user_academic_teacher")
+
+    created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+    @@map("academic_teachers")
+}
