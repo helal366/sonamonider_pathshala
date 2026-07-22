@@ -4,6 +4,8 @@ model Role{
 
     user User[] @relation(name: "user_role_relation")
 
+    position Position[] @relation(name: "position_role_relation")
+
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt
 

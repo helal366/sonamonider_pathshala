@@ -4,6 +4,9 @@ model Position{
 
     user User[] @relation(name: "user_position_relation")
 
+    role_name String
+    role Role @relation(name: "position_role_relation", fields: [role_name], references: [role_name], onDelete: Restrict)
+
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt
 

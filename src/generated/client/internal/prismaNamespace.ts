@@ -957,6 +957,7 @@ export type ClassScalarFieldEnum = (typeof ClassScalarFieldEnum)[keyof typeof Cl
 export const PositionScalarFieldEnum = {
   position_id: 'position_id',
   position_name: 'position_name',
+  role_name: 'role_name',
   created_at: 'created_at',
   updated_at: 'updated_at'
 } as const

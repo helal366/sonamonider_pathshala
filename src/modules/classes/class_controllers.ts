@@ -4,7 +4,7 @@ import { AppError } from "../../utils/appError.js";
 import { StatusCodes } from "http-status-codes";
 import { classServices } from "./class_services.js";
 import { sendResponse } from "../../utils/sendResponse.js";
-import { IUpdateClassName } from "./class_interfaces.js";
+import { IDeleteClassName, IUpdateClassName } from "./class_interfaces.js";
 
 const createClass = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
@@ -23,7 +23,7 @@ const createClass = catchAsync(
     sendResponse(res, {
       success: true,
       statusCode: StatusCodes.CREATED,
-      message: "Class name created successfully.",
+      message: `Class name: ${result.class_name} created successfully.`,
       data: result,
     });
   },
@@ -45,12 +45,23 @@ const updateClassName=catchAsync(async(req: Request, res: Response, next: NextFu
   sendResponse(res, {
     success: true,
     statusCode: StatusCodes.OK,
-    message: "Class name updated successfully.",
+    message: `Class name updated successfully.`,
     data: result
+  })
+});
+
+const deleteClassName=catchAsync(async(req:Request, res: Response, next:NextFunction)=>{
+  const payload = req.body as IDeleteClassName;
+  await classServices.deleteClassName(payload);
+  sendResponse(res, {
+    success:true,
+    statusCode: StatusCodes.OK,
+    message: `Class name: ${payload.class_name} deleted successfully.`
   })
 })
 export const classControllers = {
   createClass,
   getAllClassNames,
-  updateClassName
+  updateClassName,
+  deleteClassName
 };
