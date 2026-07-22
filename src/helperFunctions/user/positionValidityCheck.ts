@@ -9,11 +9,12 @@ export const availablePositions=async()=>{
 }
 
 export const checkPositionValidity = async (position_name: string) => {
-  const positionExists = await prisma.position.count({
+  const positionExists = await prisma.position.findUnique({
     where: { position_name }
   });
 
-  if (positionExists === 0) {
+  if (!positionExists) {
     throw new AppError("Provided position is not valid", StatusCodes.BAD_REQUEST);
   }
+  return positionExists.role_name
 };

@@ -18,7 +18,7 @@ model User {
   updated_at               DateTime                @updatedAt
   email                    String?                 @unique
   user_name                String?                 @unique
-  user_password            String?                 @default("smps1234")
+  user_password            String?                 @default("sm1234ps")
   position_name            String
   active_status            ActiveStatus            @default(ACTIVE)
   active_inactive_history  ActiveInactiveHistory[] @relation("user_active_history")
