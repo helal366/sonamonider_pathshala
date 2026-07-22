@@ -7,12 +7,24 @@ import { StatusCodes } from "http-status-codes";
 
 const authLogin=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
     const payload = req.body as IAuthLogin;
-    const result = await authServices.authLogin(payload);
+    const {accessToken, refreshToken} = await authServices.authLogin(payload);
+    res.cookie("accessToken",accessToken,{
+        httpOnly:true,
+        secure:false,
+        sameSite:"none",
+        maxAge:1000*60*60*24*1 // 1 day
+    })
+    res.cookie("refreshToken",refreshToken,{
+        httpOnly:true,
+        secure:false,   
+        sameSite:"none",
+        maxAge:1000*60*60*24*7 // 7 days
+    })
     sendResponse(res, {
         success: true,
         statusCode: StatusCodes.OK,
         message: "Credential login successful.",
-        data: result
+        data: {accessToken, refreshToken}
     })
 });
 export const authControllers={

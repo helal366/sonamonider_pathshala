@@ -24,7 +24,7 @@ model User{
     father_name String?
     mother_name String?
     email String? @unique
-    user_name String? 
+    user_name String @unique
     user_password String? @default("smps1234")
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt
