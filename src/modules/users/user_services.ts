@@ -8,7 +8,7 @@ import { validateStrictBDMobile } from "../../helperFunctions/user/mobileNumberV
 import bcrypt from "bcryptjs";
 import { envVars } from "../../configs/index.js";
 
-const createUser = async (payload: ICreateUserRequest) => {
+const createUser = async (payload: ICreateUserRequest, userRole:string) => {
   const mobileNumber = await validateStrictBDMobile(payload.mobile_number);
   const existingUser = await prisma.user.findUnique({
     where: {

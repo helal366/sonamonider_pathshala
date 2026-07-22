@@ -5,6 +5,7 @@ import { envVars } from "../configs/index.js";
 import { sendResponse } from "../utils/sendResponse.js";
 import { StatusCodes } from "http-status-codes";
 import { prisma } from "../lib/prisma.js";
+import { AppError } from "../utils/appError.js";
 
 declare global{
     namespace Express {
@@ -47,14 +48,14 @@ export const userAuth = (...requiredRoles: string[]) => {
       });
       return;
     };
-    if (!requiredRoles.length) {
-      sendResponse(res, {
-        success: false,
-        message: "The Role is not defined.",
-        statusCode: StatusCodes.FORBIDDEN,
-      });
-      return;
-    }
+    // if (!requiredRoles.length) {
+    //   sendResponse(res, {
+    //     success: false,
+    //     message: "The Role is not defined.",
+    //     statusCode: StatusCodes.FORBIDDEN,
+    //   });
+    //   return;
+    // }
     const userRole = verifiedAccessToken.data.role_name;
     const validRoles=(await prisma.role.findMany()).map(role=>role.role_name);
 
@@ -81,7 +82,7 @@ export const userAuth = (...requiredRoles: string[]) => {
 
     const {user_id, full_name, role_name, position_name, user_name}=verifiedAccessToken.data;
     // console.log(verifiedAccessToken);
-    const user = await prisma.user.findUniqueOrThrow({
+    const user = await prisma.user.findUnique({
         where: {
             user_id
         },
@@ -89,6 +90,9 @@ export const userAuth = (...requiredRoles: string[]) => {
             user_password: true
         }
     });
+    if(!user){
+      throw new AppError("Please login", StatusCodes.UNAUTHORIZED)
+    }
     if(user.active_status==="INACTIVE"){
         sendResponse(res,{
             success: false,
