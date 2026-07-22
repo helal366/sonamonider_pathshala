@@ -24,7 +24,7 @@ const authLogin = async (payload: IAuthLogin) => {
   if(!isPasswordValid){
     throw new AppError("Wrong password", StatusCodes.UNAUTHORIZED)
   };
-  console.log("jwt access tokens: ",envVars.JWT_ACCESS_EXPIRES_IN)
+  // console.log("jwt access tokens: ",envVars.JWT_ACCESS_EXPIRES_IN)
   const jwtPayload:JwtPayload={
     user_id: existingAuth.user_id,
     full_name: existingAuth.full_name,
@@ -44,7 +44,8 @@ const authLogin = async (payload: IAuthLogin) => {
     envVars.JWT_REFRESH_SECRET,
     envVars.JWT_REFRESH_EXPIRES_IN as SignOptions,
   );
-  // console.log({accessToken, refreshToken})
+  const validRoles=(await prisma.role.findMany()).map(role=>role.role_name);
+    // console.log({validRoles})
   return {accessToken, refreshToken}
 };
 export const authServices = {
