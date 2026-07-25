@@ -8,9 +8,15 @@
  *
  * 🟢 You can import this file directly.
  */
+export type * from './models/AcademicTeacher.js'
+export type * from './models/AcademicYear.js'
 export type * from './models/ActiveInactiveHistory.js'
 export type * from './models/Class.js'
+export type * from './models/FatherDetails.js'
+export type * from './models/MotherDetails.js'
+export type * from './models/PermanentAddress.js'
 export type * from './models/Position.js'
+export type * from './models/PresentAddress.js'
 export type * from './models/Responsibility.js'
 export type * from './models/Role.js'
 export type * from './models/User.js'

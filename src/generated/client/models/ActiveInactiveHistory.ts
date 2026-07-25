@@ -30,8 +30,8 @@ export type ActiveInactiveHistoryMinAggregateOutputType = {
   activationTime: Date | null
   inactivationTime: Date | null
   user_id: string | null
-  createdAt: Date | null
-  updatedAt: Date | null
+  created_at: Date | null
+  updated_at: Date | null
 }
 
 export type ActiveInactiveHistoryMaxAggregateOutputType = {
@@ -40,8 +40,8 @@ export type ActiveInactiveHistoryMaxAggregateOutputType = {
   activationTime: Date | null
   inactivationTime: Date | null
   user_id: string | null
-  createdAt: Date | null
-  updatedAt: Date | null
+  created_at: Date | null
+  updated_at: Date | null
 }
 
 export type ActiveInactiveHistoryCountAggregateOutputType = {
@@ -50,8 +50,8 @@ export type ActiveInactiveHistoryCountAggregateOutputType = {
   activationTime: number
   inactivationTime: number
   user_id: number
-  createdAt: number
-  updatedAt: number
+  created_at: number
+  updated_at: number
   _all: number
 }
 
@@ -62,8 +62,8 @@ export type ActiveInactiveHistoryMinAggregateInputType = {
   activationTime?: true
   inactivationTime?: true
   user_id?: true
-  createdAt?: true
-  updatedAt?: true
+  created_at?: true
+  updated_at?: true
 }
 
 export type ActiveInactiveHistoryMaxAggregateInputType = {
@@ -72,8 +72,8 @@ export type ActiveInactiveHistoryMaxAggregateInputType = {
   activationTime?: true
   inactivationTime?: true
   user_id?: true
-  createdAt?: true
-  updatedAt?: true
+  created_at?: true
+  updated_at?: true
 }
 
 export type ActiveInactiveHistoryCountAggregateInputType = {
@@ -82,8 +82,8 @@ export type ActiveInactiveHistoryCountAggregateInputType = {
   activationTime?: true
   inactivationTime?: true
   user_id?: true
-  createdAt?: true
-  updatedAt?: true
+  created_at?: true
+  updated_at?: true
   _all?: true
 }
 
@@ -165,8 +165,8 @@ export type ActiveInactiveHistoryGroupByOutputType = {
   activationTime: Date | null
   inactivationTime: Date | null
   user_id: string
-  createdAt: Date
-  updatedAt: Date
+  created_at: Date
+  updated_at: Date
   _count: ActiveInactiveHistoryCountAggregateOutputType | null
   _min: ActiveInactiveHistoryMinAggregateOutputType | null
   _max: ActiveInactiveHistoryMaxAggregateOutputType | null
@@ -196,8 +196,8 @@ export type ActiveInactiveHistoryWhereInput = {
   activationTime?: Prisma.DateTimeNullableFilter<"ActiveInactiveHistory"> | Date | string | null
   inactivationTime?: Prisma.DateTimeNullableFilter<"ActiveInactiveHistory"> | Date | string | null
   user_id?: Prisma.StringFilter<"ActiveInactiveHistory"> | string
-  createdAt?: Prisma.DateTimeFilter<"ActiveInactiveHistory"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"ActiveInactiveHistory"> | Date | string
+  created_at?: Prisma.DateTimeFilter<"ActiveInactiveHistory"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"ActiveInactiveHistory"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }
 
@@ -207,8 +207,8 @@ export type ActiveInactiveHistoryOrderByWithRelationInput = {
   activationTime?: Prisma.SortOrderInput | Prisma.SortOrder
   inactivationTime?: Prisma.SortOrderInput | Prisma.SortOrder
   user_id?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
 }
 
@@ -221,8 +221,8 @@ export type ActiveInactiveHistoryWhereUniqueInput = Prisma.AtLeast<{
   activationTime?: Prisma.DateTimeNullableFilter<"ActiveInactiveHistory"> | Date | string | null
   inactivationTime?: Prisma.DateTimeNullableFilter<"ActiveInactiveHistory"> | Date | string | null
   user_id?: Prisma.StringFilter<"ActiveInactiveHistory"> | string
-  createdAt?: Prisma.DateTimeFilter<"ActiveInactiveHistory"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"ActiveInactiveHistory"> | Date | string
+  created_at?: Prisma.DateTimeFilter<"ActiveInactiveHistory"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"ActiveInactiveHistory"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }, "active_inactive_history_id">
 
@@ -232,8 +232,8 @@ export type ActiveInactiveHistoryOrderByWithAggregationInput = {
   activationTime?: Prisma.SortOrderInput | Prisma.SortOrder
   inactivationTime?: Prisma.SortOrderInput | Prisma.SortOrder
   user_id?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
   _count?: Prisma.ActiveInactiveHistoryCountOrderByAggregateInput
   _max?: Prisma.ActiveInactiveHistoryMaxOrderByAggregateInput
   _min?: Prisma.ActiveInactiveHistoryMinOrderByAggregateInput
@@ -248,8 +248,8 @@ export type ActiveInactiveHistoryScalarWhereWithAggregatesInput = {
   activationTime?: Prisma.DateTimeNullableWithAggregatesFilter<"ActiveInactiveHistory"> | Date | string | null
   inactivationTime?: Prisma.DateTimeNullableWithAggregatesFilter<"ActiveInactiveHistory"> | Date | string | null
   user_id?: Prisma.StringWithAggregatesFilter<"ActiveInactiveHistory"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"ActiveInactiveHistory"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"ActiveInactiveHistory"> | Date | string
+  created_at?: Prisma.DateTimeWithAggregatesFilter<"ActiveInactiveHistory"> | Date | string
+  updated_at?: Prisma.DateTimeWithAggregatesFilter<"ActiveInactiveHistory"> | Date | string
 }
 
 export type ActiveInactiveHistoryCreateInput = {
@@ -257,8 +257,8 @@ export type ActiveInactiveHistoryCreateInput = {
   active_status: $Enums.ActiveStatus
   activationTime?: Date | string | null
   inactivationTime?: Date | string | null
-  createdAt?: Date | string
-  updatedAt?: Date | string
+  created_at?: Date | string
+  updated_at?: Date | string
   user: Prisma.UserCreateNestedOneWithoutActive_inactive_historyInput
 }
 
@@ -268,8 +268,8 @@ export type ActiveInactiveHistoryUncheckedCreateInput = {
   activationTime?: Date | string | null
   inactivationTime?: Date | string | null
   user_id: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type ActiveInactiveHistoryUpdateInput = {
@@ -277,8 +277,8 @@ export type ActiveInactiveHistoryUpdateInput = {
   active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   activationTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   inactivationTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutActive_inactive_historyNestedInput
 }
 
@@ -288,8 +288,8 @@ export type ActiveInactiveHistoryUncheckedUpdateInput = {
   activationTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   inactivationTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ActiveInactiveHistoryCreateManyInput = {
@@ -298,8 +298,8 @@ export type ActiveInactiveHistoryCreateManyInput = {
   activationTime?: Date | string | null
   inactivationTime?: Date | string | null
   user_id: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type ActiveInactiveHistoryUpdateManyMutationInput = {
@@ -307,8 +307,8 @@ export type ActiveInactiveHistoryUpdateManyMutationInput = {
   active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   activationTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   inactivationTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ActiveInactiveHistoryUncheckedUpdateManyInput = {
@@ -317,8 +317,8 @@ export type ActiveInactiveHistoryUncheckedUpdateManyInput = {
   activationTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   inactivationTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ActiveInactiveHistoryCountOrderByAggregateInput = {
@@ -327,8 +327,8 @@ export type ActiveInactiveHistoryCountOrderByAggregateInput = {
   activationTime?: Prisma.SortOrder
   inactivationTime?: Prisma.SortOrder
   user_id?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type ActiveInactiveHistoryMaxOrderByAggregateInput = {
@@ -337,8 +337,8 @@ export type ActiveInactiveHistoryMaxOrderByAggregateInput = {
   activationTime?: Prisma.SortOrder
   inactivationTime?: Prisma.SortOrder
   user_id?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type ActiveInactiveHistoryMinOrderByAggregateInput = {
@@ -347,8 +347,8 @@ export type ActiveInactiveHistoryMinOrderByAggregateInput = {
   activationTime?: Prisma.SortOrder
   inactivationTime?: Prisma.SortOrder
   user_id?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type ActiveInactiveHistoryListRelationFilter = {
@@ -361,20 +361,12 @@ export type ActiveInactiveHistoryOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type StringFieldUpdateOperationsInput = {
-  set?: string
-}
-
 export type EnumActiveStatusFieldUpdateOperationsInput = {
   set?: $Enums.ActiveStatus
 }
 
 export type NullableDateTimeFieldUpdateOperationsInput = {
   set?: Date | string | null
-}
-
-export type DateTimeFieldUpdateOperationsInput = {
-  set?: Date | string
 }
 
 export type ActiveInactiveHistoryCreateNestedManyWithoutUserInput = {
@@ -424,8 +416,8 @@ export type ActiveInactiveHistoryCreateWithoutUserInput = {
   active_status: $Enums.ActiveStatus
   activationTime?: Date | string | null
   inactivationTime?: Date | string | null
-  createdAt?: Date | string
-  updatedAt?: Date | string
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type ActiveInactiveHistoryUncheckedCreateWithoutUserInput = {
@@ -433,8 +425,8 @@ export type ActiveInactiveHistoryUncheckedCreateWithoutUserInput = {
   active_status: $Enums.ActiveStatus
   activationTime?: Date | string | null
   inactivationTime?: Date | string | null
-  createdAt?: Date | string
-  updatedAt?: Date | string
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type ActiveInactiveHistoryCreateOrConnectWithoutUserInput = {
@@ -472,8 +464,8 @@ export type ActiveInactiveHistoryScalarWhereInput = {
   activationTime?: Prisma.DateTimeNullableFilter<"ActiveInactiveHistory"> | Date | string | null
   inactivationTime?: Prisma.DateTimeNullableFilter<"ActiveInactiveHistory"> | Date | string | null
   user_id?: Prisma.StringFilter<"ActiveInactiveHistory"> | string
-  createdAt?: Prisma.DateTimeFilter<"ActiveInactiveHistory"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"ActiveInactiveHistory"> | Date | string
+  created_at?: Prisma.DateTimeFilter<"ActiveInactiveHistory"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"ActiveInactiveHistory"> | Date | string
 }
 
 export type ActiveInactiveHistoryCreateManyUserInput = {
@@ -481,8 +473,8 @@ export type ActiveInactiveHistoryCreateManyUserInput = {
   active_status: $Enums.ActiveStatus
   activationTime?: Date | string | null
   inactivationTime?: Date | string | null
-  createdAt?: Date | string
-  updatedAt?: Date | string
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type ActiveInactiveHistoryUpdateWithoutUserInput = {
@@ -490,8 +482,8 @@ export type ActiveInactiveHistoryUpdateWithoutUserInput = {
   active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   activationTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   inactivationTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ActiveInactiveHistoryUncheckedUpdateWithoutUserInput = {
@@ -499,8 +491,8 @@ export type ActiveInactiveHistoryUncheckedUpdateWithoutUserInput = {
   active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   activationTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   inactivationTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ActiveInactiveHistoryUncheckedUpdateManyWithoutUserInput = {
@@ -508,8 +500,8 @@ export type ActiveInactiveHistoryUncheckedUpdateManyWithoutUserInput = {
   active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
   activationTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   inactivationTime?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 
@@ -520,8 +512,8 @@ export type ActiveInactiveHistorySelect<ExtArgs extends runtime.Types.Extensions
   activationTime?: boolean
   inactivationTime?: boolean
   user_id?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  created_at?: boolean
+  updated_at?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["activeInactiveHistory"]>
 
@@ -531,8 +523,8 @@ export type ActiveInactiveHistorySelectCreateManyAndReturn<ExtArgs extends runti
   activationTime?: boolean
   inactivationTime?: boolean
   user_id?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  created_at?: boolean
+  updated_at?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["activeInactiveHistory"]>
 
@@ -542,8 +534,8 @@ export type ActiveInactiveHistorySelectUpdateManyAndReturn<ExtArgs extends runti
   activationTime?: boolean
   inactivationTime?: boolean
   user_id?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  created_at?: boolean
+  updated_at?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["activeInactiveHistory"]>
 
@@ -553,11 +545,11 @@ export type ActiveInactiveHistorySelectScalar = {
   activationTime?: boolean
   inactivationTime?: boolean
   user_id?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  created_at?: boolean
+  updated_at?: boolean
 }
 
-export type ActiveInactiveHistoryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"active_inactive_history_id" | "active_status" | "activationTime" | "inactivationTime" | "user_id" | "createdAt" | "updatedAt", ExtArgs["result"]["activeInactiveHistory"]>
+export type ActiveInactiveHistoryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"active_inactive_history_id" | "active_status" | "activationTime" | "inactivationTime" | "user_id" | "created_at" | "updated_at", ExtArgs["result"]["activeInactiveHistory"]>
 export type ActiveInactiveHistoryInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -579,8 +571,8 @@ export type $ActiveInactiveHistoryPayload<ExtArgs extends runtime.Types.Extensio
     activationTime: Date | null
     inactivationTime: Date | null
     user_id: string
-    createdAt: Date
-    updatedAt: Date
+    created_at: Date
+    updated_at: Date
   }, ExtArgs["result"]["activeInactiveHistory"]>
   composites: {}
 }
@@ -1010,8 +1002,8 @@ export interface ActiveInactiveHistoryFieldRefs {
   readonly activationTime: Prisma.FieldRef<"ActiveInactiveHistory", 'DateTime'>
   readonly inactivationTime: Prisma.FieldRef<"ActiveInactiveHistory", 'DateTime'>
   readonly user_id: Prisma.FieldRef<"ActiveInactiveHistory", 'String'>
-  readonly createdAt: Prisma.FieldRef<"ActiveInactiveHistory", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"ActiveInactiveHistory", 'DateTime'>
+  readonly created_at: Prisma.FieldRef<"ActiveInactiveHistory", 'DateTime'>
+  readonly updated_at: Prisma.FieldRef<"ActiveInactiveHistory", 'DateTime'>
 }
     
 

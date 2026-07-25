@@ -18,6 +18,16 @@ export { Prisma }
 export * as $Enums from './enums.js'
 export * from './enums.js';
 /**
+ * Model AcademicTeacher
+ * 
+ */
+export type AcademicTeacher = Prisma.AcademicTeacherModel
+/**
+ * Model AcademicYear
+ * 
+ */
+export type AcademicYear = Prisma.AcademicYearModel
+/**
  * Model ActiveInactiveHistory
  * 
  */
@@ -28,10 +38,30 @@ export type ActiveInactiveHistory = Prisma.ActiveInactiveHistoryModel
  */
 export type Class = Prisma.ClassModel
 /**
+ * Model FatherDetails
+ * 
+ */
+export type FatherDetails = Prisma.FatherDetailsModel
+/**
+ * Model MotherDetails
+ * 
+ */
+export type MotherDetails = Prisma.MotherDetailsModel
+/**
+ * Model PermanentAddress
+ * 
+ */
+export type PermanentAddress = Prisma.PermanentAddressModel
+/**
  * Model Position
  * 
  */
 export type Position = Prisma.PositionModel
+/**
+ * Model PresentAddress
+ * 
+ */
+export type PresentAddress = Prisma.PresentAddressModel
 /**
  * Model Responsibility
  * 

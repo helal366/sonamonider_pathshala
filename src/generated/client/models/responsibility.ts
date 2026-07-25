@@ -27,22 +27,22 @@ export type AggregateResponsibility = {
 export type ResponsibilityMinAggregateOutputType = {
   responsibility_id: string | null
   responsibility_name: string | null
-  createdAt: Date | null
-  updatedAt: Date | null
+  created_at: Date | null
+  updated_at: Date | null
 }
 
 export type ResponsibilityMaxAggregateOutputType = {
   responsibility_id: string | null
   responsibility_name: string | null
-  createdAt: Date | null
-  updatedAt: Date | null
+  created_at: Date | null
+  updated_at: Date | null
 }
 
 export type ResponsibilityCountAggregateOutputType = {
   responsibility_id: number
   responsibility_name: number
-  createdAt: number
-  updatedAt: number
+  created_at: number
+  updated_at: number
   _all: number
 }
 
@@ -50,22 +50,22 @@ export type ResponsibilityCountAggregateOutputType = {
 export type ResponsibilityMinAggregateInputType = {
   responsibility_id?: true
   responsibility_name?: true
-  createdAt?: true
-  updatedAt?: true
+  created_at?: true
+  updated_at?: true
 }
 
 export type ResponsibilityMaxAggregateInputType = {
   responsibility_id?: true
   responsibility_name?: true
-  createdAt?: true
-  updatedAt?: true
+  created_at?: true
+  updated_at?: true
 }
 
 export type ResponsibilityCountAggregateInputType = {
   responsibility_id?: true
   responsibility_name?: true
-  createdAt?: true
-  updatedAt?: true
+  created_at?: true
+  updated_at?: true
   _all?: true
 }
 
@@ -144,8 +144,8 @@ export type ResponsibilityGroupByArgs<ExtArgs extends runtime.Types.Extensions.I
 export type ResponsibilityGroupByOutputType = {
   responsibility_id: string
   responsibility_name: string
-  createdAt: Date
-  updatedAt: Date
+  created_at: Date
+  updated_at: Date
   _count: ResponsibilityCountAggregateOutputType | null
   _min: ResponsibilityMinAggregateOutputType | null
   _max: ResponsibilityMaxAggregateOutputType | null
@@ -172,15 +172,15 @@ export type ResponsibilityWhereInput = {
   NOT?: Prisma.ResponsibilityWhereInput | Prisma.ResponsibilityWhereInput[]
   responsibility_id?: Prisma.StringFilter<"Responsibility"> | string
   responsibility_name?: Prisma.StringFilter<"Responsibility"> | string
-  createdAt?: Prisma.DateTimeFilter<"Responsibility"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Responsibility"> | Date | string
+  created_at?: Prisma.DateTimeFilter<"Responsibility"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"Responsibility"> | Date | string
 }
 
 export type ResponsibilityOrderByWithRelationInput = {
   responsibility_id?: Prisma.SortOrder
   responsibility_name?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type ResponsibilityWhereUniqueInput = Prisma.AtLeast<{
@@ -189,15 +189,15 @@ export type ResponsibilityWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.ResponsibilityWhereInput | Prisma.ResponsibilityWhereInput[]
   OR?: Prisma.ResponsibilityWhereInput[]
   NOT?: Prisma.ResponsibilityWhereInput | Prisma.ResponsibilityWhereInput[]
-  createdAt?: Prisma.DateTimeFilter<"Responsibility"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Responsibility"> | Date | string
+  created_at?: Prisma.DateTimeFilter<"Responsibility"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"Responsibility"> | Date | string
 }, "responsibility_id" | "responsibility_name">
 
 export type ResponsibilityOrderByWithAggregationInput = {
   responsibility_id?: Prisma.SortOrder
   responsibility_name?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
   _count?: Prisma.ResponsibilityCountOrderByAggregateInput
   _max?: Prisma.ResponsibilityMaxOrderByAggregateInput
   _min?: Prisma.ResponsibilityMinOrderByAggregateInput
@@ -209,78 +209,78 @@ export type ResponsibilityScalarWhereWithAggregatesInput = {
   NOT?: Prisma.ResponsibilityScalarWhereWithAggregatesInput | Prisma.ResponsibilityScalarWhereWithAggregatesInput[]
   responsibility_id?: Prisma.StringWithAggregatesFilter<"Responsibility"> | string
   responsibility_name?: Prisma.StringWithAggregatesFilter<"Responsibility"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Responsibility"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Responsibility"> | Date | string
+  created_at?: Prisma.DateTimeWithAggregatesFilter<"Responsibility"> | Date | string
+  updated_at?: Prisma.DateTimeWithAggregatesFilter<"Responsibility"> | Date | string
 }
 
 export type ResponsibilityCreateInput = {
   responsibility_id?: string
   responsibility_name: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type ResponsibilityUncheckedCreateInput = {
   responsibility_id?: string
   responsibility_name: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type ResponsibilityUpdateInput = {
   responsibility_id?: Prisma.StringFieldUpdateOperationsInput | string
   responsibility_name?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ResponsibilityUncheckedUpdateInput = {
   responsibility_id?: Prisma.StringFieldUpdateOperationsInput | string
   responsibility_name?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ResponsibilityCreateManyInput = {
   responsibility_id?: string
   responsibility_name: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type ResponsibilityUpdateManyMutationInput = {
   responsibility_id?: Prisma.StringFieldUpdateOperationsInput | string
   responsibility_name?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ResponsibilityUncheckedUpdateManyInput = {
   responsibility_id?: Prisma.StringFieldUpdateOperationsInput | string
   responsibility_name?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ResponsibilityCountOrderByAggregateInput = {
   responsibility_id?: Prisma.SortOrder
   responsibility_name?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type ResponsibilityMaxOrderByAggregateInput = {
   responsibility_id?: Prisma.SortOrder
   responsibility_name?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type ResponsibilityMinOrderByAggregateInput = {
   responsibility_id?: Prisma.SortOrder
   responsibility_name?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 
@@ -288,32 +288,32 @@ export type ResponsibilityMinOrderByAggregateInput = {
 export type ResponsibilitySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   responsibility_id?: boolean
   responsibility_name?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  created_at?: boolean
+  updated_at?: boolean
 }, ExtArgs["result"]["responsibility"]>
 
 export type ResponsibilitySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   responsibility_id?: boolean
   responsibility_name?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  created_at?: boolean
+  updated_at?: boolean
 }, ExtArgs["result"]["responsibility"]>
 
 export type ResponsibilitySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   responsibility_id?: boolean
   responsibility_name?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  created_at?: boolean
+  updated_at?: boolean
 }, ExtArgs["result"]["responsibility"]>
 
 export type ResponsibilitySelectScalar = {
   responsibility_id?: boolean
   responsibility_name?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  created_at?: boolean
+  updated_at?: boolean
 }
 
-export type ResponsibilityOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"responsibility_id" | "responsibility_name" | "createdAt" | "updatedAt", ExtArgs["result"]["responsibility"]>
+export type ResponsibilityOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"responsibility_id" | "responsibility_name" | "created_at" | "updated_at", ExtArgs["result"]["responsibility"]>
 
 export type $ResponsibilityPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Responsibility"
@@ -321,8 +321,8 @@ export type $ResponsibilityPayload<ExtArgs extends runtime.Types.Extensions.Inte
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     responsibility_id: string
     responsibility_name: string
-    createdAt: Date
-    updatedAt: Date
+    created_at: Date
+    updated_at: Date
   }, ExtArgs["result"]["responsibility"]>
   composites: {}
 }
@@ -748,8 +748,8 @@ export interface Prisma__ResponsibilityClient<T, Null = never, ExtArgs extends r
 export interface ResponsibilityFieldRefs {
   readonly responsibility_id: Prisma.FieldRef<"Responsibility", 'String'>
   readonly responsibility_name: Prisma.FieldRef<"Responsibility", 'String'>
-  readonly createdAt: Prisma.FieldRef<"Responsibility", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"Responsibility", 'DateTime'>
+  readonly created_at: Prisma.FieldRef<"Responsibility", 'DateTime'>
+  readonly updated_at: Prisma.FieldRef<"Responsibility", 'DateTime'>
 }
     
 

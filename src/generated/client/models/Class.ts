@@ -27,22 +27,22 @@ export type AggregateClass = {
 export type ClassMinAggregateOutputType = {
   class_id: string | null
   class_name: string | null
-  createdAt: Date | null
-  updatedAt: Date | null
+  created_at: Date | null
+  updated_at: Date | null
 }
 
 export type ClassMaxAggregateOutputType = {
   class_id: string | null
   class_name: string | null
-  createdAt: Date | null
-  updatedAt: Date | null
+  created_at: Date | null
+  updated_at: Date | null
 }
 
 export type ClassCountAggregateOutputType = {
   class_id: number
   class_name: number
-  createdAt: number
-  updatedAt: number
+  created_at: number
+  updated_at: number
   _all: number
 }
 
@@ -50,22 +50,22 @@ export type ClassCountAggregateOutputType = {
 export type ClassMinAggregateInputType = {
   class_id?: true
   class_name?: true
-  createdAt?: true
-  updatedAt?: true
+  created_at?: true
+  updated_at?: true
 }
 
 export type ClassMaxAggregateInputType = {
   class_id?: true
   class_name?: true
-  createdAt?: true
-  updatedAt?: true
+  created_at?: true
+  updated_at?: true
 }
 
 export type ClassCountAggregateInputType = {
   class_id?: true
   class_name?: true
-  createdAt?: true
-  updatedAt?: true
+  created_at?: true
+  updated_at?: true
   _all?: true
 }
 
@@ -144,8 +144,8 @@ export type ClassGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
 export type ClassGroupByOutputType = {
   class_id: string
   class_name: string
-  createdAt: Date
-  updatedAt: Date
+  created_at: Date
+  updated_at: Date
   _count: ClassCountAggregateOutputType | null
   _min: ClassMinAggregateOutputType | null
   _max: ClassMaxAggregateOutputType | null
@@ -172,15 +172,15 @@ export type ClassWhereInput = {
   NOT?: Prisma.ClassWhereInput | Prisma.ClassWhereInput[]
   class_id?: Prisma.StringFilter<"Class"> | string
   class_name?: Prisma.StringFilter<"Class"> | string
-  createdAt?: Prisma.DateTimeFilter<"Class"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Class"> | Date | string
+  created_at?: Prisma.DateTimeFilter<"Class"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"Class"> | Date | string
 }
 
 export type ClassOrderByWithRelationInput = {
   class_id?: Prisma.SortOrder
   class_name?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type ClassWhereUniqueInput = Prisma.AtLeast<{
@@ -189,15 +189,15 @@ export type ClassWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.ClassWhereInput | Prisma.ClassWhereInput[]
   OR?: Prisma.ClassWhereInput[]
   NOT?: Prisma.ClassWhereInput | Prisma.ClassWhereInput[]
-  createdAt?: Prisma.DateTimeFilter<"Class"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Class"> | Date | string
+  created_at?: Prisma.DateTimeFilter<"Class"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"Class"> | Date | string
 }, "class_id" | "class_name">
 
 export type ClassOrderByWithAggregationInput = {
   class_id?: Prisma.SortOrder
   class_name?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
   _count?: Prisma.ClassCountOrderByAggregateInput
   _max?: Prisma.ClassMaxOrderByAggregateInput
   _min?: Prisma.ClassMinOrderByAggregateInput
@@ -209,78 +209,78 @@ export type ClassScalarWhereWithAggregatesInput = {
   NOT?: Prisma.ClassScalarWhereWithAggregatesInput | Prisma.ClassScalarWhereWithAggregatesInput[]
   class_id?: Prisma.StringWithAggregatesFilter<"Class"> | string
   class_name?: Prisma.StringWithAggregatesFilter<"Class"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Class"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Class"> | Date | string
+  created_at?: Prisma.DateTimeWithAggregatesFilter<"Class"> | Date | string
+  updated_at?: Prisma.DateTimeWithAggregatesFilter<"Class"> | Date | string
 }
 
 export type ClassCreateInput = {
   class_id?: string
   class_name: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type ClassUncheckedCreateInput = {
   class_id?: string
   class_name: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type ClassUpdateInput = {
   class_id?: Prisma.StringFieldUpdateOperationsInput | string
   class_name?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ClassUncheckedUpdateInput = {
   class_id?: Prisma.StringFieldUpdateOperationsInput | string
   class_name?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ClassCreateManyInput = {
   class_id?: string
   class_name: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type ClassUpdateManyMutationInput = {
   class_id?: Prisma.StringFieldUpdateOperationsInput | string
   class_name?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ClassUncheckedUpdateManyInput = {
   class_id?: Prisma.StringFieldUpdateOperationsInput | string
   class_name?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ClassCountOrderByAggregateInput = {
   class_id?: Prisma.SortOrder
   class_name?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type ClassMaxOrderByAggregateInput = {
   class_id?: Prisma.SortOrder
   class_name?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type ClassMinOrderByAggregateInput = {
   class_id?: Prisma.SortOrder
   class_name?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 
@@ -288,32 +288,32 @@ export type ClassMinOrderByAggregateInput = {
 export type ClassSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   class_id?: boolean
   class_name?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  created_at?: boolean
+  updated_at?: boolean
 }, ExtArgs["result"]["class"]>
 
 export type ClassSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   class_id?: boolean
   class_name?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  created_at?: boolean
+  updated_at?: boolean
 }, ExtArgs["result"]["class"]>
 
 export type ClassSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   class_id?: boolean
   class_name?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  created_at?: boolean
+  updated_at?: boolean
 }, ExtArgs["result"]["class"]>
 
 export type ClassSelectScalar = {
   class_id?: boolean
   class_name?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
+  created_at?: boolean
+  updated_at?: boolean
 }
 
-export type ClassOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"class_id" | "class_name" | "createdAt" | "updatedAt", ExtArgs["result"]["class"]>
+export type ClassOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"class_id" | "class_name" | "created_at" | "updated_at", ExtArgs["result"]["class"]>
 
 export type $ClassPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Class"
@@ -321,8 +321,8 @@ export type $ClassPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     class_id: string
     class_name: string
-    createdAt: Date
-    updatedAt: Date
+    created_at: Date
+    updated_at: Date
   }, ExtArgs["result"]["class"]>
   composites: {}
 }
@@ -748,8 +748,8 @@ export interface Prisma__ClassClient<T, Null = never, ExtArgs extends runtime.Ty
 export interface ClassFieldRefs {
   readonly class_id: Prisma.FieldRef<"Class", 'String'>
   readonly class_name: Prisma.FieldRef<"Class", 'String'>
-  readonly createdAt: Prisma.FieldRef<"Class", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"Class", 'DateTime'>
+  readonly created_at: Prisma.FieldRef<"Class", 'DateTime'>
+  readonly updated_at: Prisma.FieldRef<"Class", 'DateTime'>
 }
     
 

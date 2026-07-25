@@ -31,8 +31,8 @@ export * from "./enums.js"
  * const prisma = new PrismaClient({
  *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
  * })
- * // Fetch zero or more ActiveInactiveHistories
- * const activeInactiveHistories = await prisma.activeInactiveHistory.findMany()
+ * // Fetch zero or more AcademicTeachers
+ * const academicTeachers = await prisma.academicTeacher.findMany()
  * ```
  * 
  * Read more in our [docs](https://pris.ly/d/client).
@@ -41,6 +41,16 @@ export const PrismaClient = $Class.getPrismaClientClass()
 export type PrismaClient<LogOpts extends Prisma.LogLevel = never, OmitOpts extends Prisma.PrismaClientOptions["omit"] = Prisma.PrismaClientOptions["omit"], ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = $Class.PrismaClient<LogOpts, OmitOpts, ExtArgs>
 export { Prisma }
 
+/**
+ * Model AcademicTeacher
+ * 
+ */
+export type AcademicTeacher = Prisma.AcademicTeacherModel
+/**
+ * Model AcademicYear
+ * 
+ */
+export type AcademicYear = Prisma.AcademicYearModel
 /**
  * Model ActiveInactiveHistory
  * 
@@ -52,10 +62,30 @@ export type ActiveInactiveHistory = Prisma.ActiveInactiveHistoryModel
  */
 export type Class = Prisma.ClassModel
 /**
+ * Model FatherDetails
+ * 
+ */
+export type FatherDetails = Prisma.FatherDetailsModel
+/**
+ * Model MotherDetails
+ * 
+ */
+export type MotherDetails = Prisma.MotherDetailsModel
+/**
+ * Model PermanentAddress
+ * 
+ */
+export type PermanentAddress = Prisma.PermanentAddressModel
+/**
  * Model Position
  * 
  */
 export type Position = Prisma.PositionModel
+/**
+ * Model PresentAddress
+ * 
+ */
+export type PresentAddress = Prisma.PresentAddressModel
 /**
  * Model Responsibility
  * 

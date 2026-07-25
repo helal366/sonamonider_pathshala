@@ -40,7 +40,6 @@ export type UserMinAggregateOutputType = {
   user_id: string | null
   full_name: string | null
   mobile_number: string | null
-  role_name: string | null
   gender: $Enums.Gender | null
   blood_group: $Enums.BloodGroup | null
   date_of_birth: Date | null
@@ -50,22 +49,25 @@ export type UserMinAggregateOutputType = {
   nationality: string | null
   birth_certificate_number: string | null
   nid_number: string | null
-  father_name: string | null
-  mother_name: string | null
-  created_at: Date | null
-  updated_at: Date | null
+  father_details_id: string | null
+  mother_details_id: string | null
   email: string | null
   user_name: string | null
   user_password: string | null
-  position_name: string | null
   active_status: $Enums.ActiveStatus | null
+  position_name: string | null
+  role_name: string | null
+  present_address_id: string | null
+  permanent_address_id: string | null
+  academic_teacher_id: string | null
+  created_at: Date | null
+  updated_at: Date | null
 }
 
 export type UserMaxAggregateOutputType = {
   user_id: string | null
   full_name: string | null
   mobile_number: string | null
-  role_name: string | null
   gender: $Enums.Gender | null
   blood_group: $Enums.BloodGroup | null
   date_of_birth: Date | null
@@ -75,22 +77,25 @@ export type UserMaxAggregateOutputType = {
   nationality: string | null
   birth_certificate_number: string | null
   nid_number: string | null
-  father_name: string | null
-  mother_name: string | null
-  created_at: Date | null
-  updated_at: Date | null
+  father_details_id: string | null
+  mother_details_id: string | null
   email: string | null
   user_name: string | null
   user_password: string | null
-  position_name: string | null
   active_status: $Enums.ActiveStatus | null
+  position_name: string | null
+  role_name: string | null
+  present_address_id: string | null
+  permanent_address_id: string | null
+  academic_teacher_id: string | null
+  created_at: Date | null
+  updated_at: Date | null
 }
 
 export type UserCountAggregateOutputType = {
   user_id: number
   full_name: number
   mobile_number: number
-  role_name: number
   gender: number
   blood_group: number
   date_of_birth: number
@@ -100,15 +105,19 @@ export type UserCountAggregateOutputType = {
   nationality: number
   birth_certificate_number: number
   nid_number: number
-  father_name: number
-  mother_name: number
-  created_at: number
-  updated_at: number
+  father_details_id: number
+  mother_details_id: number
   email: number
   user_name: number
   user_password: number
-  position_name: number
   active_status: number
+  position_name: number
+  role_name: number
+  present_address_id: number
+  permanent_address_id: number
+  academic_teacher_id: number
+  created_at: number
+  updated_at: number
   _all: number
 }
 
@@ -127,7 +136,6 @@ export type UserMinAggregateInputType = {
   user_id?: true
   full_name?: true
   mobile_number?: true
-  role_name?: true
   gender?: true
   blood_group?: true
   date_of_birth?: true
@@ -137,22 +145,25 @@ export type UserMinAggregateInputType = {
   nationality?: true
   birth_certificate_number?: true
   nid_number?: true
-  father_name?: true
-  mother_name?: true
-  created_at?: true
-  updated_at?: true
+  father_details_id?: true
+  mother_details_id?: true
   email?: true
   user_name?: true
   user_password?: true
-  position_name?: true
   active_status?: true
+  position_name?: true
+  role_name?: true
+  present_address_id?: true
+  permanent_address_id?: true
+  academic_teacher_id?: true
+  created_at?: true
+  updated_at?: true
 }
 
 export type UserMaxAggregateInputType = {
   user_id?: true
   full_name?: true
   mobile_number?: true
-  role_name?: true
   gender?: true
   blood_group?: true
   date_of_birth?: true
@@ -162,22 +173,25 @@ export type UserMaxAggregateInputType = {
   nationality?: true
   birth_certificate_number?: true
   nid_number?: true
-  father_name?: true
-  mother_name?: true
-  created_at?: true
-  updated_at?: true
+  father_details_id?: true
+  mother_details_id?: true
   email?: true
   user_name?: true
   user_password?: true
-  position_name?: true
   active_status?: true
+  position_name?: true
+  role_name?: true
+  present_address_id?: true
+  permanent_address_id?: true
+  academic_teacher_id?: true
+  created_at?: true
+  updated_at?: true
 }
 
 export type UserCountAggregateInputType = {
   user_id?: true
   full_name?: true
   mobile_number?: true
-  role_name?: true
   gender?: true
   blood_group?: true
   date_of_birth?: true
@@ -187,15 +201,19 @@ export type UserCountAggregateInputType = {
   nationality?: true
   birth_certificate_number?: true
   nid_number?: true
-  father_name?: true
-  mother_name?: true
-  created_at?: true
-  updated_at?: true
+  father_details_id?: true
+  mother_details_id?: true
   email?: true
   user_name?: true
   user_password?: true
-  position_name?: true
   active_status?: true
+  position_name?: true
+  role_name?: true
+  present_address_id?: true
+  permanent_address_id?: true
+  academic_teacher_id?: true
+  created_at?: true
+  updated_at?: true
   _all?: true
 }
 
@@ -289,7 +307,6 @@ export type UserGroupByOutputType = {
   user_id: string
   full_name: string
   mobile_number: string
-  role_name: string | null
   gender: $Enums.Gender
   blood_group: $Enums.BloodGroup | null
   date_of_birth: Date | null
@@ -299,15 +316,19 @@ export type UserGroupByOutputType = {
   nationality: string | null
   birth_certificate_number: string | null
   nid_number: string | null
-  father_name: string | null
-  mother_name: string | null
-  created_at: Date
-  updated_at: Date
+  father_details_id: string | null
+  mother_details_id: string | null
   email: string | null
   user_name: string | null
   user_password: string | null
-  position_name: string
   active_status: $Enums.ActiveStatus
+  position_name: string
+  role_name: string | null
+  present_address_id: string | null
+  permanent_address_id: string | null
+  academic_teacher_id: string | null
+  created_at: Date
+  updated_at: Date
   _count: UserCountAggregateOutputType | null
   _avg: UserAvgAggregateOutputType | null
   _sum: UserSumAggregateOutputType | null
@@ -337,7 +358,6 @@ export type UserWhereInput = {
   user_id?: Prisma.StringFilter<"User"> | string
   full_name?: Prisma.StringFilter<"User"> | string
   mobile_number?: Prisma.StringFilter<"User"> | string
-  role_name?: Prisma.StringNullableFilter<"User"> | string | null
   gender?: Prisma.EnumGenderFilter<"User"> | $Enums.Gender
   blood_group?: Prisma.EnumBloodGroupNullableFilter<"User"> | $Enums.BloodGroup | null
   date_of_birth?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
@@ -347,25 +367,33 @@ export type UserWhereInput = {
   nationality?: Prisma.StringNullableFilter<"User"> | string | null
   birth_certificate_number?: Prisma.StringNullableFilter<"User"> | string | null
   nid_number?: Prisma.StringNullableFilter<"User"> | string | null
-  father_name?: Prisma.StringNullableFilter<"User"> | string | null
-  mother_name?: Prisma.StringNullableFilter<"User"> | string | null
-  created_at?: Prisma.DateTimeFilter<"User"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"User"> | Date | string
+  father_details_id?: Prisma.StringNullableFilter<"User"> | string | null
+  mother_details_id?: Prisma.StringNullableFilter<"User"> | string | null
   email?: Prisma.StringNullableFilter<"User"> | string | null
   user_name?: Prisma.StringNullableFilter<"User"> | string | null
   user_password?: Prisma.StringNullableFilter<"User"> | string | null
-  position_name?: Prisma.StringFilter<"User"> | string
   active_status?: Prisma.EnumActiveStatusFilter<"User"> | $Enums.ActiveStatus
+  position_name?: Prisma.StringFilter<"User"> | string
+  role_name?: Prisma.StringNullableFilter<"User"> | string | null
+  present_address_id?: Prisma.StringNullableFilter<"User"> | string | null
+  permanent_address_id?: Prisma.StringNullableFilter<"User"> | string | null
+  academic_teacher_id?: Prisma.StringNullableFilter<"User"> | string | null
+  created_at?: Prisma.DateTimeFilter<"User"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"User"> | Date | string
+  father_details?: Prisma.XOR<Prisma.FatherDetailsNullableScalarRelationFilter, Prisma.FatherDetailsWhereInput> | null
+  mother_details?: Prisma.XOR<Prisma.MotherDetailsNullableScalarRelationFilter, Prisma.MotherDetailsWhereInput> | null
   active_inactive_history?: Prisma.ActiveInactiveHistoryListRelationFilter
   position?: Prisma.XOR<Prisma.PositionScalarRelationFilter, Prisma.PositionWhereInput>
   role?: Prisma.XOR<Prisma.RoleNullableScalarRelationFilter, Prisma.RoleWhereInput> | null
+  present_address?: Prisma.XOR<Prisma.PresentAddressNullableScalarRelationFilter, Prisma.PresentAddressWhereInput> | null
+  permanent_address?: Prisma.XOR<Prisma.PermanentAddressNullableScalarRelationFilter, Prisma.PermanentAddressWhereInput> | null
+  academic_teacher?: Prisma.XOR<Prisma.AcademicTeacherNullableScalarRelationFilter, Prisma.AcademicTeacherWhereInput> | null
 }
 
 export type UserOrderByWithRelationInput = {
   user_id?: Prisma.SortOrder
   full_name?: Prisma.SortOrder
   mobile_number?: Prisma.SortOrder
-  role_name?: Prisma.SortOrderInput | Prisma.SortOrder
   gender?: Prisma.SortOrder
   blood_group?: Prisma.SortOrderInput | Prisma.SortOrder
   date_of_birth?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -375,31 +403,42 @@ export type UserOrderByWithRelationInput = {
   nationality?: Prisma.SortOrderInput | Prisma.SortOrder
   birth_certificate_number?: Prisma.SortOrderInput | Prisma.SortOrder
   nid_number?: Prisma.SortOrderInput | Prisma.SortOrder
-  father_name?: Prisma.SortOrderInput | Prisma.SortOrder
-  mother_name?: Prisma.SortOrderInput | Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  father_details_id?: Prisma.SortOrderInput | Prisma.SortOrder
+  mother_details_id?: Prisma.SortOrderInput | Prisma.SortOrder
   email?: Prisma.SortOrderInput | Prisma.SortOrder
   user_name?: Prisma.SortOrderInput | Prisma.SortOrder
   user_password?: Prisma.SortOrderInput | Prisma.SortOrder
-  position_name?: Prisma.SortOrder
   active_status?: Prisma.SortOrder
+  position_name?: Prisma.SortOrder
+  role_name?: Prisma.SortOrderInput | Prisma.SortOrder
+  present_address_id?: Prisma.SortOrderInput | Prisma.SortOrder
+  permanent_address_id?: Prisma.SortOrderInput | Prisma.SortOrder
+  academic_teacher_id?: Prisma.SortOrderInput | Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
+  father_details?: Prisma.FatherDetailsOrderByWithRelationInput
+  mother_details?: Prisma.MotherDetailsOrderByWithRelationInput
   active_inactive_history?: Prisma.ActiveInactiveHistoryOrderByRelationAggregateInput
   position?: Prisma.PositionOrderByWithRelationInput
   role?: Prisma.RoleOrderByWithRelationInput
+  present_address?: Prisma.PresentAddressOrderByWithRelationInput
+  permanent_address?: Prisma.PermanentAddressOrderByWithRelationInput
+  academic_teacher?: Prisma.AcademicTeacherOrderByWithRelationInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
   user_id?: string
   email?: string
   user_name?: string
+  present_address_id?: string
+  permanent_address_id?: string
+  academic_teacher_id?: string
   user_full_name_mobile_unique?: Prisma.UserUser_full_name_mobile_uniqueCompoundUniqueInput
   AND?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   OR?: Prisma.UserWhereInput[]
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   full_name?: Prisma.StringFilter<"User"> | string
   mobile_number?: Prisma.StringFilter<"User"> | string
-  role_name?: Prisma.StringNullableFilter<"User"> | string | null
   gender?: Prisma.EnumGenderFilter<"User"> | $Enums.Gender
   blood_group?: Prisma.EnumBloodGroupNullableFilter<"User"> | $Enums.BloodGroup | null
   date_of_birth?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
@@ -409,23 +448,28 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   nationality?: Prisma.StringNullableFilter<"User"> | string | null
   birth_certificate_number?: Prisma.StringNullableFilter<"User"> | string | null
   nid_number?: Prisma.StringNullableFilter<"User"> | string | null
-  father_name?: Prisma.StringNullableFilter<"User"> | string | null
-  mother_name?: Prisma.StringNullableFilter<"User"> | string | null
+  father_details_id?: Prisma.StringNullableFilter<"User"> | string | null
+  mother_details_id?: Prisma.StringNullableFilter<"User"> | string | null
+  user_password?: Prisma.StringNullableFilter<"User"> | string | null
+  active_status?: Prisma.EnumActiveStatusFilter<"User"> | $Enums.ActiveStatus
+  position_name?: Prisma.StringFilter<"User"> | string
+  role_name?: Prisma.StringNullableFilter<"User"> | string | null
   created_at?: Prisma.DateTimeFilter<"User"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"User"> | Date | string
-  user_password?: Prisma.StringNullableFilter<"User"> | string | null
-  position_name?: Prisma.StringFilter<"User"> | string
-  active_status?: Prisma.EnumActiveStatusFilter<"User"> | $Enums.ActiveStatus
+  father_details?: Prisma.XOR<Prisma.FatherDetailsNullableScalarRelationFilter, Prisma.FatherDetailsWhereInput> | null
+  mother_details?: Prisma.XOR<Prisma.MotherDetailsNullableScalarRelationFilter, Prisma.MotherDetailsWhereInput> | null
   active_inactive_history?: Prisma.ActiveInactiveHistoryListRelationFilter
   position?: Prisma.XOR<Prisma.PositionScalarRelationFilter, Prisma.PositionWhereInput>
   role?: Prisma.XOR<Prisma.RoleNullableScalarRelationFilter, Prisma.RoleWhereInput> | null
-}, "user_id" | "email" | "user_name" | "user_full_name_mobile_unique">
+  present_address?: Prisma.XOR<Prisma.PresentAddressNullableScalarRelationFilter, Prisma.PresentAddressWhereInput> | null
+  permanent_address?: Prisma.XOR<Prisma.PermanentAddressNullableScalarRelationFilter, Prisma.PermanentAddressWhereInput> | null
+  academic_teacher?: Prisma.XOR<Prisma.AcademicTeacherNullableScalarRelationFilter, Prisma.AcademicTeacherWhereInput> | null
+}, "user_id" | "email" | "user_name" | "present_address_id" | "permanent_address_id" | "academic_teacher_id" | "user_full_name_mobile_unique">
 
 export type UserOrderByWithAggregationInput = {
   user_id?: Prisma.SortOrder
   full_name?: Prisma.SortOrder
   mobile_number?: Prisma.SortOrder
-  role_name?: Prisma.SortOrderInput | Prisma.SortOrder
   gender?: Prisma.SortOrder
   blood_group?: Prisma.SortOrderInput | Prisma.SortOrder
   date_of_birth?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -435,15 +479,19 @@ export type UserOrderByWithAggregationInput = {
   nationality?: Prisma.SortOrderInput | Prisma.SortOrder
   birth_certificate_number?: Prisma.SortOrderInput | Prisma.SortOrder
   nid_number?: Prisma.SortOrderInput | Prisma.SortOrder
-  father_name?: Prisma.SortOrderInput | Prisma.SortOrder
-  mother_name?: Prisma.SortOrderInput | Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  father_details_id?: Prisma.SortOrderInput | Prisma.SortOrder
+  mother_details_id?: Prisma.SortOrderInput | Prisma.SortOrder
   email?: Prisma.SortOrderInput | Prisma.SortOrder
   user_name?: Prisma.SortOrderInput | Prisma.SortOrder
   user_password?: Prisma.SortOrderInput | Prisma.SortOrder
-  position_name?: Prisma.SortOrder
   active_status?: Prisma.SortOrder
+  position_name?: Prisma.SortOrder
+  role_name?: Prisma.SortOrderInput | Prisma.SortOrder
+  present_address_id?: Prisma.SortOrderInput | Prisma.SortOrder
+  permanent_address_id?: Prisma.SortOrderInput | Prisma.SortOrder
+  academic_teacher_id?: Prisma.SortOrderInput | Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
   _count?: Prisma.UserCountOrderByAggregateInput
   _avg?: Prisma.UserAvgOrderByAggregateInput
   _max?: Prisma.UserMaxOrderByAggregateInput
@@ -458,7 +506,6 @@ export type UserScalarWhereWithAggregatesInput = {
   user_id?: Prisma.StringWithAggregatesFilter<"User"> | string
   full_name?: Prisma.StringWithAggregatesFilter<"User"> | string
   mobile_number?: Prisma.StringWithAggregatesFilter<"User"> | string
-  role_name?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   gender?: Prisma.EnumGenderWithAggregatesFilter<"User"> | $Enums.Gender
   blood_group?: Prisma.EnumBloodGroupNullableWithAggregatesFilter<"User"> | $Enums.BloodGroup | null
   date_of_birth?: Prisma.DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
@@ -468,15 +515,19 @@ export type UserScalarWhereWithAggregatesInput = {
   nationality?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   birth_certificate_number?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   nid_number?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
-  father_name?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
-  mother_name?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
-  created_at?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
-  updated_at?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
+  father_details_id?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  mother_details_id?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   email?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   user_name?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   user_password?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
-  position_name?: Prisma.StringWithAggregatesFilter<"User"> | string
   active_status?: Prisma.EnumActiveStatusWithAggregatesFilter<"User"> | $Enums.ActiveStatus
+  position_name?: Prisma.StringWithAggregatesFilter<"User"> | string
+  role_name?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  present_address_id?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  permanent_address_id?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  academic_teacher_id?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  created_at?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
+  updated_at?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
 }
 
 export type UserCreateInput = {
@@ -492,24 +543,26 @@ export type UserCreateInput = {
   nationality?: string | null
   birth_certificate_number?: string | null
   nid_number?: string | null
-  father_name?: string | null
-  mother_name?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string
   email?: string | null
   user_name?: string | null
   user_password?: string | null
   active_status?: $Enums.ActiveStatus
+  created_at?: Date | string
+  updated_at?: Date | string
+  father_details?: Prisma.FatherDetailsCreateNestedOneWithoutUserInput
+  mother_details?: Prisma.MotherDetailsCreateNestedOneWithoutUserInput
   active_inactive_history?: Prisma.ActiveInactiveHistoryCreateNestedManyWithoutUserInput
   position: Prisma.PositionCreateNestedOneWithoutUserInput
   role?: Prisma.RoleCreateNestedOneWithoutUserInput
+  present_address?: Prisma.PresentAddressCreateNestedOneWithoutUserInput
+  permanent_address?: Prisma.PermanentAddressCreateNestedOneWithoutUserInput
+  academic_teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
   user_id?: string
   full_name: string
   mobile_number: string
-  role_name?: string | null
   gender: $Enums.Gender
   blood_group?: $Enums.BloodGroup | null
   date_of_birth?: Date | string | null
@@ -519,15 +572,19 @@ export type UserUncheckedCreateInput = {
   nationality?: string | null
   birth_certificate_number?: string | null
   nid_number?: string | null
-  father_name?: string | null
-  mother_name?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string
+  father_details_id?: string | null
+  mother_details_id?: string | null
   email?: string | null
   user_name?: string | null
   user_password?: string | null
-  position_name: string
   active_status?: $Enums.ActiveStatus
+  position_name: string
+  role_name?: string | null
+  present_address_id?: string | null
+  permanent_address_id?: string | null
+  academic_teacher_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
   active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedCreateNestedManyWithoutUserInput
 }
 
@@ -544,24 +601,26 @@ export type UserUpdateInput = {
   nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  father_details?: Prisma.FatherDetailsUpdateOneWithoutUserNestedInput
+  mother_details?: Prisma.MotherDetailsUpdateOneWithoutUserNestedInput
   active_inactive_history?: Prisma.ActiveInactiveHistoryUpdateManyWithoutUserNestedInput
   position?: Prisma.PositionUpdateOneRequiredWithoutUserNestedInput
   role?: Prisma.RoleUpdateOneWithoutUserNestedInput
+  present_address?: Prisma.PresentAddressUpdateOneWithoutUserNestedInput
+  permanent_address?: Prisma.PermanentAddressUpdateOneWithoutUserNestedInput
+  academic_teacher?: Prisma.AcademicTeacherUpdateOneWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   full_name?: Prisma.StringFieldUpdateOperationsInput | string
   mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
-  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
   blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
   date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -571,15 +630,19 @@ export type UserUncheckedUpdateInput = {
   nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  father_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mother_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  position_name?: Prisma.StringFieldUpdateOperationsInput | string
   active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  present_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  permanent_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  academic_teacher_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedUpdateManyWithoutUserNestedInput
 }
 
@@ -587,7 +650,6 @@ export type UserCreateManyInput = {
   user_id?: string
   full_name: string
   mobile_number: string
-  role_name?: string | null
   gender: $Enums.Gender
   blood_group?: $Enums.BloodGroup | null
   date_of_birth?: Date | string | null
@@ -597,15 +659,19 @@ export type UserCreateManyInput = {
   nationality?: string | null
   birth_certificate_number?: string | null
   nid_number?: string | null
-  father_name?: string | null
-  mother_name?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string
+  father_details_id?: string | null
+  mother_details_id?: string | null
   email?: string | null
   user_name?: string | null
   user_password?: string | null
-  position_name: string
   active_status?: $Enums.ActiveStatus
+  position_name: string
+  role_name?: string | null
+  present_address_id?: string | null
+  permanent_address_id?: string | null
+  academic_teacher_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type UserUpdateManyMutationInput = {
@@ -621,21 +687,18 @@ export type UserUpdateManyMutationInput = {
   nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type UserUncheckedUpdateManyInput = {
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   full_name?: Prisma.StringFieldUpdateOperationsInput | string
   mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
-  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
   blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
   date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -645,15 +708,24 @@ export type UserUncheckedUpdateManyInput = {
   nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  father_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mother_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  position_name?: Prisma.StringFieldUpdateOperationsInput | string
   active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  present_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  permanent_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  academic_teacher_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type UserNullableScalarRelationFilter = {
+  is?: Prisma.UserWhereInput | null
+  isNot?: Prisma.UserWhereInput | null
 }
 
 export type UserScalarRelationFilter = {
@@ -680,7 +752,6 @@ export type UserCountOrderByAggregateInput = {
   user_id?: Prisma.SortOrder
   full_name?: Prisma.SortOrder
   mobile_number?: Prisma.SortOrder
-  role_name?: Prisma.SortOrder
   gender?: Prisma.SortOrder
   blood_group?: Prisma.SortOrder
   date_of_birth?: Prisma.SortOrder
@@ -690,15 +761,19 @@ export type UserCountOrderByAggregateInput = {
   nationality?: Prisma.SortOrder
   birth_certificate_number?: Prisma.SortOrder
   nid_number?: Prisma.SortOrder
-  father_name?: Prisma.SortOrder
-  mother_name?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  father_details_id?: Prisma.SortOrder
+  mother_details_id?: Prisma.SortOrder
   email?: Prisma.SortOrder
   user_name?: Prisma.SortOrder
   user_password?: Prisma.SortOrder
-  position_name?: Prisma.SortOrder
   active_status?: Prisma.SortOrder
+  position_name?: Prisma.SortOrder
+  role_name?: Prisma.SortOrder
+  present_address_id?: Prisma.SortOrder
+  permanent_address_id?: Prisma.SortOrder
+  academic_teacher_id?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type UserAvgOrderByAggregateInput = {
@@ -710,7 +785,6 @@ export type UserMaxOrderByAggregateInput = {
   user_id?: Prisma.SortOrder
   full_name?: Prisma.SortOrder
   mobile_number?: Prisma.SortOrder
-  role_name?: Prisma.SortOrder
   gender?: Prisma.SortOrder
   blood_group?: Prisma.SortOrder
   date_of_birth?: Prisma.SortOrder
@@ -720,22 +794,25 @@ export type UserMaxOrderByAggregateInput = {
   nationality?: Prisma.SortOrder
   birth_certificate_number?: Prisma.SortOrder
   nid_number?: Prisma.SortOrder
-  father_name?: Prisma.SortOrder
-  mother_name?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  father_details_id?: Prisma.SortOrder
+  mother_details_id?: Prisma.SortOrder
   email?: Prisma.SortOrder
   user_name?: Prisma.SortOrder
   user_password?: Prisma.SortOrder
-  position_name?: Prisma.SortOrder
   active_status?: Prisma.SortOrder
+  position_name?: Prisma.SortOrder
+  role_name?: Prisma.SortOrder
+  present_address_id?: Prisma.SortOrder
+  permanent_address_id?: Prisma.SortOrder
+  academic_teacher_id?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type UserMinOrderByAggregateInput = {
   user_id?: Prisma.SortOrder
   full_name?: Prisma.SortOrder
   mobile_number?: Prisma.SortOrder
-  role_name?: Prisma.SortOrder
   gender?: Prisma.SortOrder
   blood_group?: Prisma.SortOrder
   date_of_birth?: Prisma.SortOrder
@@ -745,20 +822,56 @@ export type UserMinOrderByAggregateInput = {
   nationality?: Prisma.SortOrder
   birth_certificate_number?: Prisma.SortOrder
   nid_number?: Prisma.SortOrder
-  father_name?: Prisma.SortOrder
-  mother_name?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
+  father_details_id?: Prisma.SortOrder
+  mother_details_id?: Prisma.SortOrder
   email?: Prisma.SortOrder
   user_name?: Prisma.SortOrder
   user_password?: Prisma.SortOrder
-  position_name?: Prisma.SortOrder
   active_status?: Prisma.SortOrder
+  position_name?: Prisma.SortOrder
+  role_name?: Prisma.SortOrder
+  present_address_id?: Prisma.SortOrder
+  permanent_address_id?: Prisma.SortOrder
+  academic_teacher_id?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type UserSumOrderByAggregateInput = {
   heightInCm?: Prisma.SortOrder
   weightInKg?: Prisma.SortOrder
+}
+
+export type UserCreateNestedOneWithoutAcademic_teacherInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutAcademic_teacherInput, Prisma.UserUncheckedCreateWithoutAcademic_teacherInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutAcademic_teacherInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUncheckedCreateNestedOneWithoutAcademic_teacherInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutAcademic_teacherInput, Prisma.UserUncheckedCreateWithoutAcademic_teacherInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutAcademic_teacherInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutAcademic_teacherNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutAcademic_teacherInput, Prisma.UserUncheckedCreateWithoutAcademic_teacherInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutAcademic_teacherInput
+  upsert?: Prisma.UserUpsertWithoutAcademic_teacherInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutAcademic_teacherInput, Prisma.UserUpdateWithoutAcademic_teacherInput>, Prisma.UserUncheckedUpdateWithoutAcademic_teacherInput>
+}
+
+export type UserUncheckedUpdateOneWithoutAcademic_teacherNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutAcademic_teacherInput, Prisma.UserUncheckedCreateWithoutAcademic_teacherInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutAcademic_teacherInput
+  upsert?: Prisma.UserUpsertWithoutAcademic_teacherInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutAcademic_teacherInput, Prisma.UserUpdateWithoutAcademic_teacherInput>, Prisma.UserUncheckedUpdateWithoutAcademic_teacherInput>
 }
 
 export type UserCreateNestedOneWithoutActive_inactive_historyInput = {
@@ -773,6 +886,122 @@ export type UserUpdateOneRequiredWithoutActive_inactive_historyNestedInput = {
   upsert?: Prisma.UserUpsertWithoutActive_inactive_historyInput
   connect?: Prisma.UserWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutActive_inactive_historyInput, Prisma.UserUpdateWithoutActive_inactive_historyInput>, Prisma.UserUncheckedUpdateWithoutActive_inactive_historyInput>
+}
+
+export type UserCreateNestedManyWithoutFather_detailsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFather_detailsInput, Prisma.UserUncheckedCreateWithoutFather_detailsInput> | Prisma.UserCreateWithoutFather_detailsInput[] | Prisma.UserUncheckedCreateWithoutFather_detailsInput[]
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFather_detailsInput | Prisma.UserCreateOrConnectWithoutFather_detailsInput[]
+  createMany?: Prisma.UserCreateManyFather_detailsInputEnvelope
+  connect?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+}
+
+export type UserUncheckedCreateNestedManyWithoutFather_detailsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFather_detailsInput, Prisma.UserUncheckedCreateWithoutFather_detailsInput> | Prisma.UserCreateWithoutFather_detailsInput[] | Prisma.UserUncheckedCreateWithoutFather_detailsInput[]
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFather_detailsInput | Prisma.UserCreateOrConnectWithoutFather_detailsInput[]
+  createMany?: Prisma.UserCreateManyFather_detailsInputEnvelope
+  connect?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+}
+
+export type UserUpdateManyWithoutFather_detailsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFather_detailsInput, Prisma.UserUncheckedCreateWithoutFather_detailsInput> | Prisma.UserCreateWithoutFather_detailsInput[] | Prisma.UserUncheckedCreateWithoutFather_detailsInput[]
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFather_detailsInput | Prisma.UserCreateOrConnectWithoutFather_detailsInput[]
+  upsert?: Prisma.UserUpsertWithWhereUniqueWithoutFather_detailsInput | Prisma.UserUpsertWithWhereUniqueWithoutFather_detailsInput[]
+  createMany?: Prisma.UserCreateManyFather_detailsInputEnvelope
+  set?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+  disconnect?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+  delete?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+  connect?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+  update?: Prisma.UserUpdateWithWhereUniqueWithoutFather_detailsInput | Prisma.UserUpdateWithWhereUniqueWithoutFather_detailsInput[]
+  updateMany?: Prisma.UserUpdateManyWithWhereWithoutFather_detailsInput | Prisma.UserUpdateManyWithWhereWithoutFather_detailsInput[]
+  deleteMany?: Prisma.UserScalarWhereInput | Prisma.UserScalarWhereInput[]
+}
+
+export type UserUncheckedUpdateManyWithoutFather_detailsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFather_detailsInput, Prisma.UserUncheckedCreateWithoutFather_detailsInput> | Prisma.UserCreateWithoutFather_detailsInput[] | Prisma.UserUncheckedCreateWithoutFather_detailsInput[]
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFather_detailsInput | Prisma.UserCreateOrConnectWithoutFather_detailsInput[]
+  upsert?: Prisma.UserUpsertWithWhereUniqueWithoutFather_detailsInput | Prisma.UserUpsertWithWhereUniqueWithoutFather_detailsInput[]
+  createMany?: Prisma.UserCreateManyFather_detailsInputEnvelope
+  set?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+  disconnect?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+  delete?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+  connect?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+  update?: Prisma.UserUpdateWithWhereUniqueWithoutFather_detailsInput | Prisma.UserUpdateWithWhereUniqueWithoutFather_detailsInput[]
+  updateMany?: Prisma.UserUpdateManyWithWhereWithoutFather_detailsInput | Prisma.UserUpdateManyWithWhereWithoutFather_detailsInput[]
+  deleteMany?: Prisma.UserScalarWhereInput | Prisma.UserScalarWhereInput[]
+}
+
+export type UserCreateNestedManyWithoutMother_detailsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutMother_detailsInput, Prisma.UserUncheckedCreateWithoutMother_detailsInput> | Prisma.UserCreateWithoutMother_detailsInput[] | Prisma.UserUncheckedCreateWithoutMother_detailsInput[]
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutMother_detailsInput | Prisma.UserCreateOrConnectWithoutMother_detailsInput[]
+  createMany?: Prisma.UserCreateManyMother_detailsInputEnvelope
+  connect?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+}
+
+export type UserUncheckedCreateNestedManyWithoutMother_detailsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutMother_detailsInput, Prisma.UserUncheckedCreateWithoutMother_detailsInput> | Prisma.UserCreateWithoutMother_detailsInput[] | Prisma.UserUncheckedCreateWithoutMother_detailsInput[]
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutMother_detailsInput | Prisma.UserCreateOrConnectWithoutMother_detailsInput[]
+  createMany?: Prisma.UserCreateManyMother_detailsInputEnvelope
+  connect?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+}
+
+export type UserUpdateManyWithoutMother_detailsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutMother_detailsInput, Prisma.UserUncheckedCreateWithoutMother_detailsInput> | Prisma.UserCreateWithoutMother_detailsInput[] | Prisma.UserUncheckedCreateWithoutMother_detailsInput[]
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutMother_detailsInput | Prisma.UserCreateOrConnectWithoutMother_detailsInput[]
+  upsert?: Prisma.UserUpsertWithWhereUniqueWithoutMother_detailsInput | Prisma.UserUpsertWithWhereUniqueWithoutMother_detailsInput[]
+  createMany?: Prisma.UserCreateManyMother_detailsInputEnvelope
+  set?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+  disconnect?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+  delete?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+  connect?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+  update?: Prisma.UserUpdateWithWhereUniqueWithoutMother_detailsInput | Prisma.UserUpdateWithWhereUniqueWithoutMother_detailsInput[]
+  updateMany?: Prisma.UserUpdateManyWithWhereWithoutMother_detailsInput | Prisma.UserUpdateManyWithWhereWithoutMother_detailsInput[]
+  deleteMany?: Prisma.UserScalarWhereInput | Prisma.UserScalarWhereInput[]
+}
+
+export type UserUncheckedUpdateManyWithoutMother_detailsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutMother_detailsInput, Prisma.UserUncheckedCreateWithoutMother_detailsInput> | Prisma.UserCreateWithoutMother_detailsInput[] | Prisma.UserUncheckedCreateWithoutMother_detailsInput[]
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutMother_detailsInput | Prisma.UserCreateOrConnectWithoutMother_detailsInput[]
+  upsert?: Prisma.UserUpsertWithWhereUniqueWithoutMother_detailsInput | Prisma.UserUpsertWithWhereUniqueWithoutMother_detailsInput[]
+  createMany?: Prisma.UserCreateManyMother_detailsInputEnvelope
+  set?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+  disconnect?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+  delete?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+  connect?: Prisma.UserWhereUniqueInput | Prisma.UserWhereUniqueInput[]
+  update?: Prisma.UserUpdateWithWhereUniqueWithoutMother_detailsInput | Prisma.UserUpdateWithWhereUniqueWithoutMother_detailsInput[]
+  updateMany?: Prisma.UserUpdateManyWithWhereWithoutMother_detailsInput | Prisma.UserUpdateManyWithWhereWithoutMother_detailsInput[]
+  deleteMany?: Prisma.UserScalarWhereInput | Prisma.UserScalarWhereInput[]
+}
+
+export type UserCreateNestedOneWithoutPermanent_addressInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPermanent_addressInput, Prisma.UserUncheckedCreateWithoutPermanent_addressInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPermanent_addressInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUncheckedCreateNestedOneWithoutPermanent_addressInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPermanent_addressInput, Prisma.UserUncheckedCreateWithoutPermanent_addressInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPermanent_addressInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutPermanent_addressNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPermanent_addressInput, Prisma.UserUncheckedCreateWithoutPermanent_addressInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPermanent_addressInput
+  upsert?: Prisma.UserUpsertWithoutPermanent_addressInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPermanent_addressInput, Prisma.UserUpdateWithoutPermanent_addressInput>, Prisma.UserUncheckedUpdateWithoutPermanent_addressInput>
+}
+
+export type UserUncheckedUpdateOneWithoutPermanent_addressNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPermanent_addressInput, Prisma.UserUncheckedCreateWithoutPermanent_addressInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPermanent_addressInput
+  upsert?: Prisma.UserUpsertWithoutPermanent_addressInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPermanent_addressInput, Prisma.UserUpdateWithoutPermanent_addressInput>, Prisma.UserUncheckedUpdateWithoutPermanent_addressInput>
 }
 
 export type UserCreateNestedManyWithoutPositionInput = {
@@ -815,6 +1044,38 @@ export type UserUncheckedUpdateManyWithoutPositionNestedInput = {
   update?: Prisma.UserUpdateWithWhereUniqueWithoutPositionInput | Prisma.UserUpdateWithWhereUniqueWithoutPositionInput[]
   updateMany?: Prisma.UserUpdateManyWithWhereWithoutPositionInput | Prisma.UserUpdateManyWithWhereWithoutPositionInput[]
   deleteMany?: Prisma.UserScalarWhereInput | Prisma.UserScalarWhereInput[]
+}
+
+export type UserCreateNestedOneWithoutPresent_addressInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPresent_addressInput, Prisma.UserUncheckedCreateWithoutPresent_addressInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPresent_addressInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUncheckedCreateNestedOneWithoutPresent_addressInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPresent_addressInput, Prisma.UserUncheckedCreateWithoutPresent_addressInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPresent_addressInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutPresent_addressNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPresent_addressInput, Prisma.UserUncheckedCreateWithoutPresent_addressInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPresent_addressInput
+  upsert?: Prisma.UserUpsertWithoutPresent_addressInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPresent_addressInput, Prisma.UserUpdateWithoutPresent_addressInput>, Prisma.UserUncheckedUpdateWithoutPresent_addressInput>
+}
+
+export type UserUncheckedUpdateOneWithoutPresent_addressNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPresent_addressInput, Prisma.UserUncheckedCreateWithoutPresent_addressInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPresent_addressInput
+  upsert?: Prisma.UserUpsertWithoutPresent_addressInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPresent_addressInput, Prisma.UserUpdateWithoutPresent_addressInput>, Prisma.UserUncheckedUpdateWithoutPresent_addressInput>
 }
 
 export type UserCreateNestedManyWithoutRoleInput = {
@@ -879,8 +1140,132 @@ export type NullableEnumReligionFieldUpdateOperationsInput = {
   set?: $Enums.Religion | null
 }
 
-export type NullableStringFieldUpdateOperationsInput = {
-  set?: string | null
+export type UserCreateWithoutAcademic_teacherInput = {
+  user_id?: string
+  full_name: string
+  mobile_number: string
+  gender: $Enums.Gender
+  blood_group?: $Enums.BloodGroup | null
+  date_of_birth?: Date | string | null
+  heightInCm?: number | null
+  weightInKg?: number | null
+  religion?: $Enums.Religion | null
+  nationality?: string | null
+  birth_certificate_number?: string | null
+  nid_number?: string | null
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  active_status?: $Enums.ActiveStatus
+  created_at?: Date | string
+  updated_at?: Date | string
+  father_details?: Prisma.FatherDetailsCreateNestedOneWithoutUserInput
+  mother_details?: Prisma.MotherDetailsCreateNestedOneWithoutUserInput
+  active_inactive_history?: Prisma.ActiveInactiveHistoryCreateNestedManyWithoutUserInput
+  position: Prisma.PositionCreateNestedOneWithoutUserInput
+  role?: Prisma.RoleCreateNestedOneWithoutUserInput
+  present_address?: Prisma.PresentAddressCreateNestedOneWithoutUserInput
+  permanent_address?: Prisma.PermanentAddressCreateNestedOneWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutAcademic_teacherInput = {
+  user_id?: string
+  full_name: string
+  mobile_number: string
+  gender: $Enums.Gender
+  blood_group?: $Enums.BloodGroup | null
+  date_of_birth?: Date | string | null
+  heightInCm?: number | null
+  weightInKg?: number | null
+  religion?: $Enums.Religion | null
+  nationality?: string | null
+  birth_certificate_number?: string | null
+  nid_number?: string | null
+  father_details_id?: string | null
+  mother_details_id?: string | null
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  active_status?: $Enums.ActiveStatus
+  position_name: string
+  role_name?: string | null
+  present_address_id?: string | null
+  permanent_address_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
+  active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutAcademic_teacherInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutAcademic_teacherInput, Prisma.UserUncheckedCreateWithoutAcademic_teacherInput>
+}
+
+export type UserUpsertWithoutAcademic_teacherInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutAcademic_teacherInput, Prisma.UserUncheckedUpdateWithoutAcademic_teacherInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutAcademic_teacherInput, Prisma.UserUncheckedCreateWithoutAcademic_teacherInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutAcademic_teacherInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutAcademic_teacherInput, Prisma.UserUncheckedUpdateWithoutAcademic_teacherInput>
+}
+
+export type UserUpdateWithoutAcademic_teacherInput = {
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
+  gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
+  blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
+  date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  heightInCm?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightInKg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  religion?: Prisma.NullableEnumReligionFieldUpdateOperationsInput | $Enums.Religion | null
+  nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  father_details?: Prisma.FatherDetailsUpdateOneWithoutUserNestedInput
+  mother_details?: Prisma.MotherDetailsUpdateOneWithoutUserNestedInput
+  active_inactive_history?: Prisma.ActiveInactiveHistoryUpdateManyWithoutUserNestedInput
+  position?: Prisma.PositionUpdateOneRequiredWithoutUserNestedInput
+  role?: Prisma.RoleUpdateOneWithoutUserNestedInput
+  present_address?: Prisma.PresentAddressUpdateOneWithoutUserNestedInput
+  permanent_address?: Prisma.PermanentAddressUpdateOneWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutAcademic_teacherInput = {
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
+  gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
+  blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
+  date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  heightInCm?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightInKg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  religion?: Prisma.NullableEnumReligionFieldUpdateOperationsInput | $Enums.Religion | null
+  nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  father_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mother_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  present_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  permanent_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutActive_inactive_historyInput = {
@@ -896,23 +1281,25 @@ export type UserCreateWithoutActive_inactive_historyInput = {
   nationality?: string | null
   birth_certificate_number?: string | null
   nid_number?: string | null
-  father_name?: string | null
-  mother_name?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string
   email?: string | null
   user_name?: string | null
   user_password?: string | null
   active_status?: $Enums.ActiveStatus
+  created_at?: Date | string
+  updated_at?: Date | string
+  father_details?: Prisma.FatherDetailsCreateNestedOneWithoutUserInput
+  mother_details?: Prisma.MotherDetailsCreateNestedOneWithoutUserInput
   position: Prisma.PositionCreateNestedOneWithoutUserInput
   role?: Prisma.RoleCreateNestedOneWithoutUserInput
+  present_address?: Prisma.PresentAddressCreateNestedOneWithoutUserInput
+  permanent_address?: Prisma.PermanentAddressCreateNestedOneWithoutUserInput
+  academic_teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutActive_inactive_historyInput = {
   user_id?: string
   full_name: string
   mobile_number: string
-  role_name?: string | null
   gender: $Enums.Gender
   blood_group?: $Enums.BloodGroup | null
   date_of_birth?: Date | string | null
@@ -922,15 +1309,19 @@ export type UserUncheckedCreateWithoutActive_inactive_historyInput = {
   nationality?: string | null
   birth_certificate_number?: string | null
   nid_number?: string | null
-  father_name?: string | null
-  mother_name?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string
+  father_details_id?: string | null
+  mother_details_id?: string | null
   email?: string | null
   user_name?: string | null
   user_password?: string | null
-  position_name: string
   active_status?: $Enums.ActiveStatus
+  position_name: string
+  role_name?: string | null
+  present_address_id?: string | null
+  permanent_address_id?: string | null
+  academic_teacher_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type UserCreateOrConnectWithoutActive_inactive_historyInput = {
@@ -962,23 +1353,25 @@ export type UserUpdateWithoutActive_inactive_historyInput = {
   nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  father_details?: Prisma.FatherDetailsUpdateOneWithoutUserNestedInput
+  mother_details?: Prisma.MotherDetailsUpdateOneWithoutUserNestedInput
   position?: Prisma.PositionUpdateOneRequiredWithoutUserNestedInput
   role?: Prisma.RoleUpdateOneWithoutUserNestedInput
+  present_address?: Prisma.PresentAddressUpdateOneWithoutUserNestedInput
+  permanent_address?: Prisma.PermanentAddressUpdateOneWithoutUserNestedInput
+  academic_teacher?: Prisma.AcademicTeacherUpdateOneWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActive_inactive_historyInput = {
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   full_name?: Prisma.StringFieldUpdateOperationsInput | string
   mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
-  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
   blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
   date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -988,15 +1381,342 @@ export type UserUncheckedUpdateWithoutActive_inactive_historyInput = {
   nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  father_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mother_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  position_name?: Prisma.StringFieldUpdateOperationsInput | string
   active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  present_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  permanent_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  academic_teacher_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type UserCreateWithoutFather_detailsInput = {
+  user_id?: string
+  full_name: string
+  mobile_number: string
+  gender: $Enums.Gender
+  blood_group?: $Enums.BloodGroup | null
+  date_of_birth?: Date | string | null
+  heightInCm?: number | null
+  weightInKg?: number | null
+  religion?: $Enums.Religion | null
+  nationality?: string | null
+  birth_certificate_number?: string | null
+  nid_number?: string | null
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  active_status?: $Enums.ActiveStatus
+  created_at?: Date | string
+  updated_at?: Date | string
+  mother_details?: Prisma.MotherDetailsCreateNestedOneWithoutUserInput
+  active_inactive_history?: Prisma.ActiveInactiveHistoryCreateNestedManyWithoutUserInput
+  position: Prisma.PositionCreateNestedOneWithoutUserInput
+  role?: Prisma.RoleCreateNestedOneWithoutUserInput
+  present_address?: Prisma.PresentAddressCreateNestedOneWithoutUserInput
+  permanent_address?: Prisma.PermanentAddressCreateNestedOneWithoutUserInput
+  academic_teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutFather_detailsInput = {
+  user_id?: string
+  full_name: string
+  mobile_number: string
+  gender: $Enums.Gender
+  blood_group?: $Enums.BloodGroup | null
+  date_of_birth?: Date | string | null
+  heightInCm?: number | null
+  weightInKg?: number | null
+  religion?: $Enums.Religion | null
+  nationality?: string | null
+  birth_certificate_number?: string | null
+  nid_number?: string | null
+  mother_details_id?: string | null
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  active_status?: $Enums.ActiveStatus
+  position_name: string
+  role_name?: string | null
+  present_address_id?: string | null
+  permanent_address_id?: string | null
+  academic_teacher_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
+  active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutFather_detailsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutFather_detailsInput, Prisma.UserUncheckedCreateWithoutFather_detailsInput>
+}
+
+export type UserCreateManyFather_detailsInputEnvelope = {
+  data: Prisma.UserCreateManyFather_detailsInput | Prisma.UserCreateManyFather_detailsInput[]
+  skipDuplicates?: boolean
+}
+
+export type UserUpsertWithWhereUniqueWithoutFather_detailsInput = {
+  where: Prisma.UserWhereUniqueInput
+  update: Prisma.XOR<Prisma.UserUpdateWithoutFather_detailsInput, Prisma.UserUncheckedUpdateWithoutFather_detailsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutFather_detailsInput, Prisma.UserUncheckedCreateWithoutFather_detailsInput>
+}
+
+export type UserUpdateWithWhereUniqueWithoutFather_detailsInput = {
+  where: Prisma.UserWhereUniqueInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutFather_detailsInput, Prisma.UserUncheckedUpdateWithoutFather_detailsInput>
+}
+
+export type UserUpdateManyWithWhereWithoutFather_detailsInput = {
+  where: Prisma.UserScalarWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateManyMutationInput, Prisma.UserUncheckedUpdateManyWithoutFather_detailsInput>
+}
+
+export type UserScalarWhereInput = {
+  AND?: Prisma.UserScalarWhereInput | Prisma.UserScalarWhereInput[]
+  OR?: Prisma.UserScalarWhereInput[]
+  NOT?: Prisma.UserScalarWhereInput | Prisma.UserScalarWhereInput[]
+  user_id?: Prisma.StringFilter<"User"> | string
+  full_name?: Prisma.StringFilter<"User"> | string
+  mobile_number?: Prisma.StringFilter<"User"> | string
+  gender?: Prisma.EnumGenderFilter<"User"> | $Enums.Gender
+  blood_group?: Prisma.EnumBloodGroupNullableFilter<"User"> | $Enums.BloodGroup | null
+  date_of_birth?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
+  heightInCm?: Prisma.FloatNullableFilter<"User"> | number | null
+  weightInKg?: Prisma.FloatNullableFilter<"User"> | number | null
+  religion?: Prisma.EnumReligionNullableFilter<"User"> | $Enums.Religion | null
+  nationality?: Prisma.StringNullableFilter<"User"> | string | null
+  birth_certificate_number?: Prisma.StringNullableFilter<"User"> | string | null
+  nid_number?: Prisma.StringNullableFilter<"User"> | string | null
+  father_details_id?: Prisma.StringNullableFilter<"User"> | string | null
+  mother_details_id?: Prisma.StringNullableFilter<"User"> | string | null
+  email?: Prisma.StringNullableFilter<"User"> | string | null
+  user_name?: Prisma.StringNullableFilter<"User"> | string | null
+  user_password?: Prisma.StringNullableFilter<"User"> | string | null
+  active_status?: Prisma.EnumActiveStatusFilter<"User"> | $Enums.ActiveStatus
+  position_name?: Prisma.StringFilter<"User"> | string
+  role_name?: Prisma.StringNullableFilter<"User"> | string | null
+  present_address_id?: Prisma.StringNullableFilter<"User"> | string | null
+  permanent_address_id?: Prisma.StringNullableFilter<"User"> | string | null
+  academic_teacher_id?: Prisma.StringNullableFilter<"User"> | string | null
+  created_at?: Prisma.DateTimeFilter<"User"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"User"> | Date | string
+}
+
+export type UserCreateWithoutMother_detailsInput = {
+  user_id?: string
+  full_name: string
+  mobile_number: string
+  gender: $Enums.Gender
+  blood_group?: $Enums.BloodGroup | null
+  date_of_birth?: Date | string | null
+  heightInCm?: number | null
+  weightInKg?: number | null
+  religion?: $Enums.Religion | null
+  nationality?: string | null
+  birth_certificate_number?: string | null
+  nid_number?: string | null
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  active_status?: $Enums.ActiveStatus
+  created_at?: Date | string
+  updated_at?: Date | string
+  father_details?: Prisma.FatherDetailsCreateNestedOneWithoutUserInput
+  active_inactive_history?: Prisma.ActiveInactiveHistoryCreateNestedManyWithoutUserInput
+  position: Prisma.PositionCreateNestedOneWithoutUserInput
+  role?: Prisma.RoleCreateNestedOneWithoutUserInput
+  present_address?: Prisma.PresentAddressCreateNestedOneWithoutUserInput
+  permanent_address?: Prisma.PermanentAddressCreateNestedOneWithoutUserInput
+  academic_teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutMother_detailsInput = {
+  user_id?: string
+  full_name: string
+  mobile_number: string
+  gender: $Enums.Gender
+  blood_group?: $Enums.BloodGroup | null
+  date_of_birth?: Date | string | null
+  heightInCm?: number | null
+  weightInKg?: number | null
+  religion?: $Enums.Religion | null
+  nationality?: string | null
+  birth_certificate_number?: string | null
+  nid_number?: string | null
+  father_details_id?: string | null
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  active_status?: $Enums.ActiveStatus
+  position_name: string
+  role_name?: string | null
+  present_address_id?: string | null
+  permanent_address_id?: string | null
+  academic_teacher_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
+  active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutMother_detailsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutMother_detailsInput, Prisma.UserUncheckedCreateWithoutMother_detailsInput>
+}
+
+export type UserCreateManyMother_detailsInputEnvelope = {
+  data: Prisma.UserCreateManyMother_detailsInput | Prisma.UserCreateManyMother_detailsInput[]
+  skipDuplicates?: boolean
+}
+
+export type UserUpsertWithWhereUniqueWithoutMother_detailsInput = {
+  where: Prisma.UserWhereUniqueInput
+  update: Prisma.XOR<Prisma.UserUpdateWithoutMother_detailsInput, Prisma.UserUncheckedUpdateWithoutMother_detailsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutMother_detailsInput, Prisma.UserUncheckedCreateWithoutMother_detailsInput>
+}
+
+export type UserUpdateWithWhereUniqueWithoutMother_detailsInput = {
+  where: Prisma.UserWhereUniqueInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutMother_detailsInput, Prisma.UserUncheckedUpdateWithoutMother_detailsInput>
+}
+
+export type UserUpdateManyWithWhereWithoutMother_detailsInput = {
+  where: Prisma.UserScalarWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateManyMutationInput, Prisma.UserUncheckedUpdateManyWithoutMother_detailsInput>
+}
+
+export type UserCreateWithoutPermanent_addressInput = {
+  user_id?: string
+  full_name: string
+  mobile_number: string
+  gender: $Enums.Gender
+  blood_group?: $Enums.BloodGroup | null
+  date_of_birth?: Date | string | null
+  heightInCm?: number | null
+  weightInKg?: number | null
+  religion?: $Enums.Religion | null
+  nationality?: string | null
+  birth_certificate_number?: string | null
+  nid_number?: string | null
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  active_status?: $Enums.ActiveStatus
+  created_at?: Date | string
+  updated_at?: Date | string
+  father_details?: Prisma.FatherDetailsCreateNestedOneWithoutUserInput
+  mother_details?: Prisma.MotherDetailsCreateNestedOneWithoutUserInput
+  active_inactive_history?: Prisma.ActiveInactiveHistoryCreateNestedManyWithoutUserInput
+  position: Prisma.PositionCreateNestedOneWithoutUserInput
+  role?: Prisma.RoleCreateNestedOneWithoutUserInput
+  present_address?: Prisma.PresentAddressCreateNestedOneWithoutUserInput
+  academic_teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutPermanent_addressInput = {
+  user_id?: string
+  full_name: string
+  mobile_number: string
+  gender: $Enums.Gender
+  blood_group?: $Enums.BloodGroup | null
+  date_of_birth?: Date | string | null
+  heightInCm?: number | null
+  weightInKg?: number | null
+  religion?: $Enums.Religion | null
+  nationality?: string | null
+  birth_certificate_number?: string | null
+  nid_number?: string | null
+  father_details_id?: string | null
+  mother_details_id?: string | null
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  active_status?: $Enums.ActiveStatus
+  position_name: string
+  role_name?: string | null
+  present_address_id?: string | null
+  academic_teacher_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
+  active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutPermanent_addressInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutPermanent_addressInput, Prisma.UserUncheckedCreateWithoutPermanent_addressInput>
+}
+
+export type UserUpsertWithoutPermanent_addressInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutPermanent_addressInput, Prisma.UserUncheckedUpdateWithoutPermanent_addressInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutPermanent_addressInput, Prisma.UserUncheckedCreateWithoutPermanent_addressInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutPermanent_addressInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutPermanent_addressInput, Prisma.UserUncheckedUpdateWithoutPermanent_addressInput>
+}
+
+export type UserUpdateWithoutPermanent_addressInput = {
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
+  gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
+  blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
+  date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  heightInCm?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightInKg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  religion?: Prisma.NullableEnumReligionFieldUpdateOperationsInput | $Enums.Religion | null
+  nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  father_details?: Prisma.FatherDetailsUpdateOneWithoutUserNestedInput
+  mother_details?: Prisma.MotherDetailsUpdateOneWithoutUserNestedInput
+  active_inactive_history?: Prisma.ActiveInactiveHistoryUpdateManyWithoutUserNestedInput
+  position?: Prisma.PositionUpdateOneRequiredWithoutUserNestedInput
+  role?: Prisma.RoleUpdateOneWithoutUserNestedInput
+  present_address?: Prisma.PresentAddressUpdateOneWithoutUserNestedInput
+  academic_teacher?: Prisma.AcademicTeacherUpdateOneWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutPermanent_addressInput = {
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
+  gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
+  blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
+  date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  heightInCm?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightInKg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  religion?: Prisma.NullableEnumReligionFieldUpdateOperationsInput | $Enums.Religion | null
+  nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  father_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mother_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  present_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  academic_teacher_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutPositionInput = {
@@ -1012,23 +1732,25 @@ export type UserCreateWithoutPositionInput = {
   nationality?: string | null
   birth_certificate_number?: string | null
   nid_number?: string | null
-  father_name?: string | null
-  mother_name?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string
   email?: string | null
   user_name?: string | null
   user_password?: string | null
   active_status?: $Enums.ActiveStatus
+  created_at?: Date | string
+  updated_at?: Date | string
+  father_details?: Prisma.FatherDetailsCreateNestedOneWithoutUserInput
+  mother_details?: Prisma.MotherDetailsCreateNestedOneWithoutUserInput
   active_inactive_history?: Prisma.ActiveInactiveHistoryCreateNestedManyWithoutUserInput
   role?: Prisma.RoleCreateNestedOneWithoutUserInput
+  present_address?: Prisma.PresentAddressCreateNestedOneWithoutUserInput
+  permanent_address?: Prisma.PermanentAddressCreateNestedOneWithoutUserInput
+  academic_teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutPositionInput = {
   user_id?: string
   full_name: string
   mobile_number: string
-  role_name?: string | null
   gender: $Enums.Gender
   blood_group?: $Enums.BloodGroup | null
   date_of_birth?: Date | string | null
@@ -1038,14 +1760,18 @@ export type UserUncheckedCreateWithoutPositionInput = {
   nationality?: string | null
   birth_certificate_number?: string | null
   nid_number?: string | null
-  father_name?: string | null
-  mother_name?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string
+  father_details_id?: string | null
+  mother_details_id?: string | null
   email?: string | null
   user_name?: string | null
   user_password?: string | null
   active_status?: $Enums.ActiveStatus
+  role_name?: string | null
+  present_address_id?: string | null
+  permanent_address_id?: string | null
+  academic_teacher_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
   active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedCreateNestedManyWithoutUserInput
 }
 
@@ -1075,32 +1801,132 @@ export type UserUpdateManyWithWhereWithoutPositionInput = {
   data: Prisma.XOR<Prisma.UserUpdateManyMutationInput, Prisma.UserUncheckedUpdateManyWithoutPositionInput>
 }
 
-export type UserScalarWhereInput = {
-  AND?: Prisma.UserScalarWhereInput | Prisma.UserScalarWhereInput[]
-  OR?: Prisma.UserScalarWhereInput[]
-  NOT?: Prisma.UserScalarWhereInput | Prisma.UserScalarWhereInput[]
-  user_id?: Prisma.StringFilter<"User"> | string
-  full_name?: Prisma.StringFilter<"User"> | string
-  mobile_number?: Prisma.StringFilter<"User"> | string
-  role_name?: Prisma.StringNullableFilter<"User"> | string | null
-  gender?: Prisma.EnumGenderFilter<"User"> | $Enums.Gender
-  blood_group?: Prisma.EnumBloodGroupNullableFilter<"User"> | $Enums.BloodGroup | null
-  date_of_birth?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
-  heightInCm?: Prisma.FloatNullableFilter<"User"> | number | null
-  weightInKg?: Prisma.FloatNullableFilter<"User"> | number | null
-  religion?: Prisma.EnumReligionNullableFilter<"User"> | $Enums.Religion | null
-  nationality?: Prisma.StringNullableFilter<"User"> | string | null
-  birth_certificate_number?: Prisma.StringNullableFilter<"User"> | string | null
-  nid_number?: Prisma.StringNullableFilter<"User"> | string | null
-  father_name?: Prisma.StringNullableFilter<"User"> | string | null
-  mother_name?: Prisma.StringNullableFilter<"User"> | string | null
-  created_at?: Prisma.DateTimeFilter<"User"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"User"> | Date | string
-  email?: Prisma.StringNullableFilter<"User"> | string | null
-  user_name?: Prisma.StringNullableFilter<"User"> | string | null
-  user_password?: Prisma.StringNullableFilter<"User"> | string | null
-  position_name?: Prisma.StringFilter<"User"> | string
-  active_status?: Prisma.EnumActiveStatusFilter<"User"> | $Enums.ActiveStatus
+export type UserCreateWithoutPresent_addressInput = {
+  user_id?: string
+  full_name: string
+  mobile_number: string
+  gender: $Enums.Gender
+  blood_group?: $Enums.BloodGroup | null
+  date_of_birth?: Date | string | null
+  heightInCm?: number | null
+  weightInKg?: number | null
+  religion?: $Enums.Religion | null
+  nationality?: string | null
+  birth_certificate_number?: string | null
+  nid_number?: string | null
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  active_status?: $Enums.ActiveStatus
+  created_at?: Date | string
+  updated_at?: Date | string
+  father_details?: Prisma.FatherDetailsCreateNestedOneWithoutUserInput
+  mother_details?: Prisma.MotherDetailsCreateNestedOneWithoutUserInput
+  active_inactive_history?: Prisma.ActiveInactiveHistoryCreateNestedManyWithoutUserInput
+  position: Prisma.PositionCreateNestedOneWithoutUserInput
+  role?: Prisma.RoleCreateNestedOneWithoutUserInput
+  permanent_address?: Prisma.PermanentAddressCreateNestedOneWithoutUserInput
+  academic_teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutPresent_addressInput = {
+  user_id?: string
+  full_name: string
+  mobile_number: string
+  gender: $Enums.Gender
+  blood_group?: $Enums.BloodGroup | null
+  date_of_birth?: Date | string | null
+  heightInCm?: number | null
+  weightInKg?: number | null
+  religion?: $Enums.Religion | null
+  nationality?: string | null
+  birth_certificate_number?: string | null
+  nid_number?: string | null
+  father_details_id?: string | null
+  mother_details_id?: string | null
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  active_status?: $Enums.ActiveStatus
+  position_name: string
+  role_name?: string | null
+  permanent_address_id?: string | null
+  academic_teacher_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
+  active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutPresent_addressInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutPresent_addressInput, Prisma.UserUncheckedCreateWithoutPresent_addressInput>
+}
+
+export type UserUpsertWithoutPresent_addressInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutPresent_addressInput, Prisma.UserUncheckedUpdateWithoutPresent_addressInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutPresent_addressInput, Prisma.UserUncheckedCreateWithoutPresent_addressInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutPresent_addressInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutPresent_addressInput, Prisma.UserUncheckedUpdateWithoutPresent_addressInput>
+}
+
+export type UserUpdateWithoutPresent_addressInput = {
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
+  gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
+  blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
+  date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  heightInCm?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightInKg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  religion?: Prisma.NullableEnumReligionFieldUpdateOperationsInput | $Enums.Religion | null
+  nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  father_details?: Prisma.FatherDetailsUpdateOneWithoutUserNestedInput
+  mother_details?: Prisma.MotherDetailsUpdateOneWithoutUserNestedInput
+  active_inactive_history?: Prisma.ActiveInactiveHistoryUpdateManyWithoutUserNestedInput
+  position?: Prisma.PositionUpdateOneRequiredWithoutUserNestedInput
+  role?: Prisma.RoleUpdateOneWithoutUserNestedInput
+  permanent_address?: Prisma.PermanentAddressUpdateOneWithoutUserNestedInput
+  academic_teacher?: Prisma.AcademicTeacherUpdateOneWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutPresent_addressInput = {
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
+  gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
+  blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
+  date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  heightInCm?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightInKg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  religion?: Prisma.NullableEnumReligionFieldUpdateOperationsInput | $Enums.Religion | null
+  nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  father_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mother_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  permanent_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  academic_teacher_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutRoleInput = {
@@ -1116,16 +1942,19 @@ export type UserCreateWithoutRoleInput = {
   nationality?: string | null
   birth_certificate_number?: string | null
   nid_number?: string | null
-  father_name?: string | null
-  mother_name?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string
   email?: string | null
   user_name?: string | null
   user_password?: string | null
   active_status?: $Enums.ActiveStatus
+  created_at?: Date | string
+  updated_at?: Date | string
+  father_details?: Prisma.FatherDetailsCreateNestedOneWithoutUserInput
+  mother_details?: Prisma.MotherDetailsCreateNestedOneWithoutUserInput
   active_inactive_history?: Prisma.ActiveInactiveHistoryCreateNestedManyWithoutUserInput
   position: Prisma.PositionCreateNestedOneWithoutUserInput
+  present_address?: Prisma.PresentAddressCreateNestedOneWithoutUserInput
+  permanent_address?: Prisma.PermanentAddressCreateNestedOneWithoutUserInput
+  academic_teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutRoleInput = {
@@ -1141,15 +1970,18 @@ export type UserUncheckedCreateWithoutRoleInput = {
   nationality?: string | null
   birth_certificate_number?: string | null
   nid_number?: string | null
-  father_name?: string | null
-  mother_name?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string
+  father_details_id?: string | null
+  mother_details_id?: string | null
   email?: string | null
   user_name?: string | null
   user_password?: string | null
-  position_name: string
   active_status?: $Enums.ActiveStatus
+  position_name: string
+  present_address_id?: string | null
+  permanent_address_id?: string | null
+  academic_teacher_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
   active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedCreateNestedManyWithoutUserInput
 }
 
@@ -1179,11 +2011,10 @@ export type UserUpdateManyWithWhereWithoutRoleInput = {
   data: Prisma.XOR<Prisma.UserUpdateManyMutationInput, Prisma.UserUncheckedUpdateManyWithoutRoleInput>
 }
 
-export type UserCreateManyPositionInput = {
+export type UserCreateManyFather_detailsInput = {
   user_id?: string
   full_name: string
   mobile_number: string
-  role_name?: string | null
   gender: $Enums.Gender
   blood_group?: $Enums.BloodGroup | null
   date_of_birth?: Date | string | null
@@ -1193,14 +2024,238 @@ export type UserCreateManyPositionInput = {
   nationality?: string | null
   birth_certificate_number?: string | null
   nid_number?: string | null
-  father_name?: string | null
-  mother_name?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string
+  mother_details_id?: string | null
   email?: string | null
   user_name?: string | null
   user_password?: string | null
   active_status?: $Enums.ActiveStatus
+  position_name: string
+  role_name?: string | null
+  present_address_id?: string | null
+  permanent_address_id?: string | null
+  academic_teacher_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
+}
+
+export type UserUpdateWithoutFather_detailsInput = {
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
+  gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
+  blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
+  date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  heightInCm?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightInKg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  religion?: Prisma.NullableEnumReligionFieldUpdateOperationsInput | $Enums.Religion | null
+  nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  mother_details?: Prisma.MotherDetailsUpdateOneWithoutUserNestedInput
+  active_inactive_history?: Prisma.ActiveInactiveHistoryUpdateManyWithoutUserNestedInput
+  position?: Prisma.PositionUpdateOneRequiredWithoutUserNestedInput
+  role?: Prisma.RoleUpdateOneWithoutUserNestedInput
+  present_address?: Prisma.PresentAddressUpdateOneWithoutUserNestedInput
+  permanent_address?: Prisma.PermanentAddressUpdateOneWithoutUserNestedInput
+  academic_teacher?: Prisma.AcademicTeacherUpdateOneWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutFather_detailsInput = {
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
+  gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
+  blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
+  date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  heightInCm?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightInKg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  religion?: Prisma.NullableEnumReligionFieldUpdateOperationsInput | $Enums.Religion | null
+  nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mother_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  present_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  permanent_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  academic_teacher_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateManyWithoutFather_detailsInput = {
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
+  gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
+  blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
+  date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  heightInCm?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightInKg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  religion?: Prisma.NullableEnumReligionFieldUpdateOperationsInput | $Enums.Religion | null
+  nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mother_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  present_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  permanent_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  academic_teacher_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type UserCreateManyMother_detailsInput = {
+  user_id?: string
+  full_name: string
+  mobile_number: string
+  gender: $Enums.Gender
+  blood_group?: $Enums.BloodGroup | null
+  date_of_birth?: Date | string | null
+  heightInCm?: number | null
+  weightInKg?: number | null
+  religion?: $Enums.Religion | null
+  nationality?: string | null
+  birth_certificate_number?: string | null
+  nid_number?: string | null
+  father_details_id?: string | null
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  active_status?: $Enums.ActiveStatus
+  position_name: string
+  role_name?: string | null
+  present_address_id?: string | null
+  permanent_address_id?: string | null
+  academic_teacher_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
+}
+
+export type UserUpdateWithoutMother_detailsInput = {
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
+  gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
+  blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
+  date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  heightInCm?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightInKg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  religion?: Prisma.NullableEnumReligionFieldUpdateOperationsInput | $Enums.Religion | null
+  nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  father_details?: Prisma.FatherDetailsUpdateOneWithoutUserNestedInput
+  active_inactive_history?: Prisma.ActiveInactiveHistoryUpdateManyWithoutUserNestedInput
+  position?: Prisma.PositionUpdateOneRequiredWithoutUserNestedInput
+  role?: Prisma.RoleUpdateOneWithoutUserNestedInput
+  present_address?: Prisma.PresentAddressUpdateOneWithoutUserNestedInput
+  permanent_address?: Prisma.PermanentAddressUpdateOneWithoutUserNestedInput
+  academic_teacher?: Prisma.AcademicTeacherUpdateOneWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutMother_detailsInput = {
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
+  gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
+  blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
+  date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  heightInCm?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightInKg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  religion?: Prisma.NullableEnumReligionFieldUpdateOperationsInput | $Enums.Religion | null
+  nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  father_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  present_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  permanent_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  academic_teacher_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateManyWithoutMother_detailsInput = {
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
+  gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
+  blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
+  date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  heightInCm?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  weightInKg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  religion?: Prisma.NullableEnumReligionFieldUpdateOperationsInput | $Enums.Religion | null
+  nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  father_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  present_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  permanent_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  academic_teacher_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type UserCreateManyPositionInput = {
+  user_id?: string
+  full_name: string
+  mobile_number: string
+  gender: $Enums.Gender
+  blood_group?: $Enums.BloodGroup | null
+  date_of_birth?: Date | string | null
+  heightInCm?: number | null
+  weightInKg?: number | null
+  religion?: $Enums.Religion | null
+  nationality?: string | null
+  birth_certificate_number?: string | null
+  nid_number?: string | null
+  father_details_id?: string | null
+  mother_details_id?: string | null
+  email?: string | null
+  user_name?: string | null
+  user_password?: string | null
+  active_status?: $Enums.ActiveStatus
+  role_name?: string | null
+  present_address_id?: string | null
+  permanent_address_id?: string | null
+  academic_teacher_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type UserUpdateWithoutPositionInput = {
@@ -1216,23 +2271,25 @@ export type UserUpdateWithoutPositionInput = {
   nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  father_details?: Prisma.FatherDetailsUpdateOneWithoutUserNestedInput
+  mother_details?: Prisma.MotherDetailsUpdateOneWithoutUserNestedInput
   active_inactive_history?: Prisma.ActiveInactiveHistoryUpdateManyWithoutUserNestedInput
   role?: Prisma.RoleUpdateOneWithoutUserNestedInput
+  present_address?: Prisma.PresentAddressUpdateOneWithoutUserNestedInput
+  permanent_address?: Prisma.PermanentAddressUpdateOneWithoutUserNestedInput
+  academic_teacher?: Prisma.AcademicTeacherUpdateOneWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPositionInput = {
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   full_name?: Prisma.StringFieldUpdateOperationsInput | string
   mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
-  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
   blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
   date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1242,14 +2299,18 @@ export type UserUncheckedUpdateWithoutPositionInput = {
   nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  father_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mother_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  present_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  permanent_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  academic_teacher_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedUpdateManyWithoutUserNestedInput
 }
 
@@ -1257,7 +2318,6 @@ export type UserUncheckedUpdateManyWithoutPositionInput = {
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   full_name?: Prisma.StringFieldUpdateOperationsInput | string
   mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
-  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   gender?: Prisma.EnumGenderFieldUpdateOperationsInput | $Enums.Gender
   blood_group?: Prisma.NullableEnumBloodGroupFieldUpdateOperationsInput | $Enums.BloodGroup | null
   date_of_birth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1267,14 +2327,18 @@ export type UserUncheckedUpdateManyWithoutPositionInput = {
   nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  father_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mother_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  role_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  present_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  permanent_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  academic_teacher_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type UserCreateManyRoleInput = {
@@ -1290,15 +2354,18 @@ export type UserCreateManyRoleInput = {
   nationality?: string | null
   birth_certificate_number?: string | null
   nid_number?: string | null
-  father_name?: string | null
-  mother_name?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string
+  father_details_id?: string | null
+  mother_details_id?: string | null
   email?: string | null
   user_name?: string | null
   user_password?: string | null
-  position_name: string
   active_status?: $Enums.ActiveStatus
+  position_name: string
+  present_address_id?: string | null
+  permanent_address_id?: string | null
+  academic_teacher_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type UserUpdateWithoutRoleInput = {
@@ -1314,16 +2381,19 @@ export type UserUpdateWithoutRoleInput = {
   nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  father_details?: Prisma.FatherDetailsUpdateOneWithoutUserNestedInput
+  mother_details?: Prisma.MotherDetailsUpdateOneWithoutUserNestedInput
   active_inactive_history?: Prisma.ActiveInactiveHistoryUpdateManyWithoutUserNestedInput
   position?: Prisma.PositionUpdateOneRequiredWithoutUserNestedInput
+  present_address?: Prisma.PresentAddressUpdateOneWithoutUserNestedInput
+  permanent_address?: Prisma.PermanentAddressUpdateOneWithoutUserNestedInput
+  academic_teacher?: Prisma.AcademicTeacherUpdateOneWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutRoleInput = {
@@ -1339,15 +2409,18 @@ export type UserUncheckedUpdateWithoutRoleInput = {
   nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  father_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mother_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  position_name?: Prisma.StringFieldUpdateOperationsInput | string
   active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  present_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  permanent_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  academic_teacher_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   active_inactive_history?: Prisma.ActiveInactiveHistoryUncheckedUpdateManyWithoutUserNestedInput
 }
 
@@ -1364,15 +2437,18 @@ export type UserUncheckedUpdateManyWithoutRoleInput = {
   nationality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   birth_certificate_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   nid_number?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  father_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mother_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  father_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mother_details_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  position_name?: Prisma.StringFieldUpdateOperationsInput | string
   active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  present_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  permanent_address_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  academic_teacher_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 
@@ -1410,7 +2486,6 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   user_id?: boolean
   full_name?: boolean
   mobile_number?: boolean
-  role_name?: boolean
   gender?: boolean
   blood_group?: boolean
   date_of_birth?: boolean
@@ -1420,18 +2495,27 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   nationality?: boolean
   birth_certificate_number?: boolean
   nid_number?: boolean
-  father_name?: boolean
-  mother_name?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  father_details_id?: boolean
+  mother_details_id?: boolean
   email?: boolean
   user_name?: boolean
   user_password?: boolean
-  position_name?: boolean
   active_status?: boolean
+  position_name?: boolean
+  role_name?: boolean
+  present_address_id?: boolean
+  permanent_address_id?: boolean
+  academic_teacher_id?: boolean
+  created_at?: boolean
+  updated_at?: boolean
+  father_details?: boolean | Prisma.User$father_detailsArgs<ExtArgs>
+  mother_details?: boolean | Prisma.User$mother_detailsArgs<ExtArgs>
   active_inactive_history?: boolean | Prisma.User$active_inactive_historyArgs<ExtArgs>
   position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
   role?: boolean | Prisma.User$roleArgs<ExtArgs>
+  present_address?: boolean | Prisma.User$present_addressArgs<ExtArgs>
+  permanent_address?: boolean | Prisma.User$permanent_addressArgs<ExtArgs>
+  academic_teacher?: boolean | Prisma.User$academic_teacherArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -1439,7 +2523,6 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   user_id?: boolean
   full_name?: boolean
   mobile_number?: boolean
-  role_name?: boolean
   gender?: boolean
   blood_group?: boolean
   date_of_birth?: boolean
@@ -1449,24 +2532,32 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   nationality?: boolean
   birth_certificate_number?: boolean
   nid_number?: boolean
-  father_name?: boolean
-  mother_name?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  father_details_id?: boolean
+  mother_details_id?: boolean
   email?: boolean
   user_name?: boolean
   user_password?: boolean
-  position_name?: boolean
   active_status?: boolean
+  position_name?: boolean
+  role_name?: boolean
+  present_address_id?: boolean
+  permanent_address_id?: boolean
+  academic_teacher_id?: boolean
+  created_at?: boolean
+  updated_at?: boolean
+  father_details?: boolean | Prisma.User$father_detailsArgs<ExtArgs>
+  mother_details?: boolean | Prisma.User$mother_detailsArgs<ExtArgs>
   position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
   role?: boolean | Prisma.User$roleArgs<ExtArgs>
+  present_address?: boolean | Prisma.User$present_addressArgs<ExtArgs>
+  permanent_address?: boolean | Prisma.User$permanent_addressArgs<ExtArgs>
+  academic_teacher?: boolean | Prisma.User$academic_teacherArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   user_id?: boolean
   full_name?: boolean
   mobile_number?: boolean
-  role_name?: boolean
   gender?: boolean
   blood_group?: boolean
   date_of_birth?: boolean
@@ -1476,24 +2567,32 @@ export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   nationality?: boolean
   birth_certificate_number?: boolean
   nid_number?: boolean
-  father_name?: boolean
-  mother_name?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  father_details_id?: boolean
+  mother_details_id?: boolean
   email?: boolean
   user_name?: boolean
   user_password?: boolean
-  position_name?: boolean
   active_status?: boolean
+  position_name?: boolean
+  role_name?: boolean
+  present_address_id?: boolean
+  permanent_address_id?: boolean
+  academic_teacher_id?: boolean
+  created_at?: boolean
+  updated_at?: boolean
+  father_details?: boolean | Prisma.User$father_detailsArgs<ExtArgs>
+  mother_details?: boolean | Prisma.User$mother_detailsArgs<ExtArgs>
   position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
   role?: boolean | Prisma.User$roleArgs<ExtArgs>
+  present_address?: boolean | Prisma.User$present_addressArgs<ExtArgs>
+  permanent_address?: boolean | Prisma.User$permanent_addressArgs<ExtArgs>
+  academic_teacher?: boolean | Prisma.User$academic_teacherArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectScalar = {
   user_id?: boolean
   full_name?: boolean
   mobile_number?: boolean
-  role_name?: boolean
   gender?: boolean
   blood_group?: boolean
   date_of_birth?: boolean
@@ -1503,45 +2602,68 @@ export type UserSelectScalar = {
   nationality?: boolean
   birth_certificate_number?: boolean
   nid_number?: boolean
-  father_name?: boolean
-  mother_name?: boolean
-  created_at?: boolean
-  updated_at?: boolean
+  father_details_id?: boolean
+  mother_details_id?: boolean
   email?: boolean
   user_name?: boolean
   user_password?: boolean
-  position_name?: boolean
   active_status?: boolean
+  position_name?: boolean
+  role_name?: boolean
+  present_address_id?: boolean
+  permanent_address_id?: boolean
+  academic_teacher_id?: boolean
+  created_at?: boolean
+  updated_at?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"user_id" | "full_name" | "mobile_number" | "role_name" | "gender" | "blood_group" | "date_of_birth" | "heightInCm" | "weightInKg" | "religion" | "nationality" | "birth_certificate_number" | "nid_number" | "father_name" | "mother_name" | "created_at" | "updated_at" | "email" | "user_name" | "user_password" | "position_name" | "active_status", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"user_id" | "full_name" | "mobile_number" | "gender" | "blood_group" | "date_of_birth" | "heightInCm" | "weightInKg" | "religion" | "nationality" | "birth_certificate_number" | "nid_number" | "father_details_id" | "mother_details_id" | "email" | "user_name" | "user_password" | "active_status" | "position_name" | "role_name" | "present_address_id" | "permanent_address_id" | "academic_teacher_id" | "created_at" | "updated_at", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  father_details?: boolean | Prisma.User$father_detailsArgs<ExtArgs>
+  mother_details?: boolean | Prisma.User$mother_detailsArgs<ExtArgs>
   active_inactive_history?: boolean | Prisma.User$active_inactive_historyArgs<ExtArgs>
   position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
   role?: boolean | Prisma.User$roleArgs<ExtArgs>
+  present_address?: boolean | Prisma.User$present_addressArgs<ExtArgs>
+  permanent_address?: boolean | Prisma.User$permanent_addressArgs<ExtArgs>
+  academic_teacher?: boolean | Prisma.User$academic_teacherArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  father_details?: boolean | Prisma.User$father_detailsArgs<ExtArgs>
+  mother_details?: boolean | Prisma.User$mother_detailsArgs<ExtArgs>
   position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
   role?: boolean | Prisma.User$roleArgs<ExtArgs>
+  present_address?: boolean | Prisma.User$present_addressArgs<ExtArgs>
+  permanent_address?: boolean | Prisma.User$permanent_addressArgs<ExtArgs>
+  academic_teacher?: boolean | Prisma.User$academic_teacherArgs<ExtArgs>
 }
 export type UserIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  father_details?: boolean | Prisma.User$father_detailsArgs<ExtArgs>
+  mother_details?: boolean | Prisma.User$mother_detailsArgs<ExtArgs>
   position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
   role?: boolean | Prisma.User$roleArgs<ExtArgs>
+  present_address?: boolean | Prisma.User$present_addressArgs<ExtArgs>
+  permanent_address?: boolean | Prisma.User$permanent_addressArgs<ExtArgs>
+  academic_teacher?: boolean | Prisma.User$academic_teacherArgs<ExtArgs>
 }
 
 export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "User"
   objects: {
+    father_details: Prisma.$FatherDetailsPayload<ExtArgs> | null
+    mother_details: Prisma.$MotherDetailsPayload<ExtArgs> | null
     active_inactive_history: Prisma.$ActiveInactiveHistoryPayload<ExtArgs>[]
     position: Prisma.$PositionPayload<ExtArgs>
     role: Prisma.$RolePayload<ExtArgs> | null
+    present_address: Prisma.$PresentAddressPayload<ExtArgs> | null
+    permanent_address: Prisma.$PermanentAddressPayload<ExtArgs> | null
+    academic_teacher: Prisma.$AcademicTeacherPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     user_id: string
     full_name: string
     mobile_number: string
-    role_name: string | null
     gender: $Enums.Gender
     blood_group: $Enums.BloodGroup | null
     date_of_birth: Date | null
@@ -1551,15 +2673,19 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     nationality: string | null
     birth_certificate_number: string | null
     nid_number: string | null
-    father_name: string | null
-    mother_name: string | null
-    created_at: Date
-    updated_at: Date
+    father_details_id: string | null
+    mother_details_id: string | null
     email: string | null
     user_name: string | null
     user_password: string | null
-    position_name: string
     active_status: $Enums.ActiveStatus
+    position_name: string
+    role_name: string | null
+    present_address_id: string | null
+    permanent_address_id: string | null
+    academic_teacher_id: string | null
+    created_at: Date
+    updated_at: Date
   }, ExtArgs["result"]["user"]>
   composites: {}
 }
@@ -1954,9 +3080,14 @@ readonly fields: UserFieldRefs;
  */
 export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  father_details<T extends Prisma.User$father_detailsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$father_detailsArgs<ExtArgs>>): Prisma.Prisma__FatherDetailsClient<runtime.Types.Result.GetResult<Prisma.$FatherDetailsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  mother_details<T extends Prisma.User$mother_detailsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$mother_detailsArgs<ExtArgs>>): Prisma.Prisma__MotherDetailsClient<runtime.Types.Result.GetResult<Prisma.$MotherDetailsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   active_inactive_history<T extends Prisma.User$active_inactive_historyArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$active_inactive_historyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ActiveInactiveHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   position<T extends Prisma.PositionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PositionDefaultArgs<ExtArgs>>): Prisma.Prisma__PositionClient<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   role<T extends Prisma.User$roleArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$roleArgs<ExtArgs>>): Prisma.Prisma__RoleClient<runtime.Types.Result.GetResult<Prisma.$RolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  present_address<T extends Prisma.User$present_addressArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$present_addressArgs<ExtArgs>>): Prisma.Prisma__PresentAddressClient<runtime.Types.Result.GetResult<Prisma.$PresentAddressPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  permanent_address<T extends Prisma.User$permanent_addressArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$permanent_addressArgs<ExtArgs>>): Prisma.Prisma__PermanentAddressClient<runtime.Types.Result.GetResult<Prisma.$PermanentAddressPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  academic_teacher<T extends Prisma.User$academic_teacherArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$academic_teacherArgs<ExtArgs>>): Prisma.Prisma__AcademicTeacherClient<runtime.Types.Result.GetResult<Prisma.$AcademicTeacherPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1989,7 +3120,6 @@ export interface UserFieldRefs {
   readonly user_id: Prisma.FieldRef<"User", 'String'>
   readonly full_name: Prisma.FieldRef<"User", 'String'>
   readonly mobile_number: Prisma.FieldRef<"User", 'String'>
-  readonly role_name: Prisma.FieldRef<"User", 'String'>
   readonly gender: Prisma.FieldRef<"User", 'Gender'>
   readonly blood_group: Prisma.FieldRef<"User", 'BloodGroup'>
   readonly date_of_birth: Prisma.FieldRef<"User", 'DateTime'>
@@ -1999,15 +3129,19 @@ export interface UserFieldRefs {
   readonly nationality: Prisma.FieldRef<"User", 'String'>
   readonly birth_certificate_number: Prisma.FieldRef<"User", 'String'>
   readonly nid_number: Prisma.FieldRef<"User", 'String'>
-  readonly father_name: Prisma.FieldRef<"User", 'String'>
-  readonly mother_name: Prisma.FieldRef<"User", 'String'>
-  readonly created_at: Prisma.FieldRef<"User", 'DateTime'>
-  readonly updated_at: Prisma.FieldRef<"User", 'DateTime'>
+  readonly father_details_id: Prisma.FieldRef<"User", 'String'>
+  readonly mother_details_id: Prisma.FieldRef<"User", 'String'>
   readonly email: Prisma.FieldRef<"User", 'String'>
   readonly user_name: Prisma.FieldRef<"User", 'String'>
   readonly user_password: Prisma.FieldRef<"User", 'String'>
-  readonly position_name: Prisma.FieldRef<"User", 'String'>
   readonly active_status: Prisma.FieldRef<"User", 'ActiveStatus'>
+  readonly position_name: Prisma.FieldRef<"User", 'String'>
+  readonly role_name: Prisma.FieldRef<"User", 'String'>
+  readonly present_address_id: Prisma.FieldRef<"User", 'String'>
+  readonly permanent_address_id: Prisma.FieldRef<"User", 'String'>
+  readonly academic_teacher_id: Prisma.FieldRef<"User", 'String'>
+  readonly created_at: Prisma.FieldRef<"User", 'DateTime'>
+  readonly updated_at: Prisma.FieldRef<"User", 'DateTime'>
 }
     
 
@@ -2409,6 +3543,44 @@ export type UserDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Internal
 }
 
 /**
+ * User.father_details
+ */
+export type User$father_detailsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the FatherDetails
+   */
+  select?: Prisma.FatherDetailsSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the FatherDetails
+   */
+  omit?: Prisma.FatherDetailsOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.FatherDetailsInclude<ExtArgs> | null
+  where?: Prisma.FatherDetailsWhereInput
+}
+
+/**
+ * User.mother_details
+ */
+export type User$mother_detailsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the MotherDetails
+   */
+  select?: Prisma.MotherDetailsSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the MotherDetails
+   */
+  omit?: Prisma.MotherDetailsOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.MotherDetailsInclude<ExtArgs> | null
+  where?: Prisma.MotherDetailsWhereInput
+}
+
+/**
  * User.active_inactive_history
  */
 export type User$active_inactive_historyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2449,6 +3621,63 @@ export type User$roleArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs 
    */
   include?: Prisma.RoleInclude<ExtArgs> | null
   where?: Prisma.RoleWhereInput
+}
+
+/**
+ * User.present_address
+ */
+export type User$present_addressArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PresentAddress
+   */
+  select?: Prisma.PresentAddressSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PresentAddress
+   */
+  omit?: Prisma.PresentAddressOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PresentAddressInclude<ExtArgs> | null
+  where?: Prisma.PresentAddressWhereInput
+}
+
+/**
+ * User.permanent_address
+ */
+export type User$permanent_addressArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PermanentAddress
+   */
+  select?: Prisma.PermanentAddressSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PermanentAddress
+   */
+  omit?: Prisma.PermanentAddressOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PermanentAddressInclude<ExtArgs> | null
+  where?: Prisma.PermanentAddressWhereInput
+}
+
+/**
+ * User.academic_teacher
+ */
+export type User$academic_teacherArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AcademicTeacher
+   */
+  select?: Prisma.AcademicTeacherSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AcademicTeacher
+   */
+  omit?: Prisma.AcademicTeacherOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AcademicTeacherInclude<ExtArgs> | null
+  where?: Prisma.AcademicTeacherWhereInput
 }
 
 /**

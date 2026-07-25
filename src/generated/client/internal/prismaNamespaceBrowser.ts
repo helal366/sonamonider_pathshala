@@ -51,9 +51,15 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
+  AcademicTeacher: 'AcademicTeacher',
+  AcademicYear: 'AcademicYear',
   ActiveInactiveHistory: 'ActiveInactiveHistory',
   Class: 'Class',
+  FatherDetails: 'FatherDetails',
+  MotherDetails: 'MotherDetails',
+  PermanentAddress: 'PermanentAddress',
   Position: 'Position',
+  PresentAddress: 'PresentAddress',
   Responsibility: 'Responsibility',
   Role: 'Role',
   User: 'User'
@@ -75,14 +81,38 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+export const AcademicTeacherScalarFieldEnum = {
+  academic_teacher_id: 'academic_teacher_id',
+  teaching_experience: 'teaching_experience',
+  applied_post: 'applied_post',
+  mobile_no_2: 'mobile_no_2',
+  mobile_no_3: 'mobile_no_3',
+  grade_teacher: 'grade_teacher',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type AcademicTeacherScalarFieldEnum = (typeof AcademicTeacherScalarFieldEnum)[keyof typeof AcademicTeacherScalarFieldEnum]
+
+
+export const AcademicYearScalarFieldEnum = {
+  academic_year_id: 'academic_year_id',
+  academic_year_number: 'academic_year_number',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type AcademicYearScalarFieldEnum = (typeof AcademicYearScalarFieldEnum)[keyof typeof AcademicYearScalarFieldEnum]
+
+
 export const ActiveInactiveHistoryScalarFieldEnum = {
   active_inactive_history_id: 'active_inactive_history_id',
   active_status: 'active_status',
   activationTime: 'activationTime',
   inactivationTime: 'inactivationTime',
   user_id: 'user_id',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
 export type ActiveInactiveHistoryScalarFieldEnum = (typeof ActiveInactiveHistoryScalarFieldEnum)[keyof typeof ActiveInactiveHistoryScalarFieldEnum]
@@ -91,11 +121,68 @@ export type ActiveInactiveHistoryScalarFieldEnum = (typeof ActiveInactiveHistory
 export const ClassScalarFieldEnum = {
   class_id: 'class_id',
   class_name: 'class_name',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
 export type ClassScalarFieldEnum = (typeof ClassScalarFieldEnum)[keyof typeof ClassScalarFieldEnum]
+
+
+export const FatherDetailsScalarFieldEnum = {
+  father_details_id: 'father_details_id',
+  father_name: 'father_name',
+  nid_no: 'nid_no',
+  occupation: 'occupation',
+  job_title: 'job_title',
+  educational_qualification: 'educational_qualification',
+  monthly_income: 'monthly_income',
+  mobile_no_1: 'mobile_no_1',
+  mobile_no_2: 'mobile_no_2',
+  mobile_no_3: 'mobile_no_3',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type FatherDetailsScalarFieldEnum = (typeof FatherDetailsScalarFieldEnum)[keyof typeof FatherDetailsScalarFieldEnum]
+
+
+export const MotherDetailsScalarFieldEnum = {
+  mother_details_id: 'mother_details_id',
+  mother_name: 'mother_name',
+  nid_no: 'nid_no',
+  occupation: 'occupation',
+  job_title: 'job_title',
+  educational_qualification: 'educational_qualification',
+  monthly_income: 'monthly_income',
+  mobile_no_1: 'mobile_no_1',
+  mobile_no_2: 'mobile_no_2',
+  mobile_no_3: 'mobile_no_3',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type MotherDetailsScalarFieldEnum = (typeof MotherDetailsScalarFieldEnum)[keyof typeof MotherDetailsScalarFieldEnum]
+
+
+export const PermanentAddressScalarFieldEnum = {
+  permanent_address_id: 'permanent_address_id',
+  house_no: 'house_no',
+  house_name: 'house_name',
+  plot_no: 'plot_no',
+  road_no: 'road_no',
+  neighbourhood: 'neighbourhood',
+  region: 'region',
+  village: 'village',
+  post_code: 'post_code',
+  post_office: 'post_office',
+  thana: 'thana',
+  district: 'district',
+  country: 'country',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type PermanentAddressScalarFieldEnum = (typeof PermanentAddressScalarFieldEnum)[keyof typeof PermanentAddressScalarFieldEnum]
 
 
 export const PositionScalarFieldEnum = {
@@ -109,11 +196,32 @@ export const PositionScalarFieldEnum = {
 export type PositionScalarFieldEnum = (typeof PositionScalarFieldEnum)[keyof typeof PositionScalarFieldEnum]
 
 
+export const PresentAddressScalarFieldEnum = {
+  present_address_id: 'present_address_id',
+  house_no: 'house_no',
+  house_name: 'house_name',
+  plot_no: 'plot_no',
+  road_no: 'road_no',
+  neighbourhood: 'neighbourhood',
+  region: 'region',
+  village: 'village',
+  post_code: 'post_code',
+  post_office: 'post_office',
+  thana: 'thana',
+  district: 'district',
+  country: 'country',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type PresentAddressScalarFieldEnum = (typeof PresentAddressScalarFieldEnum)[keyof typeof PresentAddressScalarFieldEnum]
+
+
 export const ResponsibilityScalarFieldEnum = {
   responsibility_id: 'responsibility_id',
   responsibility_name: 'responsibility_name',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
 export type ResponsibilityScalarFieldEnum = (typeof ResponsibilityScalarFieldEnum)[keyof typeof ResponsibilityScalarFieldEnum]
@@ -133,7 +241,6 @@ export const UserScalarFieldEnum = {
   user_id: 'user_id',
   full_name: 'full_name',
   mobile_number: 'mobile_number',
-  role_name: 'role_name',
   gender: 'gender',
   blood_group: 'blood_group',
   date_of_birth: 'date_of_birth',
@@ -143,15 +250,19 @@ export const UserScalarFieldEnum = {
   nationality: 'nationality',
   birth_certificate_number: 'birth_certificate_number',
   nid_number: 'nid_number',
-  father_name: 'father_name',
-  mother_name: 'mother_name',
-  created_at: 'created_at',
-  updated_at: 'updated_at',
+  father_details_id: 'father_details_id',
+  mother_details_id: 'mother_details_id',
   email: 'email',
   user_name: 'user_name',
   user_password: 'user_password',
+  active_status: 'active_status',
   position_name: 'position_name',
-  active_status: 'active_status'
+  role_name: 'role_name',
+  present_address_id: 'present_address_id',
+  permanent_address_id: 'permanent_address_id',
+  academic_teacher_id: 'academic_teacher_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
