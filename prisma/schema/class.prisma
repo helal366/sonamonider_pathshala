@@ -1,7 +1,14 @@
 model Class {
   class_id   String   @id @default(uuid())
   class_name String   @unique
+
+  bookClasses BookClass[] 
   
+  createdById String?
+  createdBy User? @relation("class_created_by",fields: [createdById], references: [user_id], onDelete: SetNull, onUpdate: Cascade)
+
+  updatedById String?
+  updatedBy User? @relation("class_updated_by", fields: [updatedById], references: [user_id],  onDelete: SetNull, onUpdate: Cascade)
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 

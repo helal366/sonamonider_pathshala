@@ -1,0 +1,16 @@
+model AuditLog {
+  audit_id      String @id @default(uuid())
+
+  entityName    String   // books, students, classes
+  entityId      String   // primary key of the record
+
+  action        AuditAction
+
+  changedById   String
+  changedBy     User @relation(fields: [changedById], references: [user_id])
+
+  oldValue      Json?
+  newValue      Json?
+
+  createdAt     DateTime @default(now())
+}

@@ -11,7 +11,7 @@ model FatherDetails{
     mobile_no_3 String?
 
     created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+    updated_at DateTime @updatedAt
 
     user User[] @relation(name: "user_father_details")
 

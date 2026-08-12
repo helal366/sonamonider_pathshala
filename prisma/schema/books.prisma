@@ -1,0 +1,19 @@
+model Book{
+    book_id String @id @default(uuid())
+    book_name String
+    publication String
+ 
+    bookClasses BookClass[]
+
+    createdById String?
+    createdBy User? @relation("book_created_by", fields: [createdById], references: [user_id], onDelete: SetNull, onUpdate: Cascade)
+
+    updatedById String?
+    updatedBy User? @relation("book_updated_by", fields: [updatedById], references: [user_id], onDelete: SetNull, onUpdate: Cascade)
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    @@unique([book_name, publication])
+    @@map("books")
+    @@index([book_name])
+}
