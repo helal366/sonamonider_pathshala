@@ -5,9 +5,9 @@ model BookClass{
     book Book @relation(fields: [book_id], references: [book_id])
     class Class @relation(fields: [class_id], references: [class_id])
 
-    createdById String?
-    createdBy User? @relation(fields: [createdById], references: [user_id],  onDelete: SetNull, onUpdate: Cascade)
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+    created_by_id String?
+    created_by User? @relation(fields: [created_by_id], references: [user_id],  onDelete: SetNull, onUpdate: Cascade)
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
     @@id([book_id,class_id])
 }

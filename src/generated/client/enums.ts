@@ -88,3 +88,12 @@ export const ActiveStatus = {
 } as const
 
 export type ActiveStatus = (typeof ActiveStatus)[keyof typeof ActiveStatus]
+
+
+export const AuditAction = {
+  CREATE: 'CREATE',
+  UPDATE: 'UPDATE',
+  DELETE: 'DELETE'
+} as const
+
+export type AuditAction = (typeof AuditAction)[keyof typeof AuditAction]

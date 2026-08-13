@@ -57,6 +57,21 @@ export type AcademicYear = Prisma.AcademicYearModel
  */
 export type ActiveInactiveHistory = Prisma.ActiveInactiveHistoryModel
 /**
+ * Model AuditLog
+ * 
+ */
+export type AuditLog = Prisma.AuditLogModel
+/**
+ * Model BookClass
+ * 
+ */
+export type BookClass = Prisma.BookClassModel
+/**
+ * Model Book
+ * 
+ */
+export type Book = Prisma.BookModel
+/**
  * Model Class
  * 
  */

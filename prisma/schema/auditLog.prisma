@@ -6,11 +6,11 @@ model AuditLog {
 
   action        AuditAction
 
-  changedById   String
-  changedBy     User @relation(fields: [changedById], references: [user_id])
+  created_by_id   String
+  changed_by     User @relation(fields: [created_by_id], references: [user_id])
 
-  oldValue      Json?
-  newValue      Json?
+  old_value      Json?
+  new_value      Json?
 
-  createdAt     DateTime @default(now())
+  created_at     DateTime @default(now())
 }

@@ -63,3 +63,20 @@ enum AuditAction {
   UPDATE
   DELETE
 }
+
+enum EducationDegree{
+  SSC
+  HSC
+  BSC
+  B_COM
+  B_ARTS
+  MSC
+  M_COM
+  M_ARTS
+  PHD
+  ALIM 
+  DAKHIL
+  KAMIL
+  FAZIL
+  OTHERS
+}

@@ -1,6 +1,6 @@
-model MotherDetails{
-    mother_details_id String @id @default(uuid())
-    mother_name String 
+model ResponsibleGuardianDetails{
+    responsible_guardian_id String @id @default(uuid())
+    guardian String
     nid_no String?
     occupation String?
     job_title String?
@@ -10,10 +10,10 @@ model MotherDetails{
     mobile_no_2 String?
     mobile_no_3 String?
 
+    students Student[]
+
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt
 
-    user User[] @relation(name: "user_mother_details")
-
-    @@map("mother_details")
+    @@map("responsible_guardians")
 }

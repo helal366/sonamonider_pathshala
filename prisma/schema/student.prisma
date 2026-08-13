@@ -1,0 +1,17 @@
+model Student{
+    student_id String @id @default(uuid())
+    classes Class[] @relation("student_classes")
+
+    active_class_id String
+    active_class Class @relation("student_active_classes", fields: [active_class_id], references: [class_id], onDelete: Restrict, onUpdate: Cascade)
+
+    previous_institute_information PreviousInstituteInformation[]
+
+    responsible_guardian_id String?
+    responsible_guardian ResponsibleGuardianDetails? @relation(fields: [responsible_guardian_id], references: [responsible_guardian_id], onDelete: Restrict, onUpdate: Cascade)
+
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+
+    @@map("students")
+}

@@ -54,6 +54,9 @@ export const ModelName = {
   AcademicTeacher: 'AcademicTeacher',
   AcademicYear: 'AcademicYear',
   ActiveInactiveHistory: 'ActiveInactiveHistory',
+  AuditLog: 'AuditLog',
+  BookClass: 'BookClass',
+  Book: 'Book',
   Class: 'Class',
   FatherDetails: 'FatherDetails',
   MotherDetails: 'MotherDetails',
@@ -118,9 +121,49 @@ export const ActiveInactiveHistoryScalarFieldEnum = {
 export type ActiveInactiveHistoryScalarFieldEnum = (typeof ActiveInactiveHistoryScalarFieldEnum)[keyof typeof ActiveInactiveHistoryScalarFieldEnum]
 
 
+export const AuditLogScalarFieldEnum = {
+  audit_id: 'audit_id',
+  entityName: 'entityName',
+  entityId: 'entityId',
+  action: 'action',
+  changedById: 'changedById',
+  oldValue: 'oldValue',
+  newValue: 'newValue',
+  createdAt: 'createdAt'
+} as const
+
+export type AuditLogScalarFieldEnum = (typeof AuditLogScalarFieldEnum)[keyof typeof AuditLogScalarFieldEnum]
+
+
+export const BookClassScalarFieldEnum = {
+  book_id: 'book_id',
+  class_id: 'class_id',
+  createdById: 'createdById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BookClassScalarFieldEnum = (typeof BookClassScalarFieldEnum)[keyof typeof BookClassScalarFieldEnum]
+
+
+export const BookScalarFieldEnum = {
+  book_id: 'book_id',
+  book_name: 'book_name',
+  publication: 'publication',
+  createdById: 'createdById',
+  updatedById: 'updatedById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BookScalarFieldEnum = (typeof BookScalarFieldEnum)[keyof typeof BookScalarFieldEnum]
+
+
 export const ClassScalarFieldEnum = {
   class_id: 'class_id',
   class_name: 'class_name',
+  createdById: 'createdById',
+  updatedById: 'updatedById',
   created_at: 'created_at',
   updated_at: 'updated_at'
 } as const
@@ -256,7 +299,7 @@ export const UserScalarFieldEnum = {
   user_name: 'user_name',
   user_password: 'user_password',
   active_status: 'active_status',
-  position_name: 'position_name',
+  position_id: 'position_id',
   role_name: 'role_name',
   present_address_id: 'present_address_id',
   permanent_address_id: 'permanent_address_id',
@@ -276,6 +319,14 @@ export const SortOrder = {
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
+export const NullableJsonNullValueInput = {
+  DbNull: DbNull,
+  JsonNull: JsonNull
+} as const
+
+export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
+
+
 export const QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
@@ -290,4 +341,13 @@ export const NullsOrder = {
 } as const
 
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const JsonNullValueFilter = {
+  DbNull: DbNull,
+  JsonNull: JsonNull,
+  AnyNull: AnyNull
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 

@@ -4,7 +4,7 @@ model FatherDetails{
     nid_no String?
     occupation String?
     job_title String?
-    educational_qualification String?
+    educational_qualification EducationDegree?
     monthly_income String?
     mobile_no_1 String?
     mobile_no_2 String?

@@ -1,0 +1,18 @@
+model PreviousInstituteInformation{
+    previous_institute_information_id String @id @default(uuid())
+    institute_name String
+    class String
+    result String?
+    tc_no String?
+
+    institute_address_id String? @unique
+    institute_address InstitureAddress? @relation(fields: [institute_address_id], references: [institute_address_id])
+
+    student_id String
+    student Student @relation(fields: [student_id], references: [student_id])
+
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
+
+    @@map("previous_institute_informations")
+}

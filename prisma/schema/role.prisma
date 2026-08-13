@@ -9,3 +9,16 @@ model Role {
   
   @@map("roles")
 }
+
+// roles: 
+// SUPER_ADMIN
+// HIGHER_ADMIN
+// ADMIN
+// MANAGEMENT
+// ACADEMIC
+// TEACHER
+// STUDENT
+// MANAGEMENT_STAFF
+// GOVERNING_BODY
+
+

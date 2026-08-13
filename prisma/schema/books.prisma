@@ -3,16 +3,16 @@ model Book{
     book_name String
     publication String
  
-    bookClasses BookClass[]
+    book_classes BookClass[]
 
-    createdById String?
-    createdBy User? @relation("book_created_by", fields: [createdById], references: [user_id], onDelete: SetNull, onUpdate: Cascade)
+    created_by_id String?
+    created_by User? @relation("book_created_by", fields: [created_by_id], references: [user_id], onDelete: SetNull, onUpdate: Cascade)
 
-    updatedById String?
-    updatedBy User? @relation("book_updated_by", fields: [updatedById], references: [user_id], onDelete: SetNull, onUpdate: Cascade)
+    updated_by_id String?
+    updated_by User? @relation("book_updated_by", fields: [updated_by_id], references: [user_id], onDelete: SetNull, onUpdate: Cascade)
 
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+    created_at DateTime @default(now())
+    updated_at DateTime @updatedAt
     @@unique([book_name, publication])
     @@map("books")
     @@index([book_name])

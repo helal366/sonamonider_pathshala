@@ -387,6 +387,9 @@ export const ModelName = {
   AcademicTeacher: 'AcademicTeacher',
   AcademicYear: 'AcademicYear',
   ActiveInactiveHistory: 'ActiveInactiveHistory',
+  AuditLog: 'AuditLog',
+  BookClass: 'BookClass',
+  Book: 'Book',
   Class: 'Class',
   FatherDetails: 'FatherDetails',
   MotherDetails: 'MotherDetails',
@@ -411,7 +414,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "academicTeacher" | "academicYear" | "activeInactiveHistory" | "class" | "fatherDetails" | "motherDetails" | "permanentAddress" | "position" | "presentAddress" | "responsibility" | "role" | "user"
+    modelProps: "academicTeacher" | "academicYear" | "activeInactiveHistory" | "auditLog" | "bookClass" | "book" | "class" | "fatherDetails" | "motherDetails" | "permanentAddress" | "position" | "presentAddress" | "responsibility" | "role" | "user"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -634,6 +637,228 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.ActiveInactiveHistoryCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.ActiveInactiveHistoryCountAggregateOutputType> | number
+        }
+      }
+    }
+    AuditLog: {
+      payload: Prisma.$AuditLogPayload<ExtArgs>
+      fields: Prisma.AuditLogFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.AuditLogFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.AuditLogFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload>
+        }
+        findFirst: {
+          args: Prisma.AuditLogFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.AuditLogFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload>
+        }
+        findMany: {
+          args: Prisma.AuditLogFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload>[]
+        }
+        create: {
+          args: Prisma.AuditLogCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload>
+        }
+        createMany: {
+          args: Prisma.AuditLogCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.AuditLogCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload>[]
+        }
+        delete: {
+          args: Prisma.AuditLogDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload>
+        }
+        update: {
+          args: Prisma.AuditLogUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload>
+        }
+        deleteMany: {
+          args: Prisma.AuditLogDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.AuditLogUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.AuditLogUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload>[]
+        }
+        upsert: {
+          args: Prisma.AuditLogUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$AuditLogPayload>
+        }
+        aggregate: {
+          args: Prisma.AuditLogAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateAuditLog>
+        }
+        groupBy: {
+          args: Prisma.AuditLogGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AuditLogGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.AuditLogCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AuditLogCountAggregateOutputType> | number
+        }
+      }
+    }
+    BookClass: {
+      payload: Prisma.$BookClassPayload<ExtArgs>
+      fields: Prisma.BookClassFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.BookClassFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookClassPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.BookClassFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookClassPayload>
+        }
+        findFirst: {
+          args: Prisma.BookClassFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookClassPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.BookClassFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookClassPayload>
+        }
+        findMany: {
+          args: Prisma.BookClassFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookClassPayload>[]
+        }
+        create: {
+          args: Prisma.BookClassCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookClassPayload>
+        }
+        createMany: {
+          args: Prisma.BookClassCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.BookClassCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookClassPayload>[]
+        }
+        delete: {
+          args: Prisma.BookClassDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookClassPayload>
+        }
+        update: {
+          args: Prisma.BookClassUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookClassPayload>
+        }
+        deleteMany: {
+          args: Prisma.BookClassDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.BookClassUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.BookClassUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookClassPayload>[]
+        }
+        upsert: {
+          args: Prisma.BookClassUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookClassPayload>
+        }
+        aggregate: {
+          args: Prisma.BookClassAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateBookClass>
+        }
+        groupBy: {
+          args: Prisma.BookClassGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BookClassGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.BookClassCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BookClassCountAggregateOutputType> | number
+        }
+      }
+    }
+    Book: {
+      payload: Prisma.$BookPayload<ExtArgs>
+      fields: Prisma.BookFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.BookFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.BookFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookPayload>
+        }
+        findFirst: {
+          args: Prisma.BookFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.BookFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookPayload>
+        }
+        findMany: {
+          args: Prisma.BookFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookPayload>[]
+        }
+        create: {
+          args: Prisma.BookCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookPayload>
+        }
+        createMany: {
+          args: Prisma.BookCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.BookCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookPayload>[]
+        }
+        delete: {
+          args: Prisma.BookDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookPayload>
+        }
+        update: {
+          args: Prisma.BookUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookPayload>
+        }
+        deleteMany: {
+          args: Prisma.BookDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.BookUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.BookUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookPayload>[]
+        }
+        upsert: {
+          args: Prisma.BookUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BookPayload>
+        }
+        aggregate: {
+          args: Prisma.BookAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateBook>
+        }
+        groupBy: {
+          args: Prisma.BookGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BookGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.BookCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BookCountAggregateOutputType> | number
         }
       }
     }
@@ -1379,9 +1604,49 @@ export const ActiveInactiveHistoryScalarFieldEnum = {
 export type ActiveInactiveHistoryScalarFieldEnum = (typeof ActiveInactiveHistoryScalarFieldEnum)[keyof typeof ActiveInactiveHistoryScalarFieldEnum]
 
 
+export const AuditLogScalarFieldEnum = {
+  audit_id: 'audit_id',
+  entityName: 'entityName',
+  entityId: 'entityId',
+  action: 'action',
+  changedById: 'changedById',
+  oldValue: 'oldValue',
+  newValue: 'newValue',
+  createdAt: 'createdAt'
+} as const
+
+export type AuditLogScalarFieldEnum = (typeof AuditLogScalarFieldEnum)[keyof typeof AuditLogScalarFieldEnum]
+
+
+export const BookClassScalarFieldEnum = {
+  book_id: 'book_id',
+  class_id: 'class_id',
+  createdById: 'createdById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BookClassScalarFieldEnum = (typeof BookClassScalarFieldEnum)[keyof typeof BookClassScalarFieldEnum]
+
+
+export const BookScalarFieldEnum = {
+  book_id: 'book_id',
+  book_name: 'book_name',
+  publication: 'publication',
+  createdById: 'createdById',
+  updatedById: 'updatedById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BookScalarFieldEnum = (typeof BookScalarFieldEnum)[keyof typeof BookScalarFieldEnum]
+
+
 export const ClassScalarFieldEnum = {
   class_id: 'class_id',
   class_name: 'class_name',
+  createdById: 'createdById',
+  updatedById: 'updatedById',
   created_at: 'created_at',
   updated_at: 'updated_at'
 } as const
@@ -1517,7 +1782,7 @@ export const UserScalarFieldEnum = {
   user_name: 'user_name',
   user_password: 'user_password',
   active_status: 'active_status',
-  position_name: 'position_name',
+  position_id: 'position_id',
   role_name: 'role_name',
   present_address_id: 'present_address_id',
   permanent_address_id: 'permanent_address_id',
@@ -1537,6 +1802,14 @@ export const SortOrder = {
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
+export const NullableJsonNullValueInput = {
+  DbNull: DbNull,
+  JsonNull: JsonNull
+} as const
+
+export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
+
+
 export const QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
@@ -1551,6 +1824,15 @@ export const NullsOrder = {
 } as const
 
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const JsonNullValueFilter = {
+  DbNull: DbNull,
+  JsonNull: JsonNull,
+  AnyNull: AnyNull
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 
 
 
@@ -1612,6 +1894,34 @@ export type EnumActiveStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$Pri
  * Reference to a field of type 'ActiveStatus[]'
  */
 export type ListEnumActiveStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ActiveStatus[]'>
+    
+
+
+/**
+ * Reference to a field of type 'AuditAction'
+ */
+export type EnumAuditActionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AuditAction'>
+    
+
+
+/**
+ * Reference to a field of type 'AuditAction[]'
+ */
+export type ListEnumAuditActionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AuditAction[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Json'
+ */
+export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
+    
+
+
+/**
+ * Reference to a field of type 'QueryMode'
+ */
+export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
     
 
 
@@ -1783,6 +2093,9 @@ export type GlobalOmitConfig = {
   academicTeacher?: Prisma.AcademicTeacherOmit
   academicYear?: Prisma.AcademicYearOmit
   activeInactiveHistory?: Prisma.ActiveInactiveHistoryOmit
+  auditLog?: Prisma.AuditLogOmit
+  bookClass?: Prisma.BookClassOmit
+  book?: Prisma.BookOmit
   class?: Prisma.ClassOmit
   fatherDetails?: Prisma.FatherDetailsOmit
   motherDetails?: Prisma.MotherDetailsOmit

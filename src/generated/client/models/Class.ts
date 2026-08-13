@@ -27,6 +27,8 @@ export type AggregateClass = {
 export type ClassMinAggregateOutputType = {
   class_id: string | null
   class_name: string | null
+  createdById: string | null
+  updatedById: string | null
   created_at: Date | null
   updated_at: Date | null
 }
@@ -34,6 +36,8 @@ export type ClassMinAggregateOutputType = {
 export type ClassMaxAggregateOutputType = {
   class_id: string | null
   class_name: string | null
+  createdById: string | null
+  updatedById: string | null
   created_at: Date | null
   updated_at: Date | null
 }
@@ -41,6 +45,8 @@ export type ClassMaxAggregateOutputType = {
 export type ClassCountAggregateOutputType = {
   class_id: number
   class_name: number
+  createdById: number
+  updatedById: number
   created_at: number
   updated_at: number
   _all: number
@@ -50,6 +56,8 @@ export type ClassCountAggregateOutputType = {
 export type ClassMinAggregateInputType = {
   class_id?: true
   class_name?: true
+  createdById?: true
+  updatedById?: true
   created_at?: true
   updated_at?: true
 }
@@ -57,6 +65,8 @@ export type ClassMinAggregateInputType = {
 export type ClassMaxAggregateInputType = {
   class_id?: true
   class_name?: true
+  createdById?: true
+  updatedById?: true
   created_at?: true
   updated_at?: true
 }
@@ -64,6 +74,8 @@ export type ClassMaxAggregateInputType = {
 export type ClassCountAggregateInputType = {
   class_id?: true
   class_name?: true
+  createdById?: true
+  updatedById?: true
   created_at?: true
   updated_at?: true
   _all?: true
@@ -144,6 +156,8 @@ export type ClassGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
 export type ClassGroupByOutputType = {
   class_id: string
   class_name: string
+  createdById: string | null
+  updatedById: string | null
   created_at: Date
   updated_at: Date
   _count: ClassCountAggregateOutputType | null
@@ -172,15 +186,25 @@ export type ClassWhereInput = {
   NOT?: Prisma.ClassWhereInput | Prisma.ClassWhereInput[]
   class_id?: Prisma.StringFilter<"Class"> | string
   class_name?: Prisma.StringFilter<"Class"> | string
+  createdById?: Prisma.StringNullableFilter<"Class"> | string | null
+  updatedById?: Prisma.StringNullableFilter<"Class"> | string | null
   created_at?: Prisma.DateTimeFilter<"Class"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"Class"> | Date | string
+  bookClasses?: Prisma.BookClassListRelationFilter
+  createdBy?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  updatedBy?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }
 
 export type ClassOrderByWithRelationInput = {
   class_id?: Prisma.SortOrder
   class_name?: Prisma.SortOrder
+  createdById?: Prisma.SortOrderInput | Prisma.SortOrder
+  updatedById?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
+  bookClasses?: Prisma.BookClassOrderByRelationAggregateInput
+  createdBy?: Prisma.UserOrderByWithRelationInput
+  updatedBy?: Prisma.UserOrderByWithRelationInput
 }
 
 export type ClassWhereUniqueInput = Prisma.AtLeast<{
@@ -189,13 +213,20 @@ export type ClassWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.ClassWhereInput | Prisma.ClassWhereInput[]
   OR?: Prisma.ClassWhereInput[]
   NOT?: Prisma.ClassWhereInput | Prisma.ClassWhereInput[]
+  createdById?: Prisma.StringNullableFilter<"Class"> | string | null
+  updatedById?: Prisma.StringNullableFilter<"Class"> | string | null
   created_at?: Prisma.DateTimeFilter<"Class"> | Date | string
   updated_at?: Prisma.DateTimeFilter<"Class"> | Date | string
+  bookClasses?: Prisma.BookClassListRelationFilter
+  createdBy?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  updatedBy?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }, "class_id" | "class_name">
 
 export type ClassOrderByWithAggregationInput = {
   class_id?: Prisma.SortOrder
   class_name?: Prisma.SortOrder
+  createdById?: Prisma.SortOrderInput | Prisma.SortOrder
+  updatedById?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
   _count?: Prisma.ClassCountOrderByAggregateInput
@@ -209,6 +240,8 @@ export type ClassScalarWhereWithAggregatesInput = {
   NOT?: Prisma.ClassScalarWhereWithAggregatesInput | Prisma.ClassScalarWhereWithAggregatesInput[]
   class_id?: Prisma.StringWithAggregatesFilter<"Class"> | string
   class_name?: Prisma.StringWithAggregatesFilter<"Class"> | string
+  createdById?: Prisma.StringNullableWithAggregatesFilter<"Class"> | string | null
+  updatedById?: Prisma.StringNullableWithAggregatesFilter<"Class"> | string | null
   created_at?: Prisma.DateTimeWithAggregatesFilter<"Class"> | Date | string
   updated_at?: Prisma.DateTimeWithAggregatesFilter<"Class"> | Date | string
 }
@@ -218,13 +251,19 @@ export type ClassCreateInput = {
   class_name: string
   created_at?: Date | string
   updated_at?: Date | string
+  bookClasses?: Prisma.BookClassCreateNestedManyWithoutClassInput
+  createdBy?: Prisma.UserCreateNestedOneWithoutCreatedClassesInput
+  updatedBy?: Prisma.UserCreateNestedOneWithoutUpdatedClassesInput
 }
 
 export type ClassUncheckedCreateInput = {
   class_id?: string
   class_name: string
+  createdById?: string | null
+  updatedById?: string | null
   created_at?: Date | string
   updated_at?: Date | string
+  bookClasses?: Prisma.BookClassUncheckedCreateNestedManyWithoutClassInput
 }
 
 export type ClassUpdateInput = {
@@ -232,18 +271,26 @@ export type ClassUpdateInput = {
   class_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bookClasses?: Prisma.BookClassUpdateManyWithoutClassNestedInput
+  createdBy?: Prisma.UserUpdateOneWithoutCreatedClassesNestedInput
+  updatedBy?: Prisma.UserUpdateOneWithoutUpdatedClassesNestedInput
 }
 
 export type ClassUncheckedUpdateInput = {
   class_id?: Prisma.StringFieldUpdateOperationsInput | string
   class_name?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bookClasses?: Prisma.BookClassUncheckedUpdateManyWithoutClassNestedInput
 }
 
 export type ClassCreateManyInput = {
   class_id?: string
   class_name: string
+  createdById?: string | null
+  updatedById?: string | null
   created_at?: Date | string
   updated_at?: Date | string
 }
@@ -258,13 +305,22 @@ export type ClassUpdateManyMutationInput = {
 export type ClassUncheckedUpdateManyInput = {
   class_id?: Prisma.StringFieldUpdateOperationsInput | string
   class_name?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type ClassScalarRelationFilter = {
+  is?: Prisma.ClassWhereInput
+  isNot?: Prisma.ClassWhereInput
 }
 
 export type ClassCountOrderByAggregateInput = {
   class_id?: Prisma.SortOrder
   class_name?: Prisma.SortOrder
+  createdById?: Prisma.SortOrder
+  updatedById?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
 }
@@ -272,6 +328,8 @@ export type ClassCountOrderByAggregateInput = {
 export type ClassMaxOrderByAggregateInput = {
   class_id?: Prisma.SortOrder
   class_name?: Prisma.SortOrder
+  createdById?: Prisma.SortOrder
+  updatedById?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
 }
@@ -279,48 +337,443 @@ export type ClassMaxOrderByAggregateInput = {
 export type ClassMinOrderByAggregateInput = {
   class_id?: Prisma.SortOrder
   class_name?: Prisma.SortOrder
+  createdById?: Prisma.SortOrder
+  updatedById?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
 }
 
+export type ClassListRelationFilter = {
+  every?: Prisma.ClassWhereInput
+  some?: Prisma.ClassWhereInput
+  none?: Prisma.ClassWhereInput
+}
+
+export type ClassOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
+}
+
+export type ClassCreateNestedOneWithoutBookClassesInput = {
+  create?: Prisma.XOR<Prisma.ClassCreateWithoutBookClassesInput, Prisma.ClassUncheckedCreateWithoutBookClassesInput>
+  connectOrCreate?: Prisma.ClassCreateOrConnectWithoutBookClassesInput
+  connect?: Prisma.ClassWhereUniqueInput
+}
+
+export type ClassUpdateOneRequiredWithoutBookClassesNestedInput = {
+  create?: Prisma.XOR<Prisma.ClassCreateWithoutBookClassesInput, Prisma.ClassUncheckedCreateWithoutBookClassesInput>
+  connectOrCreate?: Prisma.ClassCreateOrConnectWithoutBookClassesInput
+  upsert?: Prisma.ClassUpsertWithoutBookClassesInput
+  connect?: Prisma.ClassWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ClassUpdateToOneWithWhereWithoutBookClassesInput, Prisma.ClassUpdateWithoutBookClassesInput>, Prisma.ClassUncheckedUpdateWithoutBookClassesInput>
+}
+
+export type ClassCreateNestedManyWithoutCreatedByInput = {
+  create?: Prisma.XOR<Prisma.ClassCreateWithoutCreatedByInput, Prisma.ClassUncheckedCreateWithoutCreatedByInput> | Prisma.ClassCreateWithoutCreatedByInput[] | Prisma.ClassUncheckedCreateWithoutCreatedByInput[]
+  connectOrCreate?: Prisma.ClassCreateOrConnectWithoutCreatedByInput | Prisma.ClassCreateOrConnectWithoutCreatedByInput[]
+  createMany?: Prisma.ClassCreateManyCreatedByInputEnvelope
+  connect?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+}
+
+export type ClassCreateNestedManyWithoutUpdatedByInput = {
+  create?: Prisma.XOR<Prisma.ClassCreateWithoutUpdatedByInput, Prisma.ClassUncheckedCreateWithoutUpdatedByInput> | Prisma.ClassCreateWithoutUpdatedByInput[] | Prisma.ClassUncheckedCreateWithoutUpdatedByInput[]
+  connectOrCreate?: Prisma.ClassCreateOrConnectWithoutUpdatedByInput | Prisma.ClassCreateOrConnectWithoutUpdatedByInput[]
+  createMany?: Prisma.ClassCreateManyUpdatedByInputEnvelope
+  connect?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+}
+
+export type ClassUncheckedCreateNestedManyWithoutCreatedByInput = {
+  create?: Prisma.XOR<Prisma.ClassCreateWithoutCreatedByInput, Prisma.ClassUncheckedCreateWithoutCreatedByInput> | Prisma.ClassCreateWithoutCreatedByInput[] | Prisma.ClassUncheckedCreateWithoutCreatedByInput[]
+  connectOrCreate?: Prisma.ClassCreateOrConnectWithoutCreatedByInput | Prisma.ClassCreateOrConnectWithoutCreatedByInput[]
+  createMany?: Prisma.ClassCreateManyCreatedByInputEnvelope
+  connect?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+}
+
+export type ClassUncheckedCreateNestedManyWithoutUpdatedByInput = {
+  create?: Prisma.XOR<Prisma.ClassCreateWithoutUpdatedByInput, Prisma.ClassUncheckedCreateWithoutUpdatedByInput> | Prisma.ClassCreateWithoutUpdatedByInput[] | Prisma.ClassUncheckedCreateWithoutUpdatedByInput[]
+  connectOrCreate?: Prisma.ClassCreateOrConnectWithoutUpdatedByInput | Prisma.ClassCreateOrConnectWithoutUpdatedByInput[]
+  createMany?: Prisma.ClassCreateManyUpdatedByInputEnvelope
+  connect?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+}
+
+export type ClassUpdateManyWithoutCreatedByNestedInput = {
+  create?: Prisma.XOR<Prisma.ClassCreateWithoutCreatedByInput, Prisma.ClassUncheckedCreateWithoutCreatedByInput> | Prisma.ClassCreateWithoutCreatedByInput[] | Prisma.ClassUncheckedCreateWithoutCreatedByInput[]
+  connectOrCreate?: Prisma.ClassCreateOrConnectWithoutCreatedByInput | Prisma.ClassCreateOrConnectWithoutCreatedByInput[]
+  upsert?: Prisma.ClassUpsertWithWhereUniqueWithoutCreatedByInput | Prisma.ClassUpsertWithWhereUniqueWithoutCreatedByInput[]
+  createMany?: Prisma.ClassCreateManyCreatedByInputEnvelope
+  set?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+  disconnect?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+  delete?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+  connect?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+  update?: Prisma.ClassUpdateWithWhereUniqueWithoutCreatedByInput | Prisma.ClassUpdateWithWhereUniqueWithoutCreatedByInput[]
+  updateMany?: Prisma.ClassUpdateManyWithWhereWithoutCreatedByInput | Prisma.ClassUpdateManyWithWhereWithoutCreatedByInput[]
+  deleteMany?: Prisma.ClassScalarWhereInput | Prisma.ClassScalarWhereInput[]
+}
+
+export type ClassUpdateManyWithoutUpdatedByNestedInput = {
+  create?: Prisma.XOR<Prisma.ClassCreateWithoutUpdatedByInput, Prisma.ClassUncheckedCreateWithoutUpdatedByInput> | Prisma.ClassCreateWithoutUpdatedByInput[] | Prisma.ClassUncheckedCreateWithoutUpdatedByInput[]
+  connectOrCreate?: Prisma.ClassCreateOrConnectWithoutUpdatedByInput | Prisma.ClassCreateOrConnectWithoutUpdatedByInput[]
+  upsert?: Prisma.ClassUpsertWithWhereUniqueWithoutUpdatedByInput | Prisma.ClassUpsertWithWhereUniqueWithoutUpdatedByInput[]
+  createMany?: Prisma.ClassCreateManyUpdatedByInputEnvelope
+  set?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+  disconnect?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+  delete?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+  connect?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+  update?: Prisma.ClassUpdateWithWhereUniqueWithoutUpdatedByInput | Prisma.ClassUpdateWithWhereUniqueWithoutUpdatedByInput[]
+  updateMany?: Prisma.ClassUpdateManyWithWhereWithoutUpdatedByInput | Prisma.ClassUpdateManyWithWhereWithoutUpdatedByInput[]
+  deleteMany?: Prisma.ClassScalarWhereInput | Prisma.ClassScalarWhereInput[]
+}
+
+export type ClassUncheckedUpdateManyWithoutCreatedByNestedInput = {
+  create?: Prisma.XOR<Prisma.ClassCreateWithoutCreatedByInput, Prisma.ClassUncheckedCreateWithoutCreatedByInput> | Prisma.ClassCreateWithoutCreatedByInput[] | Prisma.ClassUncheckedCreateWithoutCreatedByInput[]
+  connectOrCreate?: Prisma.ClassCreateOrConnectWithoutCreatedByInput | Prisma.ClassCreateOrConnectWithoutCreatedByInput[]
+  upsert?: Prisma.ClassUpsertWithWhereUniqueWithoutCreatedByInput | Prisma.ClassUpsertWithWhereUniqueWithoutCreatedByInput[]
+  createMany?: Prisma.ClassCreateManyCreatedByInputEnvelope
+  set?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+  disconnect?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+  delete?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+  connect?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+  update?: Prisma.ClassUpdateWithWhereUniqueWithoutCreatedByInput | Prisma.ClassUpdateWithWhereUniqueWithoutCreatedByInput[]
+  updateMany?: Prisma.ClassUpdateManyWithWhereWithoutCreatedByInput | Prisma.ClassUpdateManyWithWhereWithoutCreatedByInput[]
+  deleteMany?: Prisma.ClassScalarWhereInput | Prisma.ClassScalarWhereInput[]
+}
+
+export type ClassUncheckedUpdateManyWithoutUpdatedByNestedInput = {
+  create?: Prisma.XOR<Prisma.ClassCreateWithoutUpdatedByInput, Prisma.ClassUncheckedCreateWithoutUpdatedByInput> | Prisma.ClassCreateWithoutUpdatedByInput[] | Prisma.ClassUncheckedCreateWithoutUpdatedByInput[]
+  connectOrCreate?: Prisma.ClassCreateOrConnectWithoutUpdatedByInput | Prisma.ClassCreateOrConnectWithoutUpdatedByInput[]
+  upsert?: Prisma.ClassUpsertWithWhereUniqueWithoutUpdatedByInput | Prisma.ClassUpsertWithWhereUniqueWithoutUpdatedByInput[]
+  createMany?: Prisma.ClassCreateManyUpdatedByInputEnvelope
+  set?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+  disconnect?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+  delete?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+  connect?: Prisma.ClassWhereUniqueInput | Prisma.ClassWhereUniqueInput[]
+  update?: Prisma.ClassUpdateWithWhereUniqueWithoutUpdatedByInput | Prisma.ClassUpdateWithWhereUniqueWithoutUpdatedByInput[]
+  updateMany?: Prisma.ClassUpdateManyWithWhereWithoutUpdatedByInput | Prisma.ClassUpdateManyWithWhereWithoutUpdatedByInput[]
+  deleteMany?: Prisma.ClassScalarWhereInput | Prisma.ClassScalarWhereInput[]
+}
+
+export type ClassCreateWithoutBookClassesInput = {
+  class_id?: string
+  class_name: string
+  created_at?: Date | string
+  updated_at?: Date | string
+  createdBy?: Prisma.UserCreateNestedOneWithoutCreatedClassesInput
+  updatedBy?: Prisma.UserCreateNestedOneWithoutUpdatedClassesInput
+}
+
+export type ClassUncheckedCreateWithoutBookClassesInput = {
+  class_id?: string
+  class_name: string
+  createdById?: string | null
+  updatedById?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
+}
+
+export type ClassCreateOrConnectWithoutBookClassesInput = {
+  where: Prisma.ClassWhereUniqueInput
+  create: Prisma.XOR<Prisma.ClassCreateWithoutBookClassesInput, Prisma.ClassUncheckedCreateWithoutBookClassesInput>
+}
+
+export type ClassUpsertWithoutBookClassesInput = {
+  update: Prisma.XOR<Prisma.ClassUpdateWithoutBookClassesInput, Prisma.ClassUncheckedUpdateWithoutBookClassesInput>
+  create: Prisma.XOR<Prisma.ClassCreateWithoutBookClassesInput, Prisma.ClassUncheckedCreateWithoutBookClassesInput>
+  where?: Prisma.ClassWhereInput
+}
+
+export type ClassUpdateToOneWithWhereWithoutBookClassesInput = {
+  where?: Prisma.ClassWhereInput
+  data: Prisma.XOR<Prisma.ClassUpdateWithoutBookClassesInput, Prisma.ClassUncheckedUpdateWithoutBookClassesInput>
+}
+
+export type ClassUpdateWithoutBookClassesInput = {
+  class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  class_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  createdBy?: Prisma.UserUpdateOneWithoutCreatedClassesNestedInput
+  updatedBy?: Prisma.UserUpdateOneWithoutUpdatedClassesNestedInput
+}
+
+export type ClassUncheckedUpdateWithoutBookClassesInput = {
+  class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  class_name?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updatedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type ClassCreateWithoutCreatedByInput = {
+  class_id?: string
+  class_name: string
+  created_at?: Date | string
+  updated_at?: Date | string
+  bookClasses?: Prisma.BookClassCreateNestedManyWithoutClassInput
+  updatedBy?: Prisma.UserCreateNestedOneWithoutUpdatedClassesInput
+}
+
+export type ClassUncheckedCreateWithoutCreatedByInput = {
+  class_id?: string
+  class_name: string
+  updatedById?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
+  bookClasses?: Prisma.BookClassUncheckedCreateNestedManyWithoutClassInput
+}
+
+export type ClassCreateOrConnectWithoutCreatedByInput = {
+  where: Prisma.ClassWhereUniqueInput
+  create: Prisma.XOR<Prisma.ClassCreateWithoutCreatedByInput, Prisma.ClassUncheckedCreateWithoutCreatedByInput>
+}
+
+export type ClassCreateManyCreatedByInputEnvelope = {
+  data: Prisma.ClassCreateManyCreatedByInput | Prisma.ClassCreateManyCreatedByInput[]
+  skipDuplicates?: boolean
+}
+
+export type ClassCreateWithoutUpdatedByInput = {
+  class_id?: string
+  class_name: string
+  created_at?: Date | string
+  updated_at?: Date | string
+  bookClasses?: Prisma.BookClassCreateNestedManyWithoutClassInput
+  createdBy?: Prisma.UserCreateNestedOneWithoutCreatedClassesInput
+}
+
+export type ClassUncheckedCreateWithoutUpdatedByInput = {
+  class_id?: string
+  class_name: string
+  createdById?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
+  bookClasses?: Prisma.BookClassUncheckedCreateNestedManyWithoutClassInput
+}
+
+export type ClassCreateOrConnectWithoutUpdatedByInput = {
+  where: Prisma.ClassWhereUniqueInput
+  create: Prisma.XOR<Prisma.ClassCreateWithoutUpdatedByInput, Prisma.ClassUncheckedCreateWithoutUpdatedByInput>
+}
+
+export type ClassCreateManyUpdatedByInputEnvelope = {
+  data: Prisma.ClassCreateManyUpdatedByInput | Prisma.ClassCreateManyUpdatedByInput[]
+  skipDuplicates?: boolean
+}
+
+export type ClassUpsertWithWhereUniqueWithoutCreatedByInput = {
+  where: Prisma.ClassWhereUniqueInput
+  update: Prisma.XOR<Prisma.ClassUpdateWithoutCreatedByInput, Prisma.ClassUncheckedUpdateWithoutCreatedByInput>
+  create: Prisma.XOR<Prisma.ClassCreateWithoutCreatedByInput, Prisma.ClassUncheckedCreateWithoutCreatedByInput>
+}
+
+export type ClassUpdateWithWhereUniqueWithoutCreatedByInput = {
+  where: Prisma.ClassWhereUniqueInput
+  data: Prisma.XOR<Prisma.ClassUpdateWithoutCreatedByInput, Prisma.ClassUncheckedUpdateWithoutCreatedByInput>
+}
+
+export type ClassUpdateManyWithWhereWithoutCreatedByInput = {
+  where: Prisma.ClassScalarWhereInput
+  data: Prisma.XOR<Prisma.ClassUpdateManyMutationInput, Prisma.ClassUncheckedUpdateManyWithoutCreatedByInput>
+}
+
+export type ClassScalarWhereInput = {
+  AND?: Prisma.ClassScalarWhereInput | Prisma.ClassScalarWhereInput[]
+  OR?: Prisma.ClassScalarWhereInput[]
+  NOT?: Prisma.ClassScalarWhereInput | Prisma.ClassScalarWhereInput[]
+  class_id?: Prisma.StringFilter<"Class"> | string
+  class_name?: Prisma.StringFilter<"Class"> | string
+  createdById?: Prisma.StringNullableFilter<"Class"> | string | null
+  updatedById?: Prisma.StringNullableFilter<"Class"> | string | null
+  created_at?: Prisma.DateTimeFilter<"Class"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"Class"> | Date | string
+}
+
+export type ClassUpsertWithWhereUniqueWithoutUpdatedByInput = {
+  where: Prisma.ClassWhereUniqueInput
+  update: Prisma.XOR<Prisma.ClassUpdateWithoutUpdatedByInput, Prisma.ClassUncheckedUpdateWithoutUpdatedByInput>
+  create: Prisma.XOR<Prisma.ClassCreateWithoutUpdatedByInput, Prisma.ClassUncheckedCreateWithoutUpdatedByInput>
+}
+
+export type ClassUpdateWithWhereUniqueWithoutUpdatedByInput = {
+  where: Prisma.ClassWhereUniqueInput
+  data: Prisma.XOR<Prisma.ClassUpdateWithoutUpdatedByInput, Prisma.ClassUncheckedUpdateWithoutUpdatedByInput>
+}
+
+export type ClassUpdateManyWithWhereWithoutUpdatedByInput = {
+  where: Prisma.ClassScalarWhereInput
+  data: Prisma.XOR<Prisma.ClassUpdateManyMutationInput, Prisma.ClassUncheckedUpdateManyWithoutUpdatedByInput>
+}
+
+export type ClassCreateManyCreatedByInput = {
+  class_id?: string
+  class_name: string
+  updatedById?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
+}
+
+export type ClassCreateManyUpdatedByInput = {
+  class_id?: string
+  class_name: string
+  createdById?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string
+}
+
+export type ClassUpdateWithoutCreatedByInput = {
+  class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  class_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bookClasses?: Prisma.BookClassUpdateManyWithoutClassNestedInput
+  updatedBy?: Prisma.UserUpdateOneWithoutUpdatedClassesNestedInput
+}
+
+export type ClassUncheckedUpdateWithoutCreatedByInput = {
+  class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  class_name?: Prisma.StringFieldUpdateOperationsInput | string
+  updatedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bookClasses?: Prisma.BookClassUncheckedUpdateManyWithoutClassNestedInput
+}
+
+export type ClassUncheckedUpdateManyWithoutCreatedByInput = {
+  class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  class_name?: Prisma.StringFieldUpdateOperationsInput | string
+  updatedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type ClassUpdateWithoutUpdatedByInput = {
+  class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  class_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bookClasses?: Prisma.BookClassUpdateManyWithoutClassNestedInput
+  createdBy?: Prisma.UserUpdateOneWithoutCreatedClassesNestedInput
+}
+
+export type ClassUncheckedUpdateWithoutUpdatedByInput = {
+  class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  class_name?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  bookClasses?: Prisma.BookClassUncheckedUpdateManyWithoutClassNestedInput
+}
+
+export type ClassUncheckedUpdateManyWithoutUpdatedByInput = {
+  class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  class_name?: Prisma.StringFieldUpdateOperationsInput | string
+  createdById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+
+/**
+ * Count Type ClassCountOutputType
+ */
+
+export type ClassCountOutputType = {
+  bookClasses: number
+}
+
+export type ClassCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  bookClasses?: boolean | ClassCountOutputTypeCountBookClassesArgs
+}
+
+/**
+ * ClassCountOutputType without action
+ */
+export type ClassCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ClassCountOutputType
+   */
+  select?: Prisma.ClassCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * ClassCountOutputType without action
+ */
+export type ClassCountOutputTypeCountBookClassesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BookClassWhereInput
+}
 
 
 export type ClassSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   class_id?: boolean
   class_name?: boolean
+  createdById?: boolean
+  updatedById?: boolean
   created_at?: boolean
   updated_at?: boolean
+  bookClasses?: boolean | Prisma.Class$bookClassesArgs<ExtArgs>
+  createdBy?: boolean | Prisma.Class$createdByArgs<ExtArgs>
+  updatedBy?: boolean | Prisma.Class$updatedByArgs<ExtArgs>
+  _count?: boolean | Prisma.ClassCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["class"]>
 
 export type ClassSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   class_id?: boolean
   class_name?: boolean
+  createdById?: boolean
+  updatedById?: boolean
   created_at?: boolean
   updated_at?: boolean
+  createdBy?: boolean | Prisma.Class$createdByArgs<ExtArgs>
+  updatedBy?: boolean | Prisma.Class$updatedByArgs<ExtArgs>
 }, ExtArgs["result"]["class"]>
 
 export type ClassSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   class_id?: boolean
   class_name?: boolean
+  createdById?: boolean
+  updatedById?: boolean
   created_at?: boolean
   updated_at?: boolean
+  createdBy?: boolean | Prisma.Class$createdByArgs<ExtArgs>
+  updatedBy?: boolean | Prisma.Class$updatedByArgs<ExtArgs>
 }, ExtArgs["result"]["class"]>
 
 export type ClassSelectScalar = {
   class_id?: boolean
   class_name?: boolean
+  createdById?: boolean
+  updatedById?: boolean
   created_at?: boolean
   updated_at?: boolean
 }
 
-export type ClassOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"class_id" | "class_name" | "created_at" | "updated_at", ExtArgs["result"]["class"]>
+export type ClassOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"class_id" | "class_name" | "createdById" | "updatedById" | "created_at" | "updated_at", ExtArgs["result"]["class"]>
+export type ClassInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  bookClasses?: boolean | Prisma.Class$bookClassesArgs<ExtArgs>
+  createdBy?: boolean | Prisma.Class$createdByArgs<ExtArgs>
+  updatedBy?: boolean | Prisma.Class$updatedByArgs<ExtArgs>
+  _count?: boolean | Prisma.ClassCountOutputTypeDefaultArgs<ExtArgs>
+}
+export type ClassIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  createdBy?: boolean | Prisma.Class$createdByArgs<ExtArgs>
+  updatedBy?: boolean | Prisma.Class$updatedByArgs<ExtArgs>
+}
+export type ClassIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  createdBy?: boolean | Prisma.Class$createdByArgs<ExtArgs>
+  updatedBy?: boolean | Prisma.Class$updatedByArgs<ExtArgs>
+}
 
 export type $ClassPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Class"
-  objects: {}
+  objects: {
+    bookClasses: Prisma.$BookClassPayload<ExtArgs>[]
+    createdBy: Prisma.$UserPayload<ExtArgs> | null
+    updatedBy: Prisma.$UserPayload<ExtArgs> | null
+  }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     class_id: string
     class_name: string
+    createdById: string | null
+    updatedById: string | null
     created_at: Date
     updated_at: Date
   }, ExtArgs["result"]["class"]>
@@ -717,6 +1170,9 @@ readonly fields: ClassFieldRefs;
  */
 export interface Prisma__ClassClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  bookClasses<T extends Prisma.Class$bookClassesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Class$bookClassesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BookClassPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  createdBy<T extends Prisma.Class$createdByArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Class$createdByArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  updatedBy<T extends Prisma.Class$updatedByArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Class$updatedByArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -748,6 +1204,8 @@ export interface Prisma__ClassClient<T, Null = never, ExtArgs extends runtime.Ty
 export interface ClassFieldRefs {
   readonly class_id: Prisma.FieldRef<"Class", 'String'>
   readonly class_name: Prisma.FieldRef<"Class", 'String'>
+  readonly createdById: Prisma.FieldRef<"Class", 'String'>
+  readonly updatedById: Prisma.FieldRef<"Class", 'String'>
   readonly created_at: Prisma.FieldRef<"Class", 'DateTime'>
   readonly updated_at: Prisma.FieldRef<"Class", 'DateTime'>
 }
@@ -767,6 +1225,10 @@ export type ClassFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.Interna
    */
   omit?: Prisma.ClassOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ClassInclude<ExtArgs> | null
+  /**
    * Filter, which Class to fetch.
    */
   where: Prisma.ClassWhereUniqueInput
@@ -785,6 +1247,10 @@ export type ClassFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.
    */
   omit?: Prisma.ClassOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ClassInclude<ExtArgs> | null
+  /**
    * Filter, which Class to fetch.
    */
   where: Prisma.ClassWhereUniqueInput
@@ -802,6 +1268,10 @@ export type ClassFindFirstArgs<ExtArgs extends runtime.Types.Extensions.Internal
    * Omit specific fields from the Class
    */
   omit?: Prisma.ClassOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ClassInclude<ExtArgs> | null
   /**
    * Filter, which Class to fetch.
    */
@@ -851,6 +1321,10 @@ export type ClassFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.I
    */
   omit?: Prisma.ClassOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ClassInclude<ExtArgs> | null
+  /**
    * Filter, which Class to fetch.
    */
   where?: Prisma.ClassWhereInput
@@ -898,6 +1372,10 @@ export type ClassFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalA
    * Omit specific fields from the Class
    */
   omit?: Prisma.ClassOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ClassInclude<ExtArgs> | null
   /**
    * Filter, which Classes to fetch.
    */
@@ -947,6 +1425,10 @@ export type ClassCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
    */
   omit?: Prisma.ClassOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ClassInclude<ExtArgs> | null
+  /**
    * The data needed to create a Class.
    */
   data: Prisma.XOR<Prisma.ClassCreateInput, Prisma.ClassUncheckedCreateInput>
@@ -980,6 +1462,10 @@ export type ClassCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extension
    */
   data: Prisma.ClassCreateManyInput | Prisma.ClassCreateManyInput[]
   skipDuplicates?: boolean
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ClassIncludeCreateManyAndReturn<ExtArgs> | null
 }
 
 /**
@@ -994,6 +1480,10 @@ export type ClassUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
    * Omit specific fields from the Class
    */
   omit?: Prisma.ClassOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ClassInclude<ExtArgs> | null
   /**
    * The data needed to update a Class.
    */
@@ -1046,6 +1536,10 @@ export type ClassUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extension
    * Limit how many Classes to update.
    */
   limit?: number
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ClassIncludeUpdateManyAndReturn<ExtArgs> | null
 }
 
 /**
@@ -1060,6 +1554,10 @@ export type ClassUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
    * Omit specific fields from the Class
    */
   omit?: Prisma.ClassOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ClassInclude<ExtArgs> | null
   /**
    * The filter to search for the Class to update in case it exists.
    */
@@ -1087,6 +1585,10 @@ export type ClassDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
    */
   omit?: Prisma.ClassOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ClassInclude<ExtArgs> | null
+  /**
    * Filter which Class to delete.
    */
   where: Prisma.ClassWhereUniqueInput
@@ -1107,6 +1609,68 @@ export type ClassDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Interna
 }
 
 /**
+ * Class.bookClasses
+ */
+export type Class$bookClassesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BookClass
+   */
+  select?: Prisma.BookClassSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BookClass
+   */
+  omit?: Prisma.BookClassOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BookClassInclude<ExtArgs> | null
+  where?: Prisma.BookClassWhereInput
+  orderBy?: Prisma.BookClassOrderByWithRelationInput | Prisma.BookClassOrderByWithRelationInput[]
+  cursor?: Prisma.BookClassWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BookClassScalarFieldEnum | Prisma.BookClassScalarFieldEnum[]
+}
+
+/**
+ * Class.createdBy
+ */
+export type Class$createdByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  where?: Prisma.UserWhereInput
+}
+
+/**
+ * Class.updatedBy
+ */
+export type Class$updatedByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  where?: Prisma.UserWhereInput
+}
+
+/**
  * Class without action
  */
 export type ClassDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1118,4 +1682,8 @@ export type ClassDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
    * Omit specific fields from the Class
    */
   omit?: Prisma.ClassOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ClassInclude<ExtArgs> | null
 }
