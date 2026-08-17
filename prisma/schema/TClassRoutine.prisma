@@ -1,0 +1,25 @@
+model ClassRoutine {
+  class_routine_id String   @id @default(uuid())
+  day              WeekDays
+
+  period_id String
+  period    Period @relation(fields: [period_id], references: [period_id], onDelete: Cascade, onUpdate: Cascade)
+
+  teacher_id String
+  teacher    Teacher @relation(fields: [teacher_id], references: [teacher_id], onDelete: Cascade, onUpdate: Cascade)
+
+  class_id String
+  class    Class  @relation(fields: [class_id], references: [class_id], onDelete: Cascade, onUpdate: Cascade)
+
+  created_by_id String?
+  created_by    User?   @relation("routine_created_by", fields: [created_by_id], references: [user_id], onDelete: SetNull, onUpdate: Cascade)
+  updated_by_id String?
+  updated_by    User?   @relation("routine_updated_by", fields: [updated_by_id], references: [user_id], onDelete: SetNull, onUpdate: Cascade)
+
+  created_at DateTime @default(now())
+  updated_at DateTime? @updatedAt
+
+  @@unique([day, period_id, teacher_id], name: "teacher_schedule_clash_preventer")
+  @@unique([day, period_id, class_id], name: "class_schedule_clash_preventer")
+  @@map("class_routine")
+}

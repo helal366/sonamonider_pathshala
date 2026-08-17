@@ -1,19 +1,27 @@
 model Class {
-  class_id   String   @id @default(uuid())
-  class_name String   @unique
+  class_id   String @id @default(uuid())
+  class_name String @unique
 
-  book_Classes BookClass[] 
-  
+  book_classes BookClass[]
+
   created_by_id String?
-  created_by User? @relation("class_created_by",fields: [created_by_id], references: [user_id], onDelete: SetNull, onUpdate: Cascade)
+  created_by    User?   @relation("class_created_by", fields: [created_by_id], references: [user_id], onDelete: SetNull, onUpdate: Cascade)
 
-  students Student[] @relation("student_classes")
+  students        Student[] @relation("student_classes")
   active_students Student[] @relation("student_active_classes")
 
+  grade_teacher_id String?  @unique
+  grade_teacher    Teacher? @relation("grade_teacher_class", fields: [grade_teacher_id], references: [teacher_id], onDelete: Restrict, onUpdate: Cascade)
+
+  group_teacher_id String?  @unique
+  group_teacher    Teacher? @relation("group_teacher_class", fields: [group_teacher_id], references: [teacher_id], onDelete: Restrict, onUpdate: Cascade)
+
+  class_routines ClassRoutine[]
+
   updated_by_id String?
-  updated_by User? @relation("class_updated_by", fields: [updated_by_id], references: [user_id],  onDelete: SetNull, onUpdate: Cascade)
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  updated_by    User?    @relation("class_updated_by", fields: [updated_by_id], references: [user_id], onDelete: SetNull, onUpdate: Cascade)
+  created_at    DateTime @default(now())
+  updated_at    DateTime? @updatedAt
 
   @@map("classes")
 }

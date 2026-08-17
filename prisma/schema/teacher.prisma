@@ -1,0 +1,38 @@
+model Teacher {
+  teacher_id                  String   @id @default(uuid())
+  full_name                   String
+  role                        String
+  position                    String
+  current_position            String?
+  positions                   String[]
+  teaching_experience_year    Int?
+  teaching_experience_month   Int?
+  alternative_contact_no      String[]
+  extra_curricular_activities String[]
+
+  joining_history TJoiningHistory[]
+
+  user_id           String @unique
+  user_primary_data User   @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: Cascade)
+
+  spouse_information SpouseInformation?
+  academic_results   AcademicResult?
+
+  grade_teacher_class_name Class? @relation("grade_teacher_class")
+  group_teacher_class_name Class? @relation("group_teacher_class")
+
+  is_subject_teacher Boolean           @default(false)
+  subjects           TSubjectTeacher[]
+
+  is_responsible_teacher     Boolean                  @default(false)
+  students_in_responsibility TStudentResponsibility[]
+
+  honourable_responsibilities HonourableResponsibility[]
+
+  my_classes ClassRoutine[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime? @updatedAt
+
+  @@map("teachers")
+}

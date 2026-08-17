@@ -1,0 +1,15 @@
+model TPromotedHistory {
+  promoted_history_id            String   @id @default(uuid())
+  previous_position              String
+  promoted_position              String
+  previous_position_joining_date DateTime
+  previous_position_ending_date  DateTime
+  promoted_position_joining_date DateTime
+
+  joining_history_id String?          @unique
+  joining_history    TJoiningHistory? @relation(fields: [joining_history_id], references: [joining_history_id], onDelete: Cascade, onUpdate: Cascade)
+  created_at         DateTime         @default(now())
+  updated_at         DateTime?         @updatedAt
+
+  @@map("promoted_history")
+}

@@ -28,14 +28,13 @@ enum Morning_Section {
   sonamonider_pathshala
 }
 
-enum Days {
+enum WeekDays {
   SATURDAY
   SUNDAY
   MONDAY
   TUESDAY
   WEDNESDAY
   THURSDAY
-  FRIDAY
 }
 
 enum Months {
@@ -64,7 +63,7 @@ enum AuditAction {
   DELETE
 }
 
-enum EducationDegree{
+enum EducationDegree {
   SSC
   HSC
   BSC
@@ -74,7 +73,7 @@ enum EducationDegree{
   M_COM
   M_ARTS
   PHD
-  ALIM 
+  ALIM
   DAKHIL
   KAMIL
   FAZIL

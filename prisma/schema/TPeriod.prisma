@@ -1,0 +1,11 @@
+model Period {
+  period_id   String @id @default(uuid())
+  period_name String
+
+  classes_from_routine ClassRoutine[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime? @updatedAt
+
+  @@map("periods")
+}

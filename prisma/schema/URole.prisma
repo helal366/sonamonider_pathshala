@@ -1,0 +1,22 @@
+model URole {
+  role_id   String      @id @default(uuid())
+  role_name String      @unique
+  user      User[]      @relation("user_role_relation")
+  positions UPosition[] @relation("role_position_relation")
+
+  created_at DateTime @default(now())
+  updated_at DateTime? @updatedAt
+
+  @@map("roles")
+}
+
+// roles: 
+// SUPER_ADMIN
+// HIGHER_ADMIN
+// ADMIN
+// MANAGEMENT
+// ACADEMIC
+// TEACHER
+// STUDENT
+// MANAGEMENT_STAFF
+// GOVERNING_BODY

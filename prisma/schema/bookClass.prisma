@@ -1,13 +1,14 @@
-model BookClass{
-    book_id String
-    class_id String
+model BookClass {
+  book_id  String
+  class_id String
 
-    book Book @relation(fields: [book_id], references: [book_id])
-    class Class @relation(fields: [class_id], references: [class_id])
+  book  Book  @relation(fields: [book_id], references: [book_id])
+  class Class @relation(fields: [class_id], references: [class_id])
 
-    created_by_id String?
-    created_by User? @relation(fields: [created_by_id], references: [user_id],  onDelete: SetNull, onUpdate: Cascade)
-    created_at DateTime @default(now())
-    updated_at DateTime @updatedAt
-    @@id([book_id,class_id])
+  created_by_id String?
+  created_by    User?    @relation(fields: [created_by_id], references: [user_id], onDelete: SetNull, onUpdate: Cascade)
+  created_at    DateTime @default(now())
+  updated_at    DateTime? @updatedAt
+
+  @@id([book_id, class_id])
 }

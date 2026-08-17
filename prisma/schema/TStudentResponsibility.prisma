@@ -1,0 +1,16 @@
+model TStudentResponsibility {
+  student_responsibility_id String    @id @default(uuid())
+  responsibility_start      DateTime  @default(now())
+  responsibility_end        DateTime?
+
+  teacher_id String?
+  teacher    Teacher? @relation(fields: [teacher_id], references: [teacher_id], onDelete: Cascade, onUpdate: Cascade)
+
+  student_id String?  @unique
+  student    Student? @relation(fields: [student_id], references: [student_id], onDelete: Restrict, onUpdate: Cascade)
+
+  created_at DateTime @default(now())
+  updated_at DateTime? @updatedAt
+
+  @@map("students_in_responsibility")
+}

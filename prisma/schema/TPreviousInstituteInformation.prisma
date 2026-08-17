@@ -1,0 +1,17 @@
+model TPreviousInstituteInformation {
+  teacher_previous_institute_information_id String  @id @default(uuid())
+  institute_name                            String?
+  institute_contact                         String?
+  job_duration_year                         Int?
+  job_duration_month                        Int?
+  salary                                    Int?
+  designation                               String?
+
+  joining_history_id String?          @unique
+  joining_history    TJoiningHistory? @relation(fields: [joining_history_id], references: [joining_history_id], onDelete: Cascade, onUpdate: Cascade)
+
+  created_at DateTime @default(now())
+  updated_at DateTime? @updatedAt
+
+  @@map("previous_institute_information")
+}

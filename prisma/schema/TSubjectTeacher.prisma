@@ -1,0 +1,12 @@
+model TSubjectTeacher {
+  subject_teacher_id String @id @default(uuid())
+  subject_name       String
+
+  teacher_id String
+  teacher    Teacher @relation(fields: [teacher_id], references: [teacher_id], onDelete: Cascade, onUpdate: Cascade)
+
+  created_at DateTime @default(now())
+  updated_at DateTime? @updatedAt
+
+  @@map("subject_teachers")
+}

@@ -1,58 +1,60 @@
 model User {
-  user_id                  String                  @id @default(uuid())
+  user_id                  String      @id @default(uuid())
   full_name                String
   mobile_number            String
+  is_mobile_verified Boolean @default(false)
   gender                   Gender
   blood_group              BloodGroup?
   date_of_birth            DateTime?
-  height_in_cm               Float?
-  weight_in_kg               Float?
+  height_in_cm             Float?
+  weight_in_kg             Float?
   religion                 Religion?
-  nationality              String   @default("Bangladeshi")
+  nationality              String      @default("Bangladeshi")
   birth_certificate_number String?
   nid_number               String?
+  photo_url                String?
 
-  father_details_id        String?
-  father_details           FatherDetails?           @relation(name:"user_father_details", fields: [father_details_id], references: [father_details_id], onDelete: Restrict, onUpdate: Cascade)
-  
-  mother_details_id        String?
-  mother_details           MotherDetails?  @relation(name: "user_mother_details", fields: [mother_details_id], references: [mother_details_id], onDelete: Restrict, onUpdate: Cascade)
-  
-  email                    String?                 @unique
-  user_name                String?                 @unique
-  user_password            String?                 @default("sm1234ps")
+  father_details_id String?
+  father_details    UFatherDetails? @relation(name: "user_father_details", fields: [father_details_id], references: [father_details_id], onDelete: Restrict, onUpdate: Cascade)
 
-  active_status            ActiveStatus            @default(ACTIVE)
-  active_inactive_history  ActiveInactiveHistory[] @relation("user_active_history")
-  is_deleted Boolean
-  
-  position_id           String
-  position                 Position                @relation("user_position_relation", fields: [position_id], references: [position_id], onDelete: Restrict, onUpdate: Cascade)
-  
-  role_name                String?
-  role                     Role?                    @relation("user_role_relation", fields: [role_name], references: [role_name])
+  mother_details_id String?
+  mother_details    UMotherDetails? @relation(name: "user_mother_details", fields: [mother_details_id], references: [mother_details_id], onDelete: Restrict, onUpdate: Cascade)
 
-  present_address_id String?    @unique
-  present_address PresentAddress? @relation(name: "user_present_address_relation", fields: [present_address_id], references: [present_address_id], onDelete: Cascade, onUpdate: Cascade)
+  email         String? @unique
+  user_name     String? @unique
+  user_password String? @default("sm1234ps")
 
-  permanent_address_id String?    @unique
-  permanent_address PermanentAddress? @relation(name: "user_permanent_address_relation", fields: [permanent_address_id], references: [permanent_address_id],  onDelete: Cascade, onUpdate: Cascade)
+  active_status           ActiveStatus             @default(ACTIVE)
+  active_inactive_history UActiveInactiveHistory[] @relation("user_active_history")
+  is_deleted              Boolean                  @default(false)
 
-  academic_teacher_id String? @unique
-  academic_teacher AcademicTeacher? @relation(name:"user_academic_teacher", fields: [academic_teacher_id],references: [academic_teacher_id], onDelete: Restrict)
+  position_id String?
+  position    UPosition? @relation("user_position_relation", fields: [position_id], references: [position_id], onDelete: Restrict, onUpdate: Cascade)
+
+  role_name String?
+  role      URole?  @relation("user_role_relation", fields: [role_name], references: [role_name])
+
+  present_address   AllPresentAddress?
+  permanent_address AllPermanentAddress?
+
+  student_profile Student?
+  teacher_profile Teacher?
 
   audit_logs AuditLog[]
 
   created_classes Class[] @relation("class_created_by")
   updated_classes Class[] @relation("class_updated_by")
 
-  created_books Book[] @relation("book_created_by")
-  updated_books Book[] @relation("book_updated_by")
-  book_links BookClass[]
+  created_routine ClassRoutine[] @relation("routine_created_by")
+  updated_routine ClassRoutine[] @relation("routine_updated_by")
 
-  created_at               DateTime                @default(now())
-  updated_at               DateTime                @updatedAt
-  
+  created_books Book[]      @relation("book_created_by")
+  updated_books Book[]      @relation("book_updated_by")
+  book_links    BookClass[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime? @updatedAt
+
   @@unique([full_name, mobile_number], name: "user_full_name_mobile_unique")
   @@map("users")
 }

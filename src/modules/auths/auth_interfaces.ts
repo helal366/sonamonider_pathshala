@@ -5,4 +5,3 @@ export interface IAuthLogin {
   user_password: string;
 }
 
-export type IUser = User

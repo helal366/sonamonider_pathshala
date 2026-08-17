@@ -1,0 +1,26 @@
+model AllPresentAddress {
+  present_address_id String  @id @default(uuid())
+  house_no           String?
+  house_name         String?
+  plot_no            String?
+  road_no            String?
+  neighbourhood      String?
+  region             String?
+  village            String?
+  post_code          Int?
+  post_office        String?
+  thana              String
+  district           String
+  country            String  @default("Bangladesh")
+
+  user_id String? @unique
+  user    User?   @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: Cascade)
+
+  spouse_id String?            @unique
+  spouse    SpouseInformation? @relation(fields: [spouse_id], references: [spouse_id], onDelete: Cascade, onUpdate: Cascade)
+
+  created_at DateTime @default(now())
+  updated_at DateTime? @updatedAt
+
+  @@map("present_addresses")
+}

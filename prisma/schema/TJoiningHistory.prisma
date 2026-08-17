@@ -1,0 +1,19 @@
+model TJoiningHistory {
+  joining_history_id String    @id @default(uuid())
+  applied_position   String?
+  joining_date       DateTime?
+  resign_data        DateTime?
+
+  interview_information          TInterviewInformation?
+  previous_institute_information TPreviousInstituteInformation?
+  references                     TReferences?
+  promoted_history               TPromotedHistory?
+
+  teacher_id   String?
+  teacher_info Teacher? @relation(fields: [teacher_id], references: [teacher_id], onDelete: Cascade, onUpdate: Cascade)
+
+  created_at DateTime @default(now())
+  updated_at DateTime? @updatedAt
+
+  @@map("joining_history")
+}

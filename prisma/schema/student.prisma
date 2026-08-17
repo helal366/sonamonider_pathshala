@@ -1,17 +1,22 @@
-model Student{
-    student_id String @id @default(uuid())
-    classes Class[] @relation("student_classes")
+model Student {
+  student_id String  @id @default(uuid())
+  classes    Class[] @relation("student_classes")
 
-    active_class_id String
-    active_class Class @relation("student_active_classes", fields: [active_class_id], references: [class_id], onDelete: Restrict, onUpdate: Cascade)
+  active_class_id String
+  active_class    Class  @relation("student_active_classes", fields: [active_class_id], references: [class_id], onDelete: Restrict, onUpdate: Cascade)
 
-    previous_institute_information PreviousInstituteInformation[]
+  previous_institute_information SPreviousInstituteInformation[]
 
-    responsible_guardian_id String?
-    responsible_guardian ResponsibleGuardianDetails? @relation(fields: [responsible_guardian_id], references: [responsible_guardian_id], onDelete: Restrict, onUpdate: Cascade)
+  responsible_guardian_id String?
+  responsible_guardian    SResponsibleGuardianDetails? @relation(fields: [responsible_guardian_id], references: [responsible_guardian_id], onDelete: Restrict, onUpdate: Cascade)
 
-    created_at DateTime @default(now())
-    updated_at DateTime @updatedAt
+  user_id           String @unique
+  user_primary_data User   @relation(fields: [user_id], references: [user_id], onDelete: Cascade, onUpdate: Cascade)
 
-    @@map("students")
+  student_assigned_responsibility TStudentResponsibility?
+
+  created_at DateTime @default(now())
+  updated_at DateTime? @updatedAt
+
+  @@map("students")
 }

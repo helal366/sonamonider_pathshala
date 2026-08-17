@@ -1,0 +1,14 @@
+model TReferences {
+  reference_id       String  @id @default(uuid())
+  ref1_name          String?
+  ref1_mobile_number String?
+  ref1_occupation    String?
+  ref1_job_title     String?
+  ref2_name          String?
+  ref2_mobile_number String?
+  ref2_occupation    String?
+  ref2_job_title     String?
+
+  joining_history_id String?          @unique
+  joining_history    TJoiningHistory? @relation(fields: [joining_history_id], references: [joining_history_id], onDelete: Cascade, onUpdate: Cascade)
+}
