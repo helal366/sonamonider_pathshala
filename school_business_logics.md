@@ -14,3 +14,58 @@
 ## Class routine:
 - Normal rule:
 * A teacher will not be able to take two class in a single period.
+* Each student will be able to see their own class routine.
+* Each teacher will be able to see their own class routine.
+* Each GRADE and GROUP teacher will be able to see the specific class's class routine which class's GRADE TEACHER or GROUP TEACHER he/she is.
+* ADMIN and SUPER_ADMIN can see any class's class routine and any teacher's class routine.
+
+## Class scheduling/timimg:
+**SHIFTS: **
+1. NURANI_MORNING_SHIFT: 07:00 to 08:00
+2. HIFZ_MORNING_SHIFT: 06:00 to 08:00
+3. EVENING_SHIFT: 15:00 to 17:00
+4. NIGHT_SHIFT: AFTER MAGRIB to 20:00
+5. NURANI_GIRLS: 09:45 to 10:30
+6. HIFZ_GIRLS: 08:00 to 10:30
+
+**BRANCHES: **
+1. MORNING  (madrasha)
+2. DAY  (school)
+3. BOYS
+4. GIRLS
+
+**CLASS SCHEDULING/TIMING: **
+* PLAYGROUP with MORNING BRANCH: 08:00 to 10:30
+* PLAYGROUP with DAY BRANCH: 10:45 AM to 13:00 
+* NURSERY with MORNING BRANCH: 
+    \- 08:00 to 10:15 and NURANI_MORNING_SHIFT and EVENING_SHIFT (optional)--->(Nurani/Ampara)
+    \- 08:00 to 10:15 and HIFZ_MORNING_SHIFT and EVENING_SHIFT (optional) and NIGHT_SHIFT(optional) --->(Hifz/Nazera)
+    
+* NURSERY with DAY BRANCH:
+    \- 10:30 to 13:00 (only school)
+    \- 10:30 to 13:00 and NURANI_MORNING_SHIFT (optional) and EVENING_SHIFT (optional) --->(Nurani/Ampara)
+    \- 10:30 to 13:00 and HIFZ_MORNING_SHIFT (optional) and EVENING_SHIFT(optional) and NIGHT_SHIFT(optional) --->(Hifz/Nazera)
+
+* KG, GRADE_ONE, GRADE_TWO with MORNING BRANCH: 
+    \- 08:00 to 10:30 and NURANI_MORNING_SHIFT and EVENING_SHIFT (optional)--->(Nurani/Ampara)
+    \- 08:00 to 10:30 and and HIFZ_MORNING_SHIFT and EVENING_SHIFT (optional) and NIGHT_SHIFT(optional) --->(Hifz/Nazera)
+
+* KG, GRADE_ONE, GRADE_TWO with DAY BRANCH:
+    \- 09:45 to 13:00 
+    \- 09:45 to 13:00 and NURANI_MORNING_SHIFT (optional) and EVENING_SHIFT (optional)--->(Nurani/Ampara)
+    \- 09:45 to 13:00 and and HIFZ_MORNING_SHIFT (optional) and EVENING_SHIFT (optional) and NIGHT_SHIFT(optional) --->(Hifz/Nazera)
+
+* GRADE_THREE, GRADE_FOUR and GRADE_FIVE with BOYS BRANCH: 
+    \-  NURANI_MORNING_SHIFT and 08:00 to 11:30 and EVENING_SHIFT (optional)--->(Nurani/Ampara)
+    \-  HIFZ_MORNING_SHIFT and 08:00 tp 11:30 and EVENING_SHIFT (optional) and NIGHT_SHIFT(optional) --->(Hifz/Nazera)
+* GRADE_THREE, GRADE_FOUR and GRADE_FIVE with GIRLS BRANCH:
+    \- NURANI_GIRLS and 10:30 to 14:20 and EVENING_SHIFT (optional)--->(Nurani/Ampara)
+    \- HIFZ_GIRLS and 10:30 to 14:20 and EVENING_SHIFT (optional) and NIGHT_SHIFT(optional) --->(Hifz/Nazera)
+
+* GRADE_SIX to GRADE_TEN with BOYS BRANCH:
+    \- NURANI_MORNING_SHIFT and 08:00 to 12:30 and EVENING_SHIFT (optional)--->(Nurani/Ampara)
+    \- HIFZ_MORNING_SHIFT and 08:00 tp 12:30 and EVENING_SHIFT (optional) and NIGHT_SHIFT(optional) --->(Hifz/Nazera)
+
+* GRADE_SIX to GRADE_TEN with GIRLS BRANCH:
+    \- NURANI_GIRLS and 10:30 to 14:50 and EVENING_SHIFT (optional)--->(Nurani/Ampara)
+    \- HIFZ_GIRLS and 10:30 to 14:20 and EVENING_SHIFT (optional) and NIGHT_SHIFT(optional) --->(Hifz/Nazera)
