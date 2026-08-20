@@ -70,3 +70,10 @@ SUBJECT_TEACHER
 GROUP_TEACHER
 GRADE_TEACHER
 RESPONSIBLE_TEACHER
+
+## Nurani curriculum for different classes:
+NURANI_PLAYGROUP: ARABIC ALPHABET
+NURANI_NURSERY: ARABIC WORD MAKING
+NURANI_PRELIMINARY: কায়েদা শুরু থেকে মাদ্দ অধ্যায় পর্যন্ত
+NURANI_ADVANCE: হরকত অধ্যায় থেকে শেষ পর্যন্ত
+NURANI_AMPARA: শুরু থেকে শেষ পর্যন্ত
